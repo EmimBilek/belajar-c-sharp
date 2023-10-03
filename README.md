@@ -200,7 +200,9 @@ int[ , ] x = new int[3,4];
 ## Jagged Array
 A jagged array is an array whose elements are arrays. So it is basically an array of arrays.
 The following is a declaration of a single-dimensional array that has three elements, each of which is a single-dimensional array of integers:
+```csharp
 int[ ][ ] jaggedArr = new int[3][ ];
+```
 
 ## Strings Methods
 String objects support a number of useful properties and methods:
