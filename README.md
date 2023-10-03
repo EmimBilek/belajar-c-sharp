@@ -1,6 +1,6 @@
 # belajar-c-sharp
 ## Named Arguments
-```
+```csharp
 static void Main(string[] args)
 {
   int res = Area(w: 5, h: 8);
