@@ -34,6 +34,7 @@ static void Main()
 }
 ```
 > Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method.
+```csharp
 static void Sqr(ref int x)
 {
   x = x * x;
@@ -44,3 +45,4 @@ static void Main()
   Sqr(a); //error karena tidak menggunakan ref
   Console.WriteLine(a); // Outputs 9
 }
+```
