@@ -33,7 +33,7 @@ static void Main()
   Console.WriteLine(a); // Outputs 9
 }
 ```
-> Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method
+> Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method.
 static void Sqr(ref int x)
 {
   x = x * x;
