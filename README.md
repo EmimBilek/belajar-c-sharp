@@ -49,7 +49,7 @@ static void Main()
 }
 ```
 ## Passing by Output
-Parameter output mirip dengan parameter reference, hanya saja parameter tersebut mentransfer data keluar dari metode, bukan menerima data masuk. Parameter tersebut didefinisikan menggunakan kata kunci 'out'
+Parameter output mirip dengan parameter reference, hanya saja parameter tersebut mentransfer data keluar dari metode, bukan menerima data masuk. Parameter tersebut didefinisikan menggunakan kata kunci `out`
 Variabel yang disediakan untuk parameter output tidak perlu diinisialisasi karena nilai tersebut tidak akan digunakan. Parameter keluaran sangat berguna ketika Anda perlu mengembalikan beberapa nilai dari suatu metode. Contoh:
 ```csharp
 static void GetValues(out int x, out int y)
