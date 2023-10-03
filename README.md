@@ -160,7 +160,7 @@ class Person
   }
 }
 ```
-## Auto-Implemented Properties
+### Auto-Implemented Properties
 When you do not need any custom logic, C# provides a fast and effective mechanism for declaring private members through their properties.
 For example, to create a private member that can only be accessed through the Name property's get and set accessors, use the following syntax:
 ```csharp
