@@ -34,6 +34,7 @@ static void Main()
 }
 ```
 > Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method.
+
 Kode error:
 ```csharp
 static void Sqr(ref int x)
