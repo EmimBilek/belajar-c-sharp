@@ -34,14 +34,13 @@ static void Main()
 }
 ```
 > Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method
-> static void Sqr(ref int x)
-> {
-> x = x * x;					|
-|	}						|
-|	static void Main()				|
-|	{						|
-|	  int a = 3;					|
-|	  Sqr(a); //error karena tidak menggunakan ref	|
-|							|
-|	  Console.WriteLine(a); // Outputs 9		|
-|		}
+static void Sqr(ref int x)
+{
+  x = x * x;
+}
+static void Main()
+{
+  int a = 3;
+  Sqr(a); //error karena tidak menggunakan ref
+  Console.WriteLine(a); // Outputs 9
+}
