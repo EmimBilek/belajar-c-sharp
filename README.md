@@ -67,7 +67,7 @@ static void Main(string[] args)
 > Note: berbeda dengan parameter reference, parameter output mendapatkan nilai dari method
 
 ## Verbatim Strings
-The verbatim string allows special characters and linebreaks in strings. It can be created by prefixing @ symbol before double quotes. examples :
+The verbatim string allows special characters and linebreaks in strings. It can be created by prefixing `@` symbol before double quotes (`"`). examples :
 ```csharp
 Console.WriteLine(@"Hey! I'm a verbatim string.");
 ```
