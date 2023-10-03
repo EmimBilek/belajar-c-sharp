@@ -197,6 +197,141 @@ For example, let's define a two-dimensional 3x4 integer array:
 ```csharp
 int[ , ] x = new int[3,4];
 ```
+## Jagged Array
+A jagged array is an array whose elements are arrays. So it is basically an array of arrays.
+The following is a declaration of a single-dimensional array that has three elements, each of which is a single-dimensional array of integers:
+int[ ][ ] jaggedArr = new int[3][ ];
+
+## Strings Methods
+String objects support a number of useful properties and methods:
+-Length returns the length of the string.
+-IndexOf(value) returns the index of the first occurrence of the value within the string.
+-Insert(index, value) inserts the value into the string starting from the specified index.
+-Remove(index) removes all characters in the string from the specified index.
+-Replace(oldValue, newValue) replaces the specified value in the string.
+-Substring(index, length) returns a substring of the specified length, starting from the specified index. If length is not specified, the operation continues to the end of the string.
+-Contains(value) returns true if the string contains the specified value.
+
+## Class Destructor
+As constructors are used when a class is instantiated, destructors are automatically invoked when an object is destroyed or deleted.
+Destructors have the following attributes:
+-A class can only have one destructor.
+-Destructors cannot be called. They are invoked automatically.
+-A destructor does not take modifiers or have parameters.
+-The name of a destructor is exactly the same as the class prefixed with a tilde (~).
+
+For Example :
+```csharp
+  class Dog
+{
+  ~Dog() 
+  {
+    // code statements
+  }
+}
+```
+
+## Static
+Class members (variables, properties, methods) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member. For example:
+```csharp
+class Cat {
+  public static int count=0;
+  public Cat() {
+    count++;
+  }
+}
+```
+In this case, we declared a public member variable count, which is static. The constructor of the class increments the count variable by one.
+
+No matter how many Cat objects are instantiated, there is always only one count variable that belongs to the Cat class because it was declared static.
+
+You must access static members using the class name. If you try to access them via an object of that class, you will generate an error.
+
+Static methods can access only static members.
+
+Constructors can be declared static to initialize static members of the class.
+The static constructor is automatically called once when we access a static member of the class.
+
+For example:
+```csharp
+class SomeClass {
+  public static int X { get; set; }
+  public static int Y { get; set; }
+ 
+  static SomeClass() {
+    X = 10;
+    Y = 20;
+  }
+}
+```
+The constructor will get called once when we try to access SomeClass.X or SomeClass.Y.
+
+## Static Classes
+An entire class can be declared as static.
+A static class can contain only static members.
+You cannot instantiate an object of a static class, as only one instance of the static class can exist in a program.
+Static classes are useful for combining logical properties and methods. A good example of this is the Math class.
+It contains various useful properties and methods for mathematical operations.
+
+## The readonly Modifier
+The readonly modifier prevents a member of a class from being modified after construction. It means that the field declared as readonly can be modified only when you declare it or from within a constructor. For example:
+```csharp
+class Person {
+  private readonly string name = "John"; 
+  public Person(string name) {
+    this.name = name; 
+  }
+}
+```
+
+If we try to modify the name field anywhere else, we will get an error.
+There are three major differences between readonly and const fields.
+
+First, a constant field must be initialized when it is declared, whereas a readonly field can be declared without initialization, as in:
+```csharp
+readonly string name; // OK
+const double PI; // Error
+```
+
+Second, a readonly field value can be changed in a constructor, but a constant value cannot.
+
+Third, the readonly field can be assigned a value that is a result of a calculation, but constants cannot, as in:
+```csharp
+readonly double a = Math.Sin(60); // OK
+const double b = Math.Sin(60); // Error!
+```
+
+The readonly modifier prevents a member of a class from being modified after construction.
+
+## Indexers
+Declaration of an indexer is to some extent similar to a property. The difference is that indexer accessors require an index.
+Like a property, you use get and set accessors for defining an indexer. However, where properties return or set a specific data member, indexers return or set a particular value from the object instance.
+Indexers are defined with the this keyword. For example:
+```csharp
+class Clients {
+  private string[] names = new string[10];
+
+  public string this[int index] {
+    get {
+      return names[index];
+    }
+    set {
+      names[index] = value;
+    }
+  }
+}
+```
+As you can see, the indexer definition includes the this keyword and an index, which is used to get and set the appropriate value.
+Now, when we declare an object of class Clients, we use an index to refer to specific objects like the elements of an array:
+```csharp
+Clients c = new Clients();
+c[0] = "Dave";
+c[1] = "Bob";
+
+Console.WriteLine(c[1]);
+```
+
+You typically use an indexer if the class represents a list, collection, or array of objects.
 
 ## Operator Overloading
 Overloaded operators are methods with special names, where the keyword operator is followed by the symbol for the operator being defined.
