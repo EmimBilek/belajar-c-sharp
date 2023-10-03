@@ -1,4 +1,4 @@
-# belajar-c-sharp
+# Learn C#
 ## Named Arguments
 ```csharp
 static void Main(string[] args)
@@ -19,8 +19,8 @@ static int Area(int h = 2, int w = 2)
 }
 ```
 ## Passing by Reference
-Lewat referensi menyalin alamat memori argumen ke dalam parameter formal. Di dalam metode ini, alamat digunakan untuk mengakses argumen sebenarnya yang digunakan dalam panggilan. Artinya perubahan yang dilakukan pada parameter mempengaruhi argumen.
-Untuk meneruskan nilai dengan referensi, kata kunci ref digunakan dalam panggilan dan definisi metode :
+By reference copies the argument's memory address into a formal parameter. In this method, the address is used to access the actual arguments used in the call. This means that changes made to the parameters affect the argument.
+To pass values ​​by reference, the `ref` keyword is used in method calls and definitions :
 ```csharp
 static void Sqr(ref int x)
 {
@@ -49,8 +49,8 @@ static void Main()
 }
 ```
 ## Passing by Output
-Parameter output mirip dengan parameter reference, hanya saja parameter tersebut mentransfer data keluar dari metode, bukan menerima data masuk. Parameter tersebut didefinisikan menggunakan kata kunci `out`
-Variabel yang disediakan untuk parameter output tidak perlu diinisialisasi karena nilai tersebut tidak akan digunakan. Parameter keluaran sangat berguna ketika Anda perlu mengembalikan beberapa nilai dari suatu metode. Contoh:
+Output parameters are similar to reference parameters, except that they transfer data out of the method, rather than receiving incoming data. These parameters are defined using the `out` keyword
+Variables provided for output parameters do not need to be initialized because those values ​​will not be used. Output parameters are very useful when you need to return multiple values ​​from a method. Example :
 ```csharp
 static void GetValues(out int x, out int y)
 {
@@ -83,7 +83,7 @@ Console.WriteLine($"{city} is the capital of the United Kingdom.");
 To create an interpolated string you need to prefix the $ symbol before the double quotes. To use a variable inside the string, you just need to enclose it in curly brackets: {variable name}.
 
 ## Overloading method
-Method dengan nama yang sama, tetapi dengan parameter yang berbeda (jenis maupun jumlah parameter). Overloading method tidak bisa menggunakan tipe data return sebagai pembedanya, contoh :
+Methods with the same name, but with different parameters (type and number of parameters). Overloading methods cannot use the return data type as a distinction, for example :
 ```csharp
 //hasil error
 int PrintName(int a) { }
@@ -92,7 +92,7 @@ double PrintName(int c) { }
 //harus parameter yang berbeda agar tidak error
 ```
 ## Recursif/recursion
-memanggil ulang method di dalam method yang sama :
+re-calling a method within the same method :
 ```csharp
 static int Fact(int num) {
   if (num == 1) {
@@ -101,6 +101,7 @@ static int Fact(int num) {
   return num * Fact(num - 1);
 }
 ```
+
 
 
 
