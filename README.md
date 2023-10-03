@@ -140,15 +140,63 @@ class Person
   }
 }
 ```
-> Note: value (`set { name = value; })`) is a special keyword, which represents the value we assign to a property using the set accessor (`p.Name = "Bob"`);.
+> Note: value (`set { name = value; })`) is a special keyword, which represents the value we assign to a property using the set accessor (`p.Name = "Bob";`).
 The name of the property can be anything you want, but coding conventions dictate properties have the same name as the private field with a capital letter.
 
+So, why use properties? Why not just declare the member variable public and access it directly?
+With properties you have the option to control the logic of accessing the variable.
+For example, you can check if the value of age is greater than 0, before assigning it to the variable:
+```csharp
+class Person
+{
+  private int age=0;
+  public int Age
+  {
+    get { return age; }
+    set {
+      if (value > 0)
+        age = value;
+    }
+  }
+}
+```
+## Auto-Implemented Properties
+When you do not need any custom logic, C# provides a fast and effective mechanism for declaring private members through their properties.
+For example, to create a private member that can only be accessed through the Name property's get and set accessors, use the following syntax:
+```csharp
+public string Name { get; set; }
+```
+As you can see, you do not need to declare the private field name separately - it is created by the property automatically. Name is called an auto-implemented property. Also called auto-properties, they allow for easy and short declaration of private members.
 
-
-
-
-
-
+## Array
+Since arrays are objects, we need to instantiate them with the new keyword:
+```csharp
+int[ ] myArray = new int[5];
+```
+We can provide initial values to the array when it is declared by using curly brackets:
+```csharp
+string[ ] names = new string[3] {"John", "Mary", "Jessica"};
+double[ ] prices = new double[4] {3.6, 9.8, 6.4, 5.9};
+```
+omit 👇:
+```csharp
+string[ ] names = new string[] {"John", "Mary", "Jessica"};
+double[ ] prices = new double[] {3.6, 9.8, 6.4, 5.9};
+```
+omit again 👇:
+```csharp
+string[ ] names = {"John", "Mary", "Jessica"};
+double[ ] prices = {3.6, 9.8, 6.4, 5.9};
+```
+## Multidimensional Arrays
+An array can have multiple dimensions. A multidimensional array is declared as follows:
+```csharp
+type[, , … ,] arrayName = new type[size1, size2, …, sizeN];
+```
+For example, let's define a two-dimensional 3x4 integer array:
+```csharp
+int[ , ] x = new int[3,4];
+```
 
 
 
