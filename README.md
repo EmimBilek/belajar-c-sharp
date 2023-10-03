@@ -117,13 +117,31 @@ static void Main(string[] args)
 }
 ```
 ## Encapsulation
-
 In short, the benefits of encapsulation are:
 - Control how data is accessed or modified.
 - Code is more flexible and easy to change to new requirements.
 - Change one part of the code without affecting other parts of the code.
 
+## Constructor
+A constructor has exactly the same name as its class, is public, and does not have any return type.
 
+## Class property
+A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field. Properties can be used as if they are public data members, but they actually include special methods called accessors.
+The accessor of a property contains the executable statements that help in getting (reading or computing) or setting (writing) a corresponding field. Accessor declarations can include a get accessor, a set accessor, or both. For example :
+```csharp
+class Person
+{
+  private string name; //field
+
+  public string Name //property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+```
+> Note: value ```(set { name = `value`; })``` is a special keyword, which represents the value we assign to a property using the set accessor `p.Name = "Bob"`;.
+The name of the property can be anything you want, but coding conventions dictate properties have the same name as the private field with a capital letter.
 
 
 
