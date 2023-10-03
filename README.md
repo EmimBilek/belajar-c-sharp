@@ -1,5 +1,5 @@
 # belajar-c-sharp
-### Named Arguments
+## Named Arguments
 ```csharp
 static void Main(string[] args)
 {
