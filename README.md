@@ -101,9 +101,27 @@ static int Fact(int num) {
   return num * Fact(num - 1);
 }
 ```
+## Object declaration from a class
+```csharp
+class Person {
+  int age;
+  string name;
+  public void SayHi() {
+    Console.WriteLine("Hi");
+  }
+}
+static void Main(string[] args)
+{
+  Person p1 = new Person();
+  p1.SayHi();
+}
+```
+## Encapsulation
 
-
-
+In short, the benefits of encapsulation are:
+- Control how data is accessed or modified.
+- Code is more flexible and easy to change to new requirements.
+- Change one part of the code without affecting other parts of the code.
 
 
 
