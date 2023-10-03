@@ -206,21 +206,21 @@ int[ ][ ] jaggedArr = new int[3][ ];
 
 ## Strings Methods
 String objects support a number of useful properties and methods:
--Length returns the length of the string.
--IndexOf(value) returns the index of the first occurrence of the value within the string.
--Insert(index, value) inserts the value into the string starting from the specified index.
--Remove(index) removes all characters in the string from the specified index.
--Replace(oldValue, newValue) replaces the specified value in the string.
--Substring(index, length) returns a substring of the specified length, starting from the specified index. If length is not specified, the operation continues to the end of the string.
--Contains(value) returns true if the string contains the specified value.
+- Length returns the length of the string.
+- IndexOf(value) returns the index of the first occurrence of the value within the string.
+- Insert(index, value) inserts the value into the string starting from the specified index.
+- Remove(index) removes all characters in the string from the specified index.
+- Replace(oldValue, newValue) replaces the specified value in the string.
+- Substring(index, length) returns a substring of the specified length, starting from the specified index. If length is not specified, the operation continues to the end of the string.
+- Contains(value) returns true if the string contains the specified value.
 
 ## Class Destructor
 As constructors are used when a class is instantiated, destructors are automatically invoked when an object is destroyed or deleted.
 Destructors have the following attributes:
--A class can only have one destructor.
--Destructors cannot be called. They are invoked automatically.
--A destructor does not take modifiers or have parameters.
--The name of a destructor is exactly the same as the class prefixed with a tilde (~).
+- A class can only have one destructor.
+- Destructors cannot be called. They are invoked automatically.
+- A destructor does not take modifiers or have parameters.
+- The name of a destructor is exactly the same as the class prefixed with a tilde (~).
 
 For Example :
 ```csharp
