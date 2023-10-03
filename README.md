@@ -140,7 +140,7 @@ class Person
   }
 }
 ```
-> Note: value ```(set { name = `value`; })``` is a special keyword, which represents the value we assign to a property using the set accessor `p.Name = "Bob"`;.
+> Note: value (`set { name = value; })`) is a special keyword, which represents the value we assign to a property using the set accessor (`p.Name = "Bob"`);.
 The name of the property can be anything you want, but coding conventions dictate properties have the same name as the private field with a capital letter.
 
 
