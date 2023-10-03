@@ -198,8 +198,47 @@ For example, let's define a two-dimensional 3x4 integer array:
 int[ , ] x = new int[3,4];
 ```
 
+## Operator Overloading
+Overloaded operators are methods with special names, where the keyword operator is followed by the symbol for the operator being defined.
+Similar to any other method, an overloaded operator has a return type and a parameter list.
+For example, for our Box class, we overload the + operator:
+```csharp
+public static Box operator+ (Box a, Box b) {
+  int h = a.Height + b.Height;
+  int w = a.Width + b.Width;
+  Box res = new Box(h, w);
+  return res;
+}
+```
+The method above defines an overloaded operator + with two Box object parameters and returning a new Box object whose Height and Width properties equal the sum of its parameter's corresponding properties.
+Additionally, the overloaded operator must be static.
 
+**Putting it all together:**
+```csharp
+class Box {
+  public int Height { get; set; }
+  public int Width { get; set; }
+  public Box(int h, int w) {
+    Height = h;
+    Width = w;
+  }
+  public static Box operator+(Box a, Box b) {
+    int h = a.Height + b.Height;
+    int w = a.Width + b.Width;
+    Box res = new Box(h, w);
+    return res;
+  }
+}
+static void Main(string[] args) {
+  Box b1 = new Box(14, 3);
+  Box b2 = new Box(5, 7);
+  Box b3 = b1 + b2;
 
+  Console.WriteLine(b3.Height); 
+  Console.WriteLine(b3.Width); 
+}
+```
+> All arithmetic and comparison operators can be overloaded. For instance, you could define greater than and less than operators for the boxes that would compare the Boxes and return a **boolean** result. Just keep in mind that when overloading the greater than operator, the less than operator should also be defined.
 
 
 
