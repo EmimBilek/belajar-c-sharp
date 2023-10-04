@@ -85,11 +85,11 @@ To create an interpolated string you need to prefix the $ symbol before the doub
 ## Overloading method
 Methods with the same name, but with different parameters (type and number of parameters). Overloading methods cannot use the return data type as a distinction, for example :
 ```csharp
-//hasil error
+//Error result
 int PrintName(int a) { }
 float PrintName(int b) { }
 double PrintName(int c) { }
-//harus parameter yang berbeda agar tidak error
+//Must have different parameter(s) so that are not Errors
 ```
 ## Recursif/recursion
 re-calling a method within the same method :
@@ -224,7 +224,7 @@ Destructors have the following attributes:
 
 For Example :
 ```csharp
-  class Dog
+class Dog
 {
   ~Dog() 
   {
