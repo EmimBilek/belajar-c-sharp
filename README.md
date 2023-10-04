@@ -608,6 +608,73 @@ static void Main(string[] args) {
 
 > It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings. The sealed modifier prevents a class from being inherited and the abstract modifier requires a class to be inherited.
 
+## Interfaces
+An interface is a completely abstract class, which contains only abstract members.
+It is declared using the `interface` keyword:
+```csharp
+public interface IShape
+{
+  void Draw();
+}
+```
+All members of the interface are **by default abstract**, so no need to use the abstract keyword.
+
+Interfaces can have public (by default), private and protected members.
+
+> It is common to use the capital letter **I** as the starting letter for an interface name.
+Interfaces can contain properties, methods, etc. but **cannot** contain fields (variables).
+
+When a class implements an interface, **it must also implement, or define, all of its methods**.
+The term implementing an interface is used (opposed to the term "inheriting from") to describe the process of creating a class based on an interface. The interface simply describes what a class should do. The class implementing the interface must define how to accomplish the behaviors.
+The syntax to implement an interface is the same as that to derive a class:
+```csharp
+public interface IShape {
+  void Draw();
+}
+class Circle : IShape {
+  public void Draw() {
+    Console.WriteLine("Circle Draw");
+  }
+}
+static void Main(string[] args) {
+  IShape c = new Circle();
+  c.Draw();
+}
+```
+Note, that the `override` keyword is not needed when you implement an interface.
+
+> But why use interfaces rather than abstract classes? A class can inherit from just one base class, but it can implement **multiple interfaces**! Therefore, by using interfaces you can include behavior from multiple sources in a class. To implement multiple interfaces, use a comma separated list of interfaces when creating the class: **class A: IShape, IAnimal, etc.**
+
+### Default Implementation
+Default implementation in interfaces allows to write an implementation of any method. This is useful when there is a need to provide a single implementation for common functionality.
+
+Let's suppose we need to add new common functionality to our already existing interface, which is implemented by many classes. Without default implementation (before C# 8), this operation would create errors, because the method we have added isn't implemented in the classes, and we would need to implement the same operation one by one in each class. Default implementation in interface solves this problem.
+
+For example:
+```csharp
+public interface IShape {
+  void Draw();
+  void Finish(){
+    Console.WriteLine("Done!");
+  }
+}
+class Circle : IShape {
+  public void Draw() {
+    Console.WriteLine("Circle Draw");
+  }
+}
+static void Main(string[] args) {
+  IShape c = new Circle();
+  c.Draw();
+  c.Finish();
+}
+```
+We added the `Finish()` method with default implementation to our IShape interface and called it without implementing it inside the Circle class.
+
+> Methods with default implementation can be freely overridden inside the class which implements that interface.
+
+
+
 
 
 
