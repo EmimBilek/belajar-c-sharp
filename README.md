@@ -673,7 +673,41 @@ We added the `Finish()` method with default implementation to our IShape interfa
 
 > Methods with default implementation can be freely overridden inside the class which implements that interface.
 
+## Nested classes 
+C# supports nested classes: a class that is a member of another class.
 
+For example:
+```csharp
+class Car {
+  string name;
+  public Car(string nm) {
+    name = nm;
+    Motor m = new Motor();
+  }
+  public class Motor {
+    // some code
+  }
+}
+```
+The `Motor` class is nested in the `Car` class and can be used similar to other members of the class. A nested class acts as a member of the class, so it can have the same access modifiers as other members (public, private, protected).
+
+> Just as in real life, objects can contain other objects. For example, a car, which has its own attributes (color, brand, etc.) contains a motor, which as a separate object, has its own attributes (volume, horsepower, etc.). Here, the Car class can have a nested Motor class as one of its members.
+
+## Namespaces
+Namespaces declare a scope that contains a set of related objects. You can use a namespace to organize code elements. You can define your own namespaces and use them in your program.
+The using keyword states that the program is using a given namespace.
+For example, we are using the `System` namespace in our programs, which is where the class `Console` is defined:
+```csharp
+using System;
+...
+Console.WriteLine("Hi");
+```
+Without the `using` statement, we would have to specify the namespace wherever it is used:
+```csharp
+System.Console.WriteLine("Hi");
+```
+> The .NET Framework uses namespaces to organize its many classes. System is one example of a .NET Framework namespace.
+Declaring your own namespaces can help you group your class and method names in larger programming projects.
 
 
 
