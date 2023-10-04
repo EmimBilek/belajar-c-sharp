@@ -234,7 +234,7 @@ For Example :
 ```
 
 ## Static
-Class members (variables, properties, methods) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member. For example:
+Class members (`variables`, `properties`, `methods`) can also be declared as static. This makes those members belong to the class itself, instead of belonging to individual objects. No matter how many objects of the class are created, there is only one copy of the static member. For example:
 ```csharp
 class Cat {
   public static int count=0;
