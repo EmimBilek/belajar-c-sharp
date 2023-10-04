@@ -64,7 +64,7 @@ static void Main(string[] args)
   //Now a equals 5, b equals 42
 }
 ```
-> Note: berbeda dengan parameter reference, parameter output mendapatkan nilai dari method
+> Note: Unlike reference parameters, output parameters get values ​​from the method
 
 ## Verbatim Strings
 The verbatim string allows special characters and linebreaks in strings. It can be created by prefixing `@` symbol before double quotes (`"`). examples :
