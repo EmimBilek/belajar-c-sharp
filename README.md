@@ -566,7 +566,7 @@ The polymorphic approach allows us to treat each object the same way. As all obj
 > Polymorphism can be useful in many cases. For example, we could create a game where we would have different Player types with each Player having a separate behavior for the Attack method. In this case, Attack would be a virtual method of the base class Player and each derived class would override it.
 
 ## Abstract classes
-In some situations there is no meaningful need for the virtual method to have a separate definition in the base class. These methods are defined using the abstract keyword and specify that the derived classes must define that method on their own. You cannot create objects of a class containing an abstract method, which is why the class itself should be abstract.
+In some situations there is no meaningful need for the virtual method to have a separate definition in the base class. These methods are defined using the `abstract` keyword and specify that the derived classes must define that method on their own. **You cannot create objects of a class containing an abstract method**, which is why the class itself should be abstract.
 
 We could use an abstract method in the Shape class:
 ```csharp
@@ -575,12 +575,12 @@ abstract class Shape {
 }
 ```
 As you can see, the `Draw` method is **abstract** and thus has no body. You do not even need the curly brackets(`{}`) just end the statement with a semicolon(`;`).
-The Shape class itself must be declared **abstract** because it contains an **abstract method**. **Abstract method** declarations are only permitted in abstract classes.
+The Shape class itself must be declared **abstract** because it contains an **abstract method**. **Abstract method** declarations are only permitted in **abstract classes**.
 
-> Remember, abstract method declarations are only permitted in abstract classes. Members marked as abstract, or included in an abstract class, must be implemented by classes that derive from the abstract class. An abstract class can have multiple abstract members.
+> Remember, **abstract method** declarations are only permitted in **abstract classes**. Members marked as `abstract`, or included in an **abstract class**, must be implemented by classes that derive from the **abstract class**. **An abstract class can have multiple abstract members**.
 
-An abstract class is intended to be a base class of other classes. It acts like a template for its derived classes.
-Now, having the abstract class, we can derive the other classes and define their own Draw() methods:
+An **abstract class** is intended to be a base class of other classes. It acts like a **template** for its derived classes.
+Now, having the **abstract class**, we can derive the other classes and define their own `Draw()` methods:
 ```csharp
 abstract class Shape {
   public abstract void Draw();
@@ -601,7 +601,7 @@ static void Main(string[] args) {
 }
 ```
 
-Abstract classes have the following features:
+**Abstract classes** have the following features:
 - An abstract class cannot be instantiated.
 - An abstract class may contain abstract methods and accessors.
 - A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
