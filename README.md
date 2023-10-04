@@ -397,7 +397,26 @@ The derived class inherits all the features from the base class, and can have it
 
 > Inheritance allows us to define a class based on another class.
 
-
-
+Let's define our base class Animal:
+```csharp
+class Animal {
+  public int Legs {get; set;}
+  public int Age {get; set;}
+}
+```
+Now we can derive class Dog from it:
+```csharp
+class Dog : Animal {
+  public Dog() {
+    Legs = 4;
+  }
+  public void Bark() {
+    Console.Write("Woof");
+  }
+}
+```
+Note the syntax for a derived class. A **colon** (`:`) and the name of the **base** class follow the name of the **derived** class.
+All public members of **Animal** become public members of **Dog**. That is why we can access the `Legs` member in the **Dog** constructor (`public Dog()`).
+Now we can instantiate an object of type **Dog** and access the inherited members as well as call its own **Bark** method.
 
 
