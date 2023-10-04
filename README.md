@@ -504,7 +504,7 @@ class Dog: Animal {
   }
 }
 ```
-We have defined the Animal class with a constructor and destructor and a derived Dog class with its own constructor and destructor.
+We have defined the `Animal` class with a constructor and destructor and a derived `Dog` class with its own constructor and destructor.
 
 Let's create a Dog object:
 ```csharp
@@ -512,8 +512,8 @@ static void Main(string[] args) {
   Dog d = new Dog();
 }
 ```
-Note that the base class constructor is called first and the derived class constructor is called next.
-When the object is destroyed, the derived class destructor is invoked and then the base class destructor is invoked.
+Note that **the base class constructor is called first** and **the derived class constructor is called next**.
+When the object is destroyed, **the derived class destructor is invoked** and then **the base class destructor is invoked**.
 
 > You can think of it as the following: The derived class needs its base class in order to work, which is why the base class constructor is called first.
 
@@ -524,7 +524,7 @@ Polymorphism means that a call to a member method will cause a different impleme
 
 > Simply, polymorphism means that a single method can have a number of different implementations.
 
-Now, we can derive different shape classes that define their own Draw methods using the override keyword:
+Now, we can derive different `shape` classes that define their own `Draw` methods using the `override` keyword:
 ```csharp
 class Circle : Shape {
   public override void Draw() {
@@ -539,8 +539,8 @@ class Rectangle : Shape {
   }
 }
 ```
-The virtual Draw method in the Shape base class can be overridden in the derived classes. In this case, Circle and Rectangle have their own Draw methods.
-Now, we can create separate Shape objects for each derived type and then call their Draw methods:
+The virtual `Draw` method in the `Shape` base class can be **overridden** in the derived classes. In this case, `Circle` and `Rectangle` have their own `Draw` methods.
+Now, we can create separate `Shape` objects for each derived type and then call their `Draw` methods:
 ```csharp
 static void Main(string[] args) {
   Shape c = new Circle();
@@ -550,7 +550,7 @@ static void Main(string[] args) {
   r.Draw();
 }
 ```
-> As you can see, each object invoked its own Draw method, thanks to polymorphism.
+> As you can see, each object invoked its own `Draw` method, thanks to polymorphism.
 
 To summarize, polymorphism is a way to call the same method for different objects and generate different results based on the object type. This behavior is achieved through virtual methods in the base class. To implement this, we create objects of the base type, but instantiate them as the derived type:
 ```csharp
@@ -561,10 +561,52 @@ Shape is the base class. Circle is the derived class. So why use polymorphism? W
 Circle c = new Circle();
 c.Draw();
 ```
-The polymorphic approach allows us to treat each object the same way. As all objects are of type Shape, it is easier to maintain and work with them. You could, for example, have a list (or array) of objects of that type and work with them dynamically, without knowing the actual derived type of each object.
+The polymorphic approach allows us to treat each object the same way. As all objects are of type `Shape`, it is easier to maintain and work with them. You could, for example, have a list (or array) of objects of that type and work with them dynamically, without knowing the actual derived type of each object.
 
 > Polymorphism can be useful in many cases. For example, we could create a game where we would have different Player types with each Player having a separate behavior for the Attack method. In this case, Attack would be a virtual method of the base class Player and each derived class would override it.
 
+## Abstract classes
+In some situations there is no meaningful need for the virtual method to have a separate definition in the base class. These methods are defined using the abstract keyword and specify that the derived classes must define that method on their own. You cannot create objects of a class containing an abstract method, which is why the class itself should be abstract.
+
+We could use an abstract method in the Shape class:
+```csharp
+abstract class Shape {
+   public abstract void Draw();
+}
+```
+As you can see, the `Draw` method is **abstract** and thus has no body. You do not even need the curly brackets(`{}`) just end the statement with a semicolon(`;`).
+The Shape class itself must be declared **abstract** because it contains an **abstract method**. **Abstract method** declarations are only permitted in abstract classes.
+
+> Remember, abstract method declarations are only permitted in abstract classes. Members marked as abstract, or included in an abstract class, must be implemented by classes that derive from the abstract class. An abstract class can have multiple abstract members.
+
+An abstract class is intended to be a base class of other classes. It acts like a template for its derived classes.
+Now, having the abstract class, we can derive the other classes and define their own Draw() methods:
+```csharp
+abstract class Shape {
+  public abstract void Draw();
+}
+class Circle : Shape {
+  public override void Draw() {
+    Console.WriteLine("Circle Draw");
+  }
+}
+class Rectangle : Shape {
+  public override void Draw() {
+    Console.WriteLine("Rect Draw");
+  }
+}
+static void Main(string[] args) {
+  Shape c = new Circle();
+  c.Draw();
+}
+```
+
+Abstract classes have the following features:
+- An abstract class cannot be instantiated.
+- An abstract class may contain abstract methods and accessors.
+- A non-abstract class derived from an abstract class must include actual implementations of all inherited abstract methods and accessors.
+
+> It is not possible to modify an abstract class with the sealed modifier because the two modifiers have opposite meanings. The sealed modifier prevents a class from being inherited and the abstract modifier requires a class to be inherited.
 
 
 
