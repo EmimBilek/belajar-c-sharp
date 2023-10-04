@@ -441,9 +441,129 @@ We created a Student object and called the Speak method, which was declared in t
 > C# does not support multiple inheritance, so you cannot inherit from multiple classes.
 However, you can use interfaces to implement multiple inheritance. You will learn more about interfaces in the coming lessons.
 
+## Protected modifier
+The **protected** access modifier is very similar to **private** with one difference; it can be accessed in the **derived** classes. So, a **protected** member is accessible only from **derived** classes. For example:
+```csharp
+class Person {
+  protected int Age {get; set;}
+  protected string Name {get; set;}
+}
+class Student : Person {
+  public Student(string nm) {
+    Name = nm;
+  }
+  public void Speak() {
+    Console.Write("Name: "+Name);
+  }
+}
+static void Main(string[] args) {
+  Student s = new Student("David");
+  s.Speak();
+}
+```
+As you can see, we can access and modify the `Name` property of the base class from the derived class.
+But, if we try to access it from outside code, we will get an error:
+```csharp
+static void Main(string[] args) {
+  Student s = new Student("David");
+  s.Name = "Bob"; //Error
+}
+```
 
+### Sealed
+A class can prevent other classes from inheriting it, or any of its members, by using the `sealed` modifier. For example:
+```csharp
+sealed class Animal {
+  //some code
+}
+class Dog : Animal { } //Error
+```
+In this case, we cannot derive the Dog class from the Animal class because Animal is sealed.
+> The sealed keyword provides a level of protection to your class so that other classes cannot inherit from it.
 
+## Base and Derived class constructor and destructor
+Constructors are called when objects of a class are created. With inheritance, the base class constructor and destructor are not inherited, so you should define constructors for the derived classes.
+However, the base class constructor and destructor are being invoked automatically when an object of the derived class is created or deleted.
 
+Consider the following example:
+```csharp
+class Animal {
+  public Animal() {
+    Console.WriteLine("Animal created");
+  }
+  ~Animal() {
+    Console.WriteLine("Animal deleted");
+  }
+}
+class Dog: Animal {
+  public Dog() {
+    Console.WriteLine("Dog created");
+  }
+  ~Dog() {
+    Console.WriteLine("Dog deleted");
+  }
+}
+```
+We have defined the Animal class with a constructor and destructor and a derived Dog class with its own constructor and destructor.
+
+Let's create a Dog object:
+```csharp
+static void Main(string[] args) {
+  Dog d = new Dog();
+}
+```
+Note that the base class constructor is called first and the derived class constructor is called next.
+When the object is destroyed, the derived class destructor is invoked and then the base class destructor is invoked.
+
+> You can think of it as the following: The derived class needs its base class in order to work, which is why the base class constructor is called first.
+
+## Polymorphism
+The word **polymorphism** means "having many forms".
+Typically, polymorphism occurs when there is a hierarchy of classes and they are related through inheritance from a common base class.
+Polymorphism means that a call to a member method will cause a different implementation to be executed depending on the **type** of object that invokes the method.
+
+> Simply, polymorphism means that a single method can have a number of different implementations.
+
+Now, we can derive different shape classes that define their own Draw methods using the override keyword:
+```csharp
+class Circle : Shape {
+  public override void Draw() {
+    // draw a circle...
+    Console.WriteLine("Circle Draw");
+  }
+}
+class Rectangle : Shape {
+  public override void Draw() {
+    // draw a rectangle...
+    Console.WriteLine("Rect Draw");
+  }
+}
+```
+The virtual Draw method in the Shape base class can be overridden in the derived classes. In this case, Circle and Rectangle have their own Draw methods.
+Now, we can create separate Shape objects for each derived type and then call their Draw methods:
+```csharp
+static void Main(string[] args) {
+  Shape c = new Circle();
+  c.Draw();
+
+  Shape r = new Rectangle();
+  r.Draw();
+}
+```
+> As you can see, each object invoked its own Draw method, thanks to polymorphism.
+
+To summarize, polymorphism is a way to call the same method for different objects and generate different results based on the object type. This behavior is achieved through virtual methods in the base class. To implement this, we create objects of the base type, but instantiate them as the derived type:
+```csharp
+Shape c = new Circle();
+```
+Shape is the base class. Circle is the derived class. So why use polymorphism? We could just instantiate each object of its type and call its method, as in:
+```csharp
+Circle c = new Circle();
+c.Draw();
+```
+The polymorphic approach allows us to treat each object the same way. As all objects are of type Shape, it is easier to maintain and work with them. You could, for example, have a list (or array) of objects of that type and work with them dynamically, without knowing the actual derived type of each object.
+
+> Polymorphism can be useful in many cases. For example, we could create a game where we would have different Player types with each Player having a separate behavior for the Attack method. In this case, Attack would be a virtual method of the base class Player and each derived class would override it.
 
 
 
