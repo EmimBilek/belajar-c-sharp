@@ -524,7 +524,7 @@ Polymorphism means that a call to a member method will cause a different impleme
 
 > Simply, polymorphism means that a single method can have a number of different implementations.
 
-Now, we can derive different `shape` classes that define their own `Draw` methods using the `override` keyword:
+Now, we can derive different `Shape` classes that define their own `Draw` methods using the `override` keyword:
 ```csharp
 class Circle : Shape {
   public override void Draw() {
