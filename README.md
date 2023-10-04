@@ -385,6 +385,12 @@ static void Main(string[] args) {
 ```
 > All arithmetic and comparison operators can be overloaded. For instance, you could define greater than and less than operators for the boxes that would compare the Boxes and return a **boolean** result. Just keep in mind that when overloading the greater than operator, the less than operator should also be defined.
 
+## Inheritance
+**Inheritance** allows us to define a class based on another class. This makes creating and maintaining an application easy.
+The class whose properties are inherited by another class is called the **Base** class. The class which inherits the properties is called the __Derived__ class.
+For example, base class **Animal** can be used to derive **Cat** and **Dog** classes.
+The derived class inherits all the features from the base class, and can have its own additional features.
+
 
 
 
