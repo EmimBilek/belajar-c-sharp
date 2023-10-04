@@ -249,7 +249,7 @@ No matter how many Cat objects are instantiated, there is always only one `count
 
 You must access static members using the class name. If you try to access them via an object of that class, you will generate an error.
 ```csharp
-static void Main() {
+static void Main(string[] args) {
   Cat a = new Cat();
   Cat b = new Cat();
   Console.WriteLine(Cat.count); //OK
