@@ -243,11 +243,19 @@ class Cat {
   }
 }
 ```
-In this case, we declared a public member variable count, which is static. The constructor of the class increments the count variable by one.
+In this case, we declared a public member variable `count`, which is static. The constructor of the class increments the `count` variable by one.
 
-No matter how many Cat objects are instantiated, there is always only one count variable that belongs to the Cat class because it was declared static.
+No matter how many Cat objects are instantiated, there is always only one `count` variable that belongs to the Cat class because it was declared static.
 
 You must access static members using the class name. If you try to access them via an object of that class, you will generate an error.
+```csharp
+static void Main() {
+  Cat a = new Cat();
+  Cat b = new Cat();
+  Console.WriteLine(Cat.count); //OK
+  Console.WriteLine(a.count); //Error
+}
+```
 
 Static methods can access only static members.
 
