@@ -419,4 +419,42 @@ Note the syntax for a derived class. A **colon** (`:`) and the name of the **bas
 All public members of **Animal** become public members of **Dog**. That is why we can access the `Legs` member in the **Dog** constructor (`public Dog()`).
 Now we can instantiate an object of type **Dog** and access the inherited members as well as call its own **Bark** method.
 
+> Inheritance allows the derived class to reuse the code in the base class without having to rewrite it. And the derived class can be customized by adding more members. In this manner, the derived class extends the functionality of the base class.
+
+A derived class inherits all the members of the base class, including its methods. For example:
+```csharp
+class Person {
+  public void Speak() {
+    Console.WriteLine("Hi there");
+  }
+}
+class Student : Person {
+  int number;
+}
+static void Main(string[] args) {
+  Student s = new Student();
+  s.Speak();
+}
+```
+We created a Student object and called the Speak method, which was declared in the base class Person.
+
+> C# does not support multiple inheritance, so you cannot inherit from multiple classes.
+However, you can use interfaces to implement multiple inheritance. You will learn more about interfaces in the coming lessons.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
