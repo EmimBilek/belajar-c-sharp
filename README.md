@@ -391,9 +391,7 @@ The class whose properties are inherited by another class is called the **Base**
 For example, base class **Animal** can be used to derive **Cat** and **Dog** classes.
 The derived class inherits all the features from the base class, and can have its own additional features.
 
-<p align="center">
-![alt text](https://github.com/EmimBilek/belajar-c-sharp/blob/main/inherit.jpg?raw=true)
-</p>
+<img align="center" src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/inherit.jpg" />
 
 > Inheritance allows us to define a class based on another class.
 
