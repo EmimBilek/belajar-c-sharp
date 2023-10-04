@@ -643,7 +643,7 @@ static void Main(string[] args) {
 ```
 Note, that the `override` keyword is not needed when you implement an interface.
 
-> But why use interfaces rather than abstract classes? A class can inherit from just one base class, but it can implement **multiple interfaces**! Therefore, by using interfaces you can include behavior from multiple sources in a class. To implement multiple interfaces, use a comma separated list of interfaces when creating the class: **class A: IShape, IAnimal, etc.**
+> But why use interfaces rather than abstract classes? A class can inherit from just one base class, but it can implement **multiple interfaces**! Therefore, by using interfaces you can include behavior from multiple sources in a class. To implement multiple interfaces, use a comma separated list of interfaces when creating the class: `class A: IShape, IAnimal, etc.`
 
 ### Default Implementation
 Default implementation in interfaces allows to write an implementation of any method. This is useful when there is a need to provide a single implementation for common functionality.
