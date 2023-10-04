@@ -323,7 +323,7 @@ class Clients {
   }
 }
 ```
-As you can see, the indexer definition includes the this keyword and an index, which is used to get and set the appropriate value.
+As you can see, the indexer definition includes the `this` keyword and an index, which is used to get and set the appropriate value.
 Now, when we declare an object of class Clients, we use an index to refer to specific objects like the elements of an array:
 ```csharp
 Clients c = new Clients();
