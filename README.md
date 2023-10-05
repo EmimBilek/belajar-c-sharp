@@ -916,6 +916,41 @@ The following methods are available in the File class:
 
 > All methods automatically close the file after performing the operation.
 
+## Generic Methods
+```csharp
+static void Swap<T>(ref T a, ref T b) {
+  T temp = a;
+  a = b;
+  b = temp;
+}
+```
+In the code above, `T` is the name of our generic type. We can name it anything we want, but `T` is a commonly used name. Our Swap method now takes two parameters of type `T`. We also use the `T` type for our temp variable that is used to swap the values.
+
+> Note the brackets in the syntax `<T>`, which are used to define a generic type.
+
+Now, we can use our Swap method with different types, as in:
+```csharp
+static void Swap<T>(ref T a, ref T b) {
+  T temp = a;
+  a = b;
+  b = temp;
+}
+static void Main(string[] args) {
+  int a = 4, b = 9;
+  Swap<int>(ref a, ref b);
+  //Now b is 4, a is 9
+
+  string x = "Hello";
+  string y = "World";
+  Swap<string>(ref x, ref y);
+  //Now x is "World", y is "Hello"
+}
+```
+When calling a generic method, we need to specify the type it will work with by using brackets. So, when Swap<int> is called, the T type is replaced by int. For Swap<string>, T is replaced by string. If you omit specifying the type when calling a generic method, the compiler will use the type based on the arguments passed to the method.
+
+> Multiple generic parameters can be used with a single method. For example: `Func<T, U>` takes two different generic types.
+
+## Generic Classes
 
 
 
