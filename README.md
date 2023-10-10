@@ -33,7 +33,7 @@ static void Main()
   Console.WriteLine(a); // Outputs 9
 }
 ```
-> Note: jika parameter menggunakan `ref`, maka `ref` diperlukan ketika pemanggilan method.
+> Note: if parameters use `ref`, the arguments should use `ref` too.
 
 Kode error:
 ```csharp
