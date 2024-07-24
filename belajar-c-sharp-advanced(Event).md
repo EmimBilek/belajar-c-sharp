@@ -80,7 +80,7 @@ EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
 
 Dalam pola ini, object provider harus mengimplementasikan interface generik system `IObservable<T>`, dan subscriber haurs mengimplementasikan interface generik system `IObserver<T>`. 
 
-Saat object provider mengimplementasi interface `IObservable<T>`, ada satu method yang harus diimplementasi di dalam object provider nya, yaitu method `Subscribe()` :
+Saat object provider mengimplementasi interface `IObservable<T>`, ada satu method yang harus diimplementasi di dalam object provider nya, yaitu method `Subscribe(IObserver<T> subscriber)` :
 ```csharp
 public class Provider : IObservable<SomeClass>
 {
@@ -97,7 +97,7 @@ public class Provider : IObservable<SomeClass>
 	}
 }
 ```
-Saat object subscriber mengimplementasi interface `IObserver<T>`, ada 3 method yang harus diimplementasi di dalam object subscriber nya, yaitu method `OnNext()`, `OnCompleted()`, dan `OnError()` :
+Saat object subscriber mengimplementasi interface `IObserver<T>`, ada 3 method yang harus diimplementasi di dalam object subscriber nya, yaitu method `OnNext(T value)`, `OnCompleted()`, dan `OnError(Exception ex)` :
 ```csharp
 public class Subscriber : IObserver<SomeClass>
 {
@@ -106,7 +106,7 @@ public class Subscriber : IObserver<SomeClass>
 		// Code gets executed when no further notification will be sent
 	}
 
-	public void OnNext(T value)
+	public void OnNext(SomeClass value)
 	{
 		// Code to handle notification
 	}
