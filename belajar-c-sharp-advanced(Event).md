@@ -74,9 +74,9 @@ EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
 ```
 
 ## Observer Design Pattern
-**Pola desain Observer (Observer Design Pattern)** adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan loose coupling antara subject dan observer. ~jipiti
+**Pola desain Observer (Observer Design Pattern)** adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan __loose coupling__ antara subject dan observer. ~jipiti
 
-> loose coupling adalah pengurangan ketergantungan, memungkinkan subject dan observer tidak saling bergantung secara langsung
+> Dalam konteks pola desain Observer, loose coupling berarti bahwa subject (observable) dan observer tidak saling bergantung secara langsung pada implementasi masing-masing. Mereka hanya mengetahui antarmuka (interface) satu sama lain.
 
 - dalam pola ini, object provider harus mengimplementasikan interface generik system IObservable<T>, dan subscriber haurs mengimplementasikan interface generik system IObserver<T>.
 
