@@ -29,8 +29,10 @@ public event EventHandler<CustomEventArgs> EventWithCustomArgs;
 Keyword `event` digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu `add` dan `remove`.
 - `add` : Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
 ```csharp
-public event EventHandler<SomeClass> EventClassWithCustomClass{
-	add {
+public event EventHandler<SomeClass> EventClassWithCustomClass
+{
+	add
+	{
 		_listEvent.AddHandler(_temperatureReaches, value);
 	}
 }
@@ -42,8 +44,10 @@ EventClassWithCustomClass += SomeMethod;
 
 - `remove` : Akses `remove` akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe `-=`) dari event. Contoh :
 ```csharp
-public event EventHandler<SomeClass> EventClassWithCustomClass{
-	remove {
+public event EventHandler<SomeClass> EventClassWithCustomClass
+{
+	remove
+	{
 		_listEvent.RemoveHandler(_temperatureReaches, value);
 	}
 }
