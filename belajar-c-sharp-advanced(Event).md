@@ -1,15 +1,15 @@
 # Event
 ## Definisi (Keyword : Event)
-Apa itu event? event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi. event di C# ditandai dengan keyword `event` pada saat deklarasi
+**Apa itu event?** event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi. event di C# ditandai dengan keyword `event` pada saat deklarasi
 
 Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (==, <=, >=, ataupun hasil logika apapun yang menghasilkan true / false)
 
 ## Event Handler (Keyword : EventHandler, EventHandler<TCustomClass> )
-Apa itu event handler? event handler atau `EventHandler` merupakan built-in system delegate milik C# yang digunakan untuk menangani sebuah event. Contoh penggunaan `EventHandler` di C# :
+**Apa itu event handler?** event handler atau `EventHandler` merupakan built-in system delegate milik C# yang digunakan untuk menangani sebuah event. Contoh penggunaan `EventHandler` di C# :
 ```csharp
 public event EventHandler AnEvent;
 ```
-Untuk membuat sebuah event, gunakan kata kunci 'event'
+Untuk membuat sebuah event, gunakan kata kunci `event`
 
 Ada dua jenis built-in system EventHandler, yaitu: 
 - EventHandler(object sender, EventArgs e);
@@ -57,19 +57,26 @@ Method AddHandler akan dijalankan ketika kode klien dihapus (unsubscribe) dari e
 EventClassWithCustomClass -= SomeMethod;
 ```
 
---- EVENT HANDLER LIST --- (Keyword : EventHandlerList, readonly, static)
-- apa itu event handler list? event handler list atau EventHandlerList merupakan built-in system class (ada di namespace system.ComponentModel) yang digunakan untuk menyimpan berbagai event dalam bentuk collection dan diidentifikasi dengan kunci / key untuk setiap event yang terdaftar dalam EventHandlerList
+## Event Handler List (Keyword : EventHandlerList, readonly, static)
+### Apa itu event handler list? 
+event handler list atau `EventHandlerList` merupakan built-in system class (ada di namespace `system.ComponentModel`) yang digunakan untuk menyimpan berbagai event dalam bentuk collection dan diidentifikasi dengan **kunci / key** untuk setiap event yang terdaftar dalam `EventHandlerList`
 
-- key yang biasanya digunakan untuk mengakses event yang terdaftar dalam EventHandlerList yaitu menggunakan sebuah objek statis yang readonly, contohnya :
+**Key** yang biasanya digunakan untuk mengakses event yang terdaftar dalam `EventHandlerList` yaitu menggunakan sebuah objek statis yang `readonly`, contohnya :
+```csharp
 static readonly object _eventKey1 = new object();
+```
 
-- cara memanggil event yang terdaftar di dalam event handler list yaitu dipanggil dengan menggunakan object yang telah dibuat kemudian di convert menjadi event handler, contoh :
+Cara memanggil event yang terdaftar di dalam event handler list yaitu dipanggil dengan menggunakan object yang telah dibuat kemudian di convert menjadi event handler, contoh :
+```csharp
 EventHandlerList EHList = new EventHandlerList();
 static readonly object _eventKey1 = new object();
 EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
+```
 
---- Observer Design Pattern ---
-- Pola desain Observer (Observer Design Pattern) adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan loose coupling antara subject dan observer. (loose coupling adalah pengurangan ketergantungan, memungkinkan subject dan observer tidak saling bergantung secara langsung) ~jipiti
+## Observer Design Pattern
+**Pola desain Observer (Observer Design Pattern)** adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan loose coupling antara subject dan observer. ~jipiti
+
+> loose coupling adalah pengurangan ketergantungan, memungkinkan subject dan observer tidak saling bergantung secara langsung
 
 - dalam pola ini, object provider harus mengimplementasikan interface generik system IObservable<T>, dan subscriber haurs mengimplementasikan interface generik system IObserver<T>.
 
