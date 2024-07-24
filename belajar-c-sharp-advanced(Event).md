@@ -27,8 +27,7 @@ public event EventHandler<CustomEventArgs> EventWithCustomArgs;
 ```
 ## Event Accessor (Keyword : add, remove, subscribe, unsubscribe)
 Keyword `event` digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu `add` dan `remove`.
-- Accessor `add`
--- Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
+- `add` : Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
 ```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
 	add {
@@ -41,9 +40,7 @@ Method AddHandler akan dijalankan ketika kode klien ditambahkan (subscribe) ke d
 EventClassWithCustomClass += SomeMethod;
 ```
 
-- Accessor `remove`
-
-Akses `remove` akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe `-=`) dari event. Contoh :
+- `remove` : Akses `remove` akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe `-=`) dari event. Contoh :
 ```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
 	remove {
