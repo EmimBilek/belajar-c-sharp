@@ -5,7 +5,7 @@ Apa itu event? event itu seperti delegate multicast yang spesial yang hanya bisa
 Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (==, <=, >=, ataupun hasil logika apapun yang menghasilkan true / false)
 
 ## Event Handler (Keyword : EventHandler, EventHandler<TCustomClass> )
-Apa itu event handler? event handler atau EventHandler merupakan built-in system delegate milik c# yang digunakan untuk menangani sebuah event. Contoh penggunaan EventHandler :
+Apa itu event handler? event handler atau `EventHandler` merupakan built-in system delegate milik C# yang digunakan untuk menangani sebuah event. Contoh penggunaan `EventHandler` di C# :
 ```csharp
 public event EventHandler AnEvent;
 ```
@@ -25,9 +25,10 @@ Event handler yang menggunakan generik (jenis kedua) digunakan apabila ada data 
 public class CustomEventArgs : EventArgs { //props... }
 public event EventHandler<CustomEventArgs> EventWithCustomArgs;
 ```
-## Event Accessor (KEYWORD : add, remove, subscribe, unsubscribe)
+## Event Accessor (Keyword : add, remove, subscribe, unsubscribe)
 Keyword `event` digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu `add` dan `remove`.
 - Accessor `add`
+
 Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
 ```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
@@ -42,6 +43,7 @@ EventClassWithCustomClass += SomeMethod;
 ```
 
 - Accessor `remove`
+
 Akses `remove` akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe `-=`) dari event. Contoh :
 ```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
