@@ -1,10 +1,10 @@
 # Event
-## Definisi
-- apa itu event? event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi
+## Definisi (Keyword : Event)
+apa itu event? event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi. event di c# ditandai dengan keyword `event` pada saat deklarasi
 
-- sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (==, <=, >=, ataupun hasil logika apapun yang menghasilkan true / false)
+sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (==, <=, >=, ataupun hasil logika apapun yang menghasilkan true / false)
 
---- EVENT HANDLER --- (Keyword : EventHandler, EventHandler<TCustomClass> )
+## EVENT HANDLER (Keyword : EventHandler, EventHandler<TCustomClass> )
 - apa itu event handler? event handler atau EventHandler merupakan built-in system delegate milik c# yang digunakan untuk menangani sebuah event. Contoh penggunaan EventHandler :
 
 public event EventHandler<SomeClassEventArgs> AnEvent;
