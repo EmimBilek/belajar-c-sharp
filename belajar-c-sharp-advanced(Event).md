@@ -4,25 +4,27 @@ Apa itu event? event itu seperti delegate multicast yang spesial yang hanya bisa
 
 Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (==, <=, >=, ataupun hasil logika apapun yang menghasilkan true / false)
 
-## EVENT HANDLER (Keyword : EventHandler, EventHandler<TCustomClass> )
+## Event Handler (Keyword : EventHandler, EventHandler<TCustomClass> )
 Apa itu event handler? event handler atau EventHandler merupakan built-in system delegate milik c# yang digunakan untuk menangani sebuah event. Contoh penggunaan EventHandler :
 ```csharp
 public event EventHandler<SomeClassEventArgs> AnEvent;
 ```
-- untuk membuat sebuah event, gunakan kata kunci 'event'
+Untuk membuat sebuah event, gunakan kata kunci 'event'
 
-- ada dua jenis built-in system EventHandler, yang pertama yaitu: 
-
+Ada dua jenis built-in system EventHandler, yaitu: 
+- EventHandler(object sender, EventArgs);
+```csharp
 public delegate void EventHandler (object? sender, EventArgs e);
-
+```
+- EventHandler<TEventArgs>(object sender, TEventArgs e);
+```csharp
 public delegate void EventHandler<TEventArgs> (object? sender, TEventArgs e);
-
-- event handler yang menggunakan generik digunakan apabila ada data tambahan yang dibutuhkan ketika menggunakan event, dan data tambahan harus menggunakan kelas yang menurunkan kelas EventArgs, contoh :
-
-public class CustomEventArgs : EventArgs { props... }
-
+```
+Event handler yang menggunakan generik (jenis kedua) digunakan apabila ada data tambahan yang dibutuhkan ketika menggunakan event, dan data tambahan harus menggunakan kelas yang menurunkan kelas EventArgs, contoh :
+```csharp
+public class CustomEventArgs : EventArgs { //props... }
 public event EventHandler<CustomEventArgs> EventWithCustomArgs;
-
+```
 --- EVENT ACCESSOR --- (KEYWORD : add, remove, subscribe, unsubscribe)
 - keyword 'event' digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu add dan remove.
 - add : akses add akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe -> +=) ke dalam event. Contoh :
