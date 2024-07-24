@@ -7,12 +7,12 @@ Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengkli
 ## Event Handler (Keyword : EventHandler, EventHandler<TCustomClass> )
 Apa itu event handler? event handler atau EventHandler merupakan built-in system delegate milik c# yang digunakan untuk menangani sebuah event. Contoh penggunaan EventHandler :
 ```csharp
-public event EventHandler<SomeClassEventArgs> AnEvent;
+public event EventHandler AnEvent;
 ```
 Untuk membuat sebuah event, gunakan kata kunci 'event'
 
 Ada dua jenis built-in system EventHandler, yaitu: 
-- EventHandler(object sender, EventArgs);
+- EventHandler(object sender, EventArgs e);
 ```csharp
 public delegate void EventHandler (object? sender, EventArgs e);
 ```
@@ -25,28 +25,35 @@ Event handler yang menggunakan generik (jenis kedua) digunakan apabila ada data 
 public class CustomEventArgs : EventArgs { //props... }
 public event EventHandler<CustomEventArgs> EventWithCustomArgs;
 ```
---- EVENT ACCESSOR --- (KEYWORD : add, remove, subscribe, unsubscribe)
-- keyword 'event' digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu add dan remove.
-- add : akses add akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe -> +=) ke dalam event. Contoh :
+## Event Accessor (KEYWORD : add, remove, subscribe, unsubscribe)
+Keyword `event` digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu `add` dan `remove`.
+- Accessor `add`
+Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
+```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
 	add {
 		_listEvent.AddHandler(_temperatureReaches, value);
 	}
 }
+```
+Method AddHandler akan dijalankan ketika kode klien ditambahkan (subscribe) ke dalam event :
+```csharp
+EventClassWithCustomClass += SomeMethod;
+```
 
-- method AddHandler akan dijalankan ketika kode klien ditambahkan (subscribe) ke dalam event -> 
-	EventClassWithCustomClass += SomeMethod;
-
-- remove : akses remove akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe -> -=) dari event.
-	Contoh :
+- Accessor `remove`
+Akses `remove` akan dijalankan ketika ada kode klien / sebuah method yang dihapus (unsubscribe `-=`) dari event. Contoh :
+```csharp
 public event EventHandler<SomeClass> EventClassWithCustomClass{
 	remove {
 		_listEvent.RemoveHandler(_temperatureReaches, value);
 	}
 }
-
-- method AddHandler akan dijalankan ketika kode klien dihapus (unsubscribe) dari event -> 
-	EventClassWithCustomClass -= SomeMethod;
+```
+Method AddHandler akan dijalankan ketika kode klien dihapus (unsubscribe) dari event :
+```csharp
+EventClassWithCustomClass -= SomeMethod;
+```
 
 --- EVENT HANDLER LIST --- (Keyword : EventHandlerList, readonly, static)
 - apa itu event handler list? event handler list atau EventHandlerList merupakan built-in system class (ada di namespace system.ComponentModel) yang digunakan untuk menyimpan berbagai event dalam bentuk collection dan diidentifikasi dengan kunci / key untuk setiap event yang terdaftar dalam EventHandlerList
