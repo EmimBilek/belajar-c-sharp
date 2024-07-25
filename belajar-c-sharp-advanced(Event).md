@@ -73,7 +73,7 @@ static readonly object _eventKey1 = new object();
 EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
 ```
 
-## Observer Design Pattern
+## Observer Design Pattern (Keyword: Observer Design Pattern, SOLI**D** Acronym/Principles, DRY - Don't Repeat Youself)
 **Pola desain Observer (Observer Design Pattern)** adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan _loose coupling_ antara subject dan observer. _~jipiti_
 
 > Dalam konteks pola desain Observer, loose coupling berarti bahwa subject (observable) dan observer tidak saling bergantung secara langsung pada implementasi masing-masing. Mereka hanya mengetahui antarmuka (interface) satu sama lain.
