@@ -1,7 +1,9 @@
 # Event
 ## Definisi
-<sup> 
-**Keyword :** Event
+<sup> **Keyword :** 
+```diff
++ Event
+```
 </sup>
 
 **Apa itu event?** event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi. event di C# ditandai dengan keyword `event` pada saat deklarasi
