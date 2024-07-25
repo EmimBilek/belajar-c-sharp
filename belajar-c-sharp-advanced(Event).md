@@ -7,7 +7,7 @@
 Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (`==`, `<=`, `>=`, ataupun hasil logika apapun yang menghasilkan true / false)
 
 ## Event Handler 
-<sup> **Keyword :** EventHandler, EventHandler<TCustomClass> </sup>
+<sup> **Keyword :** `EventHandler`, `EventHandler<TCustomClass>` </sup>
 
 **Apa itu event handler?** event handler atau `EventHandler` merupakan built-in system delegate milik C# yang digunakan untuk menangani sebuah event. Contoh penggunaan `EventHandler` di C# :
 ```csharp
