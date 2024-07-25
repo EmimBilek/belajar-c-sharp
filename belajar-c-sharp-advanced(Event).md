@@ -1,10 +1,13 @@
 # Event
-## Definisi (Keyword : Event)
+## Definisi
+<sup> **Keyword :** Event</sup>
 **Apa itu event?** event itu seperti delegate multicast yang spesial yang hanya bisa dipanggil dari dalam kelas dimana event itu dideklarasi. event di C# ditandai dengan keyword `event` pada saat deklarasi
 
 Sebuah event bisa dipicu melalui tindakan user seperti menekan keyboard, mengklik mouse, dll atau bisa juga melalui logika yang dibuat sendiri (`==`, `<=`, `>=`, ataupun hasil logika apapun yang menghasilkan true / false)
 
-## Event Handler (Keyword : EventHandler, EventHandler<TCustomClass> )
+## Event Handler 
+
+<sup> **Keyword :** EventHandler, EventHandler<TCustomClass> </sup>
 **Apa itu event handler?** event handler atau `EventHandler` merupakan built-in system delegate milik C# yang digunakan untuk menangani sebuah event. Contoh penggunaan `EventHandler` di C# :
 ```csharp
 public event EventHandler AnEvent;
@@ -25,7 +28,9 @@ Event handler yang menggunakan generik (jenis kedua) digunakan apabila ada data 
 public class CustomEventArgs : EventArgs { //props... }
 public event EventHandler<CustomEventArgs> EventWithCustomArgs;
 ```
-## Event Accessor (Keyword : add, remove, subscribe, unsubscribe)
+## Event Accessor 
+
+<sup> **Keyword :** add, remove, subscribe, unsubscribe</sup>
 Keyword `event` digunakan untuk membuat sebuah event, ada dua jenis akses yang bisa digunakan dalam event, yaitu `add` dan `remove`.
 - `add` : Akses `add` akan dijalankan ketika ada kode klien / sebuah method yang ditambahkan (subscribe `+=`) ke dalam event. Contoh :
 ```csharp
@@ -57,7 +62,8 @@ Method AddHandler akan dijalankan ketika kode klien dihapus (unsubscribe) dari e
 EventClassWithCustomClass -= SomeMethod;
 ```
 
-## Event Handler List (Keyword : EventHandlerList, readonly, static)
+## Event Handler List 
+<sup> **Keyword :** EventHandlerList, readonly, static </sup>
 ### Apa itu event handler list? 
 event handler list atau `EventHandlerList` merupakan built-in system class (ada di namespace `system.ComponentModel`) yang digunakan untuk menyimpan berbagai event dalam bentuk collection dan diidentifikasi dengan **kunci / key** untuk setiap event yang terdaftar dalam `EventHandlerList`
 
@@ -73,7 +79,8 @@ static readonly object _eventKey1 = new object();
 EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
 ```
 
-## Observer Design Pattern (Keyword: Observer Design Pattern, SOLI**D** Acronym/Principles, DRY - Don't Repeat Youself)
+## Observer Design Pattern
+<sup> **Keyword:** Observer Design Pattern, SOLI**D** Acronym/Principles, DRY - Don't Repeat Youself </sup>
 **Pola desain Observer (Observer Design Pattern)** adalah salah satu dari pola desain perilaku yang mengatur bagaimana objek berinteraksi satu sama lain. Pola ini memungkinkan sebuah objek (disebut subject atau observable atau provider) untuk mengelola daftar dependensinya (disebut observer atau subscriber) dan memberitahukan mereka secara otomatis tentang perubahan status apa pun, biasanya dengan memanggil metode mereka. Ini memungkinkan _loose coupling_ antara subject dan observer. _~jipiti_
 
 > Dalam konteks pola desain Observer, loose coupling berarti bahwa subject (observable) dan observer tidak saling bergantung secara langsung pada implementasi masing-masing. Mereka hanya mengetahui antarmuka (interface) satu sama lain.
