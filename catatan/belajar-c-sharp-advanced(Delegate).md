@@ -116,11 +116,11 @@ Func<decimal, decimal, decimal> gajiDenganBonus = (gajiSekarang, bonusDalamPerse
 > Kode di atas merupakan contoh penggunaan Func untuk menghitung total gaji setelah ditambahkan bonus (dengan menggunakan _lambda expression_)
 
 ### Action 
-**Action** merupakan genereic delegate built-in system mirip seperti Func, tetapi tidak bisa me-return nilai. Kode `Action` pada _metadata_ :
+**Action** merupakan genereic delegate built-in system. Kode `Action` pada _metadata_ :
 ```csharp
 public delegate void Action<in T>(T obj);
 ```
-`Action` bisa memiliki 0 hingga 16 parameter. 
+`Action` mirip seperti Func, tetapi tidak bisa me-return nilai. `Action` bisa memiliki 0 hingga 16 parameter. 
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan bisa menampung hingga 16 parameter
 	
 `Action` ini bisa digunakan sebagai pengganti method void dengan sintaks yang lebih ringkas
