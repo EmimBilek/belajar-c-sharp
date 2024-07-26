@@ -392,7 +392,7 @@ For example, base class **Animal** can be used to derive **Cat** and **Dog** cla
 The derived class inherits all the features from the base class, and can have its own additional features.
 
 <p align="center">
-  <img src="https://github.com/EmimBilek/belajar-c-sharp/catatan/blob/main/inherit.jpg" />
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/inherit.jpg" />
 </p>
 
 > Inheritance allows us to define a class based on another class.
