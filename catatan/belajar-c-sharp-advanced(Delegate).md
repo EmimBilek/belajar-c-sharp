@@ -171,7 +171,9 @@ string reversedText = originalText.ReverseText();
 - Parameter berikutnya pada method extension (setelah param dengan keyword 'this') akan menjadi param argumen method extension, contoh :
 ```csharp
 // variable textToCompare dibawah akan menjadi argumen pertama pada saat method di panggil
-public static bool Compare(this string text, string textToCompare){ ... } 
+public static bool Compare(this string text, string textToCompare){ ... }
+
+bool isSame = stringA.Compare(stringB);
 ```
 
 ## RINGKASAN
