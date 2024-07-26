@@ -46,7 +46,7 @@ SomeDelegate += AnotherMethod;
 	GetInvocationList() pada delegate nya (ini memungkinkan untuk mengambil nilai return pada setiap method yang
 	terdaftar dalam delegate multicast) -> delegate.GetInvocationList() - _Lebih lengkapnya belajar aja sama mbahGPT_
 
-## KOFARIANS & KONTRAFARIANS
+## Kofarians & Kontrafarians
 <sup> **Keyword :** Covariance, Contravariance</sup>
 
 2 jenis konsep delegate:
@@ -96,7 +96,7 @@ public static void Main()
 }
 ```
 
-## FUNC, ACTION, & PREDICATE (GENERICS DELEGATE)
+## Func, Action, & Predicate (Generics Delegate)
 <sup> **Keyword :** `Func`, `Action`, `Predicate` </sup>
 
 ### Func
@@ -107,6 +107,7 @@ public delegate TResult Func<in T, out TResult>(T arg);
 `Func` memiliki 1 nilai return, dan bisa memiliki 0 hingga 16 parameter (yang artinya memiliki 1 hingga 17 generik `<>`). 
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan generik terakhir atau keyword `out` yang dimaksud adalah tipe data return
 
+
 `Func` ini bisa digunakan sebagai pengganti method yang mereturn sebuah value dengan sintaks yang lebih ringkas
 	
 Contoh penggunaan Func:
@@ -115,6 +116,7 @@ Func<decimal, decimal, decimal> gajiDenganBonus = (gajiSekarang, bonusDalamPerse
 ```
 > Kode di atas merupakan contoh penggunaan Func untuk menghitung total gaji setelah ditambahkan bonus (dengan menggunakan _lambda expression_)
 
+
 ### Action 
 **Action** merupakan genereic delegate built-in system. Kode `Action` pada _metadata_ :
 ```csharp
@@ -122,7 +124,8 @@ public delegate void Action<in T>(T obj);
 ```
 `Action` mirip seperti Func, tetapi tidak bisa me-return nilai. `Action` bisa memiliki 0 hingga 16 parameter. 
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan bisa menampung hingga 16 parameter
-	
+
+
 `Action` ini bisa digunakan sebagai pengganti method void dengan sintaks yang lebih ringkas
 
 Contoh penggunaan `Action` :
@@ -134,41 +137,46 @@ Action<int, string, decimal, bool> displayEmployee = delegate (int id, string na
 ```
 > Kode di atas merupakan contoh penggunaan `Action` untuk men-display employee (menggunakan _anonymous method_)
 
--Predicate = generic delegate bulit-in system, me-return nilai boolean. kode -> public delegate bool Predicate<in T>(T obj);
+
+### Predicate 
+**Predicate** merupakan generic delegate bulit-in system. Kode `Predicate` pada _metadata_ :
+```csharp
+public delegate bool Predicate<in T>(T obj);
+```
+`Predicate` memiliki nilai return boolean, dan hanya boleh memiliki 1 parameter, tidak kurang dan tidak lebih.
 	
-	apa itu Predicate? Predicate merupakan delegate generik buatan sistem yang memiliki nilai return boolean, dan
-		hanya boleh memiliki 1 parameter, tidak kurang dan tidak lebih
-	
-	Predicate biasanya digunakan untuk mencari data / seleksi data dari sebuah list / array atau bisa juga untuk 
-		mengecek suatu kriteria pada objek T.
+`Predicate` biasanya digunakan untuk mencari data atau seleksi data dari sebuah _list_ / _array_ atau bisa juga untuk mengecek suatu kriteria pada objek generik `T`.
 
-	Contoh penggunan Predicate:
-	List<Employee> employeeFiltered = FilterEmployees(listemp, e => e.annualSalary > 50000);
-	static List<Employee> FilterEmployees(List<Employee> employees, Predicate<Employee> predicate)
-        { ... }
+Contoh penggunan `Predicate` :
+```csharp
+List<Employee> employeeFiltered = FilterEmployees(listemp, e => e.annualSalary > 50000);
+static List<Employee> FilterEmployees(List<Employee> employees, Predicate<Employee> predicate){ ... }
+```
+> Kode di atas merupakan contoh penggunaan `Predicate` untuk mencari employee yang gajinya di atas 50000
 
-	Kode di atas merupakan contoh penggunaan Predicate untuk mencari employee yang gajinya di atas 50000
+## Extension Method
+**Extension Method** merupakan method yang dibuat sendiri oleh user/developer. Ini sangat berguna untuk meningkatkan mobilitas pada saat ngoding
 
-NB : cara membuat extension method (method tambahan yang dibikin sendiri).
-- di dalam kelas public static apapun, buat lah sebuah method public static yang ingin kalian buat
-- method yang dibuat harus memiliki parameter dengan tambahan keyword 'this'. Contoh -> 
-	public static string ReverseText(this string text){ ... }
-- kemudian method di atas akan bisa digunakan pada variabel dengan tipe data string dengan menambahkan titik setelah nama
-	variable-nya
-- parameter berikutnya pada method extension (setelah param dengan keyword 'this') akan menjadi param argumen method 
-	extension, contoh : public static bool Compare(this string text, string textToCompare){ ... } // variable textToCompare akan
-	menjadi argumen pertama pada saat method di panggil
+Cara membuat **Extension method** :
+- Di dalam kelas `public static` apapun, buat lah sebuah method `public static` yang ingin kalian buat
+- Method yang dibuat harus memiliki parameter dengan tambahan keyword `this`. Contoh :
+```csharp
+public static string ReverseText(this string text){ ... }
+```
+- Kemudian method di atas akan bisa digunakan pada variabel dengan tipe data `string` dengan menambahkan titik setelah nama variable-nya :
+```csharp
+string originalText = "awikwok";
+string reversedText = originalText.ReverseText();
+```
+- Parameter berikutnya pada method extension (setelah param dengan keyword 'this') akan menjadi param argumen method extension, contoh :
+```csharp
+// variable textToCompare dibawah akan menjadi argumen pertama pada saat method di panggil
+public static bool Compare(this string text, string textToCompare){ ... } 
+```
 
-
----RINGKASAN---
+## RINGKASAN
 - Delegasi adalah tipe referensi dalam C# yang mereferensikan metode yang berisi daftar parameter tertentu dan return.
-- Konsep yang disebut 'varians', definisi delegasi tidak harus sama persis dengan tipe parameter atau tipe kembalian dari 
-	metode yang dienkapsulasi. Contravariance berarti delegasi misalnya. dapat mereferensikan metode di mana 
-	parameter tertentu dalam definisi delegasi lebih diturunkan daripada bagian penghitung parameter yang terdapat 
-	dalam metode yang dienkapsulasi. Kovarian berarti bahwa tipe pengembalian dalam definisi delegasi dapat 
-	diturunkan lebih sedikit dibandingkan tipe pengembalian dari metode yang dienkapsulasinya.
-- Tiga delegasi generik bawaan yaitu Func, Action, dan Predicate. Tiga delegasi umum ini dapat digunakan dalam 
-	kode untuk penggunaan kembali kode yang lebih baik, keamanan mengetik, dan untuk meningkatkan kinerja.
-	Keyword baru : anonymous method, lambda expression, extension method.
-- Dalam video terakhir tentang delegasi ini, kita melihat bagaimana delegasi dapat digunakan untuk merangkum metode 
-	CallBack yang dapat dipanggil setelah tugas asinkron selesai.
+- Konsep yang disebut 'varians', definisi delegasi tidak harus sama persis dengan tipe parameter atau tipe kembalian dari metode yang dienkapsulasi. Contravariance berarti delegasi misalnya. dapat mereferensikan metode di mana parameter tertentu dalam definisi delegasi lebih diturunkan daripada bagian penghitung parameter yang terdapat dalam metode yang dienkapsulasi. Kovarian berarti bahwa tipe pengembalian dalam definisi delegasi dapat diturunkan lebih sedikit dibandingkan tipe pengembalian dari metode yang dienkapsulasinya.
+- Tiga delegasi generik bawaan yaitu Func, Action, dan Predicate. Tiga delegasi umum ini dapat digunakan dalam kode untuk penggunaan kembali kode yang lebih baik, keamanan mengetik, dan untuk meningkatkan kinerja.
+- Keyword baru : anonymous method, lambda expression, extension method.
+- Delegasi dapat digunakan untuk merangkum metode CallBack yang dapat dipanggil setelah tugas asinkron selesai.
