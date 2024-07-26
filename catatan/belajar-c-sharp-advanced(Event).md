@@ -127,3 +127,11 @@ public class Subscriber : IObserver<SomeClass>
 	}
 }
 ```
+
+## Rangkuman
+<sup> **Kode:** Project BelajarEvent </sup>
+
+- Dalam dokumen ini kita telah mengetahui dasar-dasar Event. Kita mendemonstrasikan bagaimana kita dapat subscribe suatu `event` yang terdapat dalam `Class` lain, dan bagaimana kita dapat menentukan method untuk menangani `event` tersebut. Penanganan `event` yang dikodekan dalam C# diimplementasikan dengan menggunakan `delegate` sebagai perantara antara `event` dan method yang ditandai dipanggil ketika event yang berkaitan dimunculkan (invoked).
+- Kita telah melihat penggunaan `event` melalui logika kode, yaitu ketika kondisi logis tertentu terpenuhi di `Class` tempat `event` yang relevan berada, `event` tersebut dapat dimunculkan untuk memanggil method yang telah ditetapkan untuk menangani `event` yang relevan.
+- Kita telah melihat bagaimana ketika klien panggilan _subscribe_ atau _unsubscribe_ suatu `event`, fungsi ini dapat dienkapsulasi dalam pengakses `add` dan `remove`, yang sifatnya serupa dengan penggunaan pengakses `get` dan `set` untuk properti.
+- Terakhir dalam dokumen ini, kita telah mengetahui contoh penerapan Observer Design Pattern dianggap cocok, karena fungsi intinya melibatkan pengiriman notifikasi ke beberapa entitas dari titik pusat ketika kondisi tertentu terpenuhi.
