@@ -1,0 +1,7 @@
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\bin\Debug\BelajarEvent3_ObserverDesignPattern.exe.config
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\bin\Debug\BelajarEvent3_ObserverDesignPattern.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\bin\Debug\BelajarEvent3_ObserverDesignPattern.pdb
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\obj\Debug\BelajarEvent3_ObserverDesignPattern.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\obj\Debug\BelajarEvent3_ObserverDesignPattern.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\obj\Debug\BelajarEvent3_ObserverDesignPattern.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent3_ObserverDesignPattern\obj\Debug\BelajarEvent3_ObserverDesignPattern.pdb

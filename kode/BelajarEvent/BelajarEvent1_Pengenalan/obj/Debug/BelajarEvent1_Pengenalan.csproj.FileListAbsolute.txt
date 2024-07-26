@@ -1,0 +1,7 @@
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\bin\Debug\BelajarEvent1_Pengenalan.exe.config
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\bin\Debug\BelajarEvent1_Pengenalan.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\bin\Debug\BelajarEvent1_Pengenalan.pdb
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\obj\Debug\BelajarEvent1_Pengenalan.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\obj\Debug\BelajarEvent1_Pengenalan.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\obj\Debug\BelajarEvent1_Pengenalan.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent1_Pengenalan\obj\Debug\BelajarEvent1_Pengenalan.pdb

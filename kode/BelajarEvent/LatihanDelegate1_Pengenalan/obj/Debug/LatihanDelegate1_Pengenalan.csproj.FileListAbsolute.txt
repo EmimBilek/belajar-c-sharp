@@ -1,0 +1,7 @@
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\bin\Debug\LatihanDelegate1_Pengenalan.exe.config
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\bin\Debug\LatihanDelegate1_Pengenalan.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\bin\Debug\LatihanDelegate1_Pengenalan.pdb
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\obj\Debug\LatihanDelegate1_Pengenalan.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\obj\Debug\LatihanDelegate1_Pengenalan.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\obj\Debug\LatihanDelegate1_Pengenalan.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\LatihanDelegate1_Pengenalan\obj\Debug\LatihanDelegate1_Pengenalan.pdb

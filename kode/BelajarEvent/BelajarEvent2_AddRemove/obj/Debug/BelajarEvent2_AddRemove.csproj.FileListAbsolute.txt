@@ -1,0 +1,7 @@
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\bin\Debug\BelajarEvent2_AddRemove.exe.config
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\bin\Debug\BelajarEvent2_AddRemove.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\bin\Debug\BelajarEvent2_AddRemove.pdb
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\obj\Debug\BelajarEvent2_AddRemove.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\obj\Debug\BelajarEvent2_AddRemove.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\obj\Debug\BelajarEvent2_AddRemove.exe
+C:\kerjaan emim\belajar c#\BelajarEvent\BelajarEvent2_AddRemove\obj\Debug\BelajarEvent2_AddRemove.pdb
