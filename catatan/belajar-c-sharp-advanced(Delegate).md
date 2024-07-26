@@ -44,7 +44,7 @@ SomeDelegate += AnotherMethod;
 - **Delegate Multicast** ini disarankan untuk method yang tidak mereturn sebuah nilai, namun apabila ada sebuah skenario
 	yang membuat sebuah delegate yang mereturn sebuah nilai menggunakan metode multicast, maka gunakan method
 	GetInvocationList() pada delegate nya (ini memungkinkan untuk mengambil nilai return pada setiap method yang
-	terdaftar dalam delegate multicast) -> delegate.GetInvocationList() -_Lebih lengkapnya belajar aja sama mbahGPT_
+	terdaftar dalam delegate multicast) -> delegate.GetInvocationList() - _Lebih lengkapnya belajar aja sama mbahGPT_
 
 ## KOFARIANS & KONTRAFARIANS
 <sup> **Keyword :** Covariance, Contravariance</sup>
@@ -104,7 +104,7 @@ public static void Main()
 ```csharp
 public delegate TResult Func<in T, out TResult>(T arg);
 ```
-Func memiliki 1 nilai return, dan bisa memiliki 0 hingga 16 parameter (yang artinya memiliki 1 hingga 17 generik `<>`). 
+`Func` memiliki 1 nilai return, dan bisa memiliki 0 hingga 16 parameter (yang artinya memiliki 1 hingga 17 generik `<>`). 
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan generik terakhir atau keyword `out` yang dimaksud adalah tipe data return
 
 `Func` ini bisa digunakan sebagai pengganti method yang mereturn sebuah value dengan sintaks yang lebih ringkas
@@ -115,21 +115,24 @@ Func<decimal, decimal, decimal> gajiDenganBonus = (gajiSekarang, bonusDalamPerse
 ```
 > Kode di atas merupakan contoh penggunaan Func untuk menghitung total gaji setelah ditambahkan bonus (dengan menggunakan _lambda expression_)
 
--Action = genereic delegate built-in system mirip seperti Func, tetapi tidak bisa me-return nilai. kode ->
-		public delegate void Action<in T>(T obj);
-
-	apa itu Action? Action merupakan delegate generik buatan system yang tidak memiliki nilai return, dan bisa memiliki 0
-		hingga 16 parameter. (pada kode diatas, 'in' yang dimaksud adalah parameter, dan generic terakhir 
-		atau keyword 'out' yang dimaksud adalah tipe data return)
+### Action 
+**Action** merupakan genereic delegate built-in system mirip seperti Func, tetapi tidak bisa me-return nilai. Kode `Action` pada _metadata_ :
+```csharp
+public delegate void Action<in T>(T obj);
+```
+`Action` bisa memiliki 0 hingga 16 parameter. 
+> Pada kode diatas, `in` yang dimaksud adalah parameter, dan bisa menampung hingga 16 parameter
 	
-	Action ini bisa digunakan sebagai pengganti method void dengan sintaks yang lebih ringkas
+`Action` ini bisa digunakan sebagai pengganti method void dengan sintaks yang lebih ringkas
 
-	Contoh penggunaan Action:
-	Action<int, string, decimal, bool> displayEmployee = delegate (int id, string name, decimal salary, bool isManager)
-	 	{ Console.WriteLine($"ID : {id}{Environment.NewLine}Name : {name}{Environment.NewLine}
-		Salary : {salary}{Environment.NewLine}Position : {(isManager ? "Manager" : "Not Manager")}"); };
-
-	Kode di atas merupakan contoh penggunaan Action untuk men-display employee (menggunakan anonymous method)
+Contoh penggunaan `Action` :
+```csharp
+Action<int, string, decimal, bool> displayEmployee = delegate (int id, string name, decimal salary, bool isManager)
+{
+	Console.WriteLine($"ID : {id}{Environment.NewLine}Name : {name}{Environment.NewLine} Salary : {salary}{Environment.NewLine}Position : {(isManager ? "Manager" : "Not Manager")}");
+};
+```
+> Kode di atas merupakan contoh penggunaan `Action` untuk men-display employee (menggunakan _anonymous method_)
 
 -Predicate = generic delegate bulit-in system, me-return nilai boolean. kode -> public delegate bool Predicate<in T>(T obj);
 	
