@@ -58,5 +58,40 @@ List<int> listProfit = new List<int>();
 
 > *Microsoft* tidak menyarankan developer untuk menggunakan `ArrayList` pada pengembangan kodenya, pada dokumen dibawah akan menjelaskan mengapa ArrayList tidak disarankan untuk digunakan dan beralih untuk menggunakan generic list `List<T>`
 
+### ArrayList
+Pada contoh kode di bawah, kita akan menggunakan ArrayList sebagai koleksi yang akan kita gunakan. Kode simple di bawah ini, kita akan mengambil satu objek di dalam ArrayList kemudian di-print, pertama-tama kita membuat sebuah kelas bernama `Salaries` :
+```csharp
+class Salaries
+{
+  ArrayList _salaryList = new ArrayList();
 
+  public Salaries()
+  {
+    _salaryList.Add(6000.03);
+    _salaryList.Add(4230.80);
+    _salaryList.Add(8510.43);
+  }
+
+  public ArrayList GetSalaryList()
+  {
+    return _salaryList;
+  }
+}
+```
+Kemudian kita akan menggunakan method main untuk memanggil kelas `Salaries` dan mengambil nilai ArrayList menggunakan method `GetSalaryList` :
+```csharp
+class Program
+{
+  static void Main(string[] args)
+  {
+    Salaries salaries = new Salaries();
+
+    ArrayList salaryList = salaries.GetSalaryList();
+
+    float salary = salaryList[1];
+
+    Console.WriteLine($"Gaji : {salary}");
+  }
+}
+```
 
