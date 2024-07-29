@@ -94,7 +94,7 @@ class Program
   }
 }
 ```
-Jika kamu mencoba untuk menyalin kode di atas, itu masih mengandung error pada ``` float salary = salaryList[1];```.
+Jika kamu mencoba untuk menyalin kode di atas, itu masih mengandung error pada `float salary = salaryList[1];`.
 
 Error terjadi karena kamu mencoba mengambil nilai objek ke dalam tipe data float. Untuk mencegah terjadinya hal itu, kita harus menggunakan **explicit cast**.
 ```csharp
