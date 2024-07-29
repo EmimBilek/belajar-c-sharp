@@ -122,3 +122,6 @@ public Salaries()
   _salaryList.Add(8510.43f); 
 }
 ```
+Kode di atas sudah bisa dieksekusi dengan aman.
+
+> Mengapa ini bisa terjadi? Secara otomatis, nilai yang disimpan di dalam ArrayList akan menjadi _root data type_ (tipe data akar) yaitu `object` (semua tipe data yang ada di .NET mewarisi dari System.Object)
