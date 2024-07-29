@@ -176,7 +176,7 @@ public static bool Compare(this string text, string textToCompare){ ... }
 bool isSame = stringA.Compare(stringB);
 ```
 
-## RINGKASAN
+## Ringkasan
 - Delegasi adalah tipe referensi dalam C# yang mereferensikan metode yang berisi daftar parameter tertentu dan return.
 - Konsep yang disebut 'varians', definisi delegasi tidak harus sama persis dengan tipe parameter atau tipe kembalian dari metode yang dienkapsulasi. Contravariance berarti delegasi dapat mereferensikan metode di mana parameter tertentu dalam definisi delegasi lebih diturunkan daripada parameter yang terdapat dalam metode yang dienkapsulasi. Kovarian berarti bahwa tipe pengembalian dalam definisi delegasi dapat diturunkan lebih sedikit dibandingkan tipe pengembalian dari metode yang dienkapsulasinya.
 - Tiga delegasi generik bawaan yaitu Func, Action, dan Predicate. Tiga delegasi umum ini dapat digunakan dalam kode untuk penggunaan kembali kode yang lebih baik, keamanan mengetik, dan untuk meningkatkan kinerja.
