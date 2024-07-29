@@ -124,5 +124,4 @@ public Salaries()
 ```
 Kode di atas sudah bisa dieksekusi dengan aman.
 
-> Mengapa ini bisa terjadi? Secara otomatis, nilai yang disimpan di dalam ArrayList akan menjadi _root data type_ (tipe data akar) yaitu `object` (semua tipe data yang ada di .NET mewarisi dari `System.Object`. Ketika sebuah variable disimpan di dalam ArrayList, tipe data variable akan dibungkus oleh tipe `object` dan disimpan dalam memori _Heap_. ini yang dikenal sebagai _boxing_)
-> _boxing_ merupakan proses konversi tipe nilai menjadi tipe objek
+> Mengapa ini bisa terjadi? Secara otomatis, nilai yang disimpan di dalam ArrayList akan menjadi _root data type_ (tipe data akar) yaitu `object` (semua tipe data yang ada di .NET mewarisi dari `System.Object`. Ketika sebuah variable disimpan di dalam ArrayList, tipe data variable akan dibungkus oleh tipe `object` dan disimpan dalam memori _Heap_. ini yang dikenal sebagai _boxing_). _Boxing_ merupakan proses konversi tipe nilai menjadi tipe objek
