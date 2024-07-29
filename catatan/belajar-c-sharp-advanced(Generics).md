@@ -78,7 +78,7 @@ class Salaries
   }
 }
 ```
-Kemudian kita akan menggunakan method main untuk memanggil kelas `Salaries` dan mengambil nilai ArrayList menggunakan method `GetSalaryList` :
+Kemudian kita akan menggunakan method main untuk memanggil kelas `Salaries` dan mengambil nilai ArrayList menggunakan method `GetSalaryList()` :
 ```csharp
 class Program
 {
