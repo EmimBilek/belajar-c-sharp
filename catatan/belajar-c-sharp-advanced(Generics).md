@@ -48,5 +48,13 @@ class Program
 
 **ArrayList** merupakan sebuah koleksi non-generik milik c# (namespace `System.Collections`), sedangkan **List<T>** merupakan sebuah koleksi generic milik c# (namespace `System.Collections`). Keduanya sama2 digunakan untuk menyimpan banyak objek satu tipe, tetapi untuk `List<T>` menuliskan tipe data yang spesifik di dalam `<T>`, contoh : `<int>`,`<float>`,`<string>`.
 
+Contoh pendeklarasian `ArrayList` dan `List<T>` :
+```csharp
+ArrayList listProfit = new ArrayList();
+```
+```csharp
+List<int> listProfit = new List<int>();
+```
+
 > *Microsoft* tidak menyarankan developer untuk menggunakan `ArrayList`, pada dokumen dibawah akan menjelaskan mengapa ArrayList tidak disarankan untuk digunakan dan beralih untuk menggunakan generic list `List<T>`
 
