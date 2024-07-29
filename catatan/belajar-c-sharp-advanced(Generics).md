@@ -59,6 +59,8 @@ List<int> listProfit = new List<int>();
 > *Microsoft* tidak menyarankan developer untuk menggunakan `ArrayList` pada pengembangan kodenya, pada dokumen dibawah akan menjelaskan mengapa ArrayList tidak disarankan untuk digunakan dan beralih untuk menggunakan generic list `List<T>`
 
 ### ArrayList
+Penggunaan ArrayList di bawah hanya sebagai demonstrasi mengapa ArrayList tidak disarankan untuk penggunaan koleksi di c#.
+
 Pada contoh kode di bawah, kita akan menggunakan ArrayList sebagai koleksi yang akan kita gunakan. Kode simple di bawah ini, kita akan mengambil satu objek di dalam ArrayList kemudian di-print, pertama-tama kita membuat sebuah kelas bernama `Salaries` :
 ```csharp
 class Salaries
