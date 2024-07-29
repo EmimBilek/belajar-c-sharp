@@ -108,7 +108,7 @@ public delegate TResult Func<in T, out TResult>(T arg);
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan generik terakhir atau keyword `out` yang dimaksud adalah tipe data return
 
 
-`Func` ini bisa digunakan sebagai pengganti method yang mereturn sebuah value dengan sintaks yang lebih ringkas
+`Func` ini bisa digunakan sebagai pengganti delegate yang mereturn sebuah value dengan sintaks yang lebih ringkas
 	
 Contoh penggunaan Func:
 ```csharp
@@ -126,7 +126,7 @@ public delegate void Action<in T>(T obj);
 > Pada kode diatas, `in` yang dimaksud adalah parameter, dan bisa menampung hingga 16 parameter
 
 
-`Action` ini bisa digunakan sebagai pengganti method void dengan sintaks yang lebih ringkas
+`Action` ini bisa digunakan sebagai pengganti delegate void dengan sintaks yang lebih ringkas
 
 Contoh penggunaan `Action` :
 ```csharp
