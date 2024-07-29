@@ -96,7 +96,7 @@ class Program
 ```
 Jika kamu mencoba untuk menyalin kode di atas, itu masih mengandung error pada `float salary = salaryList[1];`.
 
-Error terjadi karena kamu mencoba mengambil nilai objek ke dalam tipe data float. Untuk mencegah terjadinya hal itu, kita harus menggunakan **explicit cast** (Konversi eksplisit menggunakan operator cast -> `(T) var`).
+Error terjadi karena kamu mencoba mengambil nilai objek ke dalam tipe data float (tidak bisa melakukan _implicit cast_ dari `object` ke `float`). Untuk mencegah terjadinya hal itu, kita harus menggunakan _explicit cast_ (Konversi eksplisit menggunakan operator cast -> `(T) obj`).
 ```csharp
 float salary = (float) salaryList[1];
 ```
