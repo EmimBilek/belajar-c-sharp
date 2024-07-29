@@ -100,3 +100,4 @@ Error terjadi karena kamu mencoba mengambil nilai objek ke dalam tipe data float
 ```csharp
 float salary = (float) salaryList[1];
 ```
+> Explicit cast (konversi eksplisit) di C# adalah proses konversi tipe data yang dilakukan secara eksplisit oleh programmer menggunakan operator cast. Ini digunakan ketika Anda ingin mengubah satu tipe data menjadi tipe data lain yang tidak bisa dilakukan secara otomatis oleh compiler C#. ~ Selengkapnya tanya jipiti
