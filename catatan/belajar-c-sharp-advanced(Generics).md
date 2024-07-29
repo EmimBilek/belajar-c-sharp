@@ -101,3 +101,22 @@ Error terjadi karena kamu mencoba mengambil nilai objek ke dalam tipe data float
 float salary = (float) salaryList[1];
 ```
 > Explicit cast (konversi eksplisit) di C# adalah proses konversi tipe data yang dilakukan secara eksplisit oleh programmer menggunakan operator cast. Ini digunakan ketika Anda ingin mengubah satu tipe data menjadi tipe data lain yang tidak bisa dilakukan secara otomatis oleh compiler C#. ~ Selengkapnya tanya jipiti
+
+Oke, ketika kamu sudah melakukan _explicit cast_ kemudian akan menjalankan kodenya, error baru akan muncul pada saat _runtime code_(Exception : `System.InvalidCastException`). Itu terjadi karena pada saat menambahkan value ke dalam ArrayList, kamu menambahkan tipe data `double` bukan `float` :
+```csharp
+public Salaries()
+{
+  _salaryList.Add(6000.03); //secara default, ini adalah tipe data double
+  _salaryList.Add(4230.80); //secara default, ini adalah tipe data double
+  _salaryList.Add(8510.43); //secara default, ini adalah tipe data double
+}
+```
+Kita perlu merubahnya merubahnya menjadi literal `float` :
+```csharp
+public Salaries()
+{
+  _salaryList.Add(6000.03f); //f sebagai indikasi bahwa tipe ini adalah literal float
+  _salaryList.Add(4230.80f); 
+  _salaryList.Add(8510.43f); 
+}
+```
