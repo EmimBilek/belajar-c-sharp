@@ -23,7 +23,26 @@ public class Comparison
   }
 }
 ```
+``` csharp
+class Program
+{
+  static void Main(string[] args)
+  {
+    //Use Generic Class
+    Comparison<int> compare = new Comparison<int>();
+    int a = 2, b = 4;
+    bool isEqual = compare.IsEqual(a, b);
+    Console.WriteLine($"int a and b are " {(isEqual ? "Equals" : "Not Equals")});
 
+    //Use Generic Method
+    Comparison compare2 = new Comparison();
+    a = 4;
+    b = 4;
+    isEqual = compare2.IsEqual<int>(a, b);
+    Console.WriteLine($"int a and b are " {(isEqual ? "Equals" : "Not Equals")});
+  }
+}
+```
 ## Non-Generic List (ArrayList) VS Generic List (List<T>)
 <sup> **Keyword :** `ArrayList`, `List<T>` </sup>
 
