@@ -23,3 +23,7 @@ public class Comparison
   }
 }
 ```
+
+## Non-Generic List (ArrayList) VS Generic List (List<T>)
+<sup> **Keyword :** `ArrayList`, `List<T>` </sup>
+
