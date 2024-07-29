@@ -1,0 +1,7 @@
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\bin\Debug\LatihanDelegate1_CovarianceContravariance.exe.config
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\bin\Debug\LatihanDelegate1_CovarianceContravariance.exe
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\bin\Debug\LatihanDelegate1_CovarianceContravariance.pdb
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\obj\Debug\LatihanDelegate1_CovarianceContravariance.csproj.AssemblyReference.cache
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\obj\Debug\LatihanDelegate1_CovarianceContravariance.csproj.CoreCompileInputs.cache
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\obj\Debug\LatihanDelegate1_CovarianceContravariance.exe
+C:\belajar c#\BelajarDelegate\LatihanDelegate1_CovarianceContravariance\obj\Debug\LatihanDelegate1_CovarianceContravariance.pdb

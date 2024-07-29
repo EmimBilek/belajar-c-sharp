@@ -1,0 +1,7 @@
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\bin\Debug\BelajarDelegate5_AsyncDelegate.exe.config
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\bin\Debug\BelajarDelegate5_AsyncDelegate.exe
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\bin\Debug\BelajarDelegate5_AsyncDelegate.pdb
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\obj\Debug\BelajarDelegate5_AsyncDelegate.csproj.AssemblyReference.cache
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\obj\Debug\BelajarDelegate5_AsyncDelegate.csproj.CoreCompileInputs.cache
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\obj\Debug\BelajarDelegate5_AsyncDelegate.exe
+C:\belajar c#\BelajarDelegate\BelajarDelegate5_AsyncDelegate\obj\Debug\BelajarDelegate5_AsyncDelegate.pdb

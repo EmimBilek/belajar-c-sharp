@@ -1,0 +1,6 @@
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\bin\Debug\BelajarDelegate2.exe.config
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\bin\Debug\BelajarDelegate2.exe
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\bin\Debug\BelajarDelegate2.pdb
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\obj\Debug\BelajarDelegate2.csproj.CoreCompileInputs.cache
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\obj\Debug\BelajarDelegate2.exe
+C:\belajar c#\BelajarDelegate\BelajarDelegate2\obj\Debug\BelajarDelegate2.pdb
