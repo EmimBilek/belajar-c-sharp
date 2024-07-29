@@ -46,7 +46,7 @@ class Program
 ## Non-Generic List (ArrayList) VS Generic List (List<T>)
 <sup> **Keyword :** `ArrayList`, `List<T>` </sup>
 
-**ArrayList** merupakan sebuah koleksi non-generik milik c# (namespace `System.Collections`), sedangkan **List** **T>** merupakan sebuah koleksi generic milik c# (namespace `System.Collections.Generics`). Keduanya sama2 digunakan untuk menyimpan banyak objek satu tipe, tetapi untuk `List<T>` menuliskan tipe data yang spesifik di dalam `<T>`, contoh : `<int>`, `<float>`, `<string>`, `<Employee>`.
+**ArrayList** merupakan sebuah koleksi non-generik milik c# (namespace `System.Collections`), sedangkan **List<****T>** merupakan sebuah koleksi generic milik c# (namespace `System.Collections.Generics`). Keduanya sama2 digunakan untuk menyimpan banyak objek satu tipe, tetapi untuk `List<T>` menuliskan tipe data yang spesifik di dalam `<T>`, contoh : `<int>`, `<float>`, `<string>`, `<Employee>`.
 
 Contoh pendeklarasian `ArrayList` dan `List<T>` :
 ```csharp
