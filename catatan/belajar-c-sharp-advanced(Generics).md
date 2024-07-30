@@ -128,4 +128,4 @@ Kode di atas sudah bisa dieksekusi dengan aman.
 
 ### Generic List (List<T>)
 Keuntungan dari menggunakan Generic List `List<T>` dibanding `ArrayList` adalah kita tidak perlu melakukan _explicit cast_/_unboxing_ ketika mengambil objek di dalam `List<T>`, karena tipe data sudah ditentukan di dalam `<T>` pada saat deklarasi/instansiasi `List<T>`
-> `ArrayList` dan `List<T>`, keduanya tidak perlu mendifinisikan ukuran koleksi nya ketika dideklarasikan, tidak seperti array yang harus ditentukan ukurannya.
+> `ArrayList` dan `List<T>`, keduanya tidak perlu mendefinisikan ukuran koleksi nya ketika dideklarasikan, tidak seperti array yang harus ditentukan ukurannya.
