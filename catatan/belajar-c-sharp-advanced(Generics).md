@@ -168,3 +168,22 @@ class Program
     }
 }
 ```
+### Keuntungan `List<T>` dibanding dengan `ArrayList`
+1. Type Safety (Keamanan Tipe)
+- List<T> adalah generik, yang berarti Anda menentukan tipe elemen yang akan disimpan saat membuat daftar. Ini memberikan keamanan tipe yang lebih baik karena hanya tipe data tertentu yang diizinkan.
+- ArrayList tidak generik dan menyimpan elemen sebagai object, yang berarti tipe data apa pun bisa dimasukkan, menyebabkan potensi kesalahan runtime jika jenis yang salah dimasukkan.
+
+2. Performansi
+- Karena List<T> adalah tipe kuat (strongly-typed), tidak ada biaya boxing dan unboxing untuk tipe nilai (value types). Dengan ArrayList, tipe nilai perlu diubah menjadi objek (boxing) ketika dimasukkan, dan dikembalikan ke tipe aslinya (unboxing) saat diambil, yang bisa mengurangi performansi.
+
+3. Ketersediaan Metode LINQ
+- List<T> mendukung LINQ (Language Integrated Query), memungkinkan Anda untuk menulis kueri kaya terhadap koleksi menggunakan sintaks LINQ.
+
+4. Ketersediaan Koleksi Metode
+- List<T> menyediakan metode generik seperti Find, FindAll, FindIndex, FindLastIndex, dan banyak lagi, yang tidak tersedia dalam ArrayList.
+
+5. Keamanan dan Pemeliharaan Kode
+- Karena List<T> adalah tipe kuat, kesalahan tipe dapat dideteksi pada waktu kompilasi, bukan waktu runtime, membuat kode lebih aman dan mudah dikelola.
+
+6. Casting Tidak Diperlukan
+- Dengan List<T>, Anda tidak perlu melakukan casting elemen saat mengambilnya dari daftar, mengurangi kemungkinan kesalahan runtime.
