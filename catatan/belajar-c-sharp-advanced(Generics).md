@@ -187,3 +187,51 @@ __5. Keamanan dan Pemeliharaan Kode__
 
 __6. Casting Tidak Diperlukan__
 - Dengan List<T>, Anda tidak perlu melakukan casting elemen saat mengambilnya dari daftar, mengurangi kemungkinan kesalahan runtime.
+
+## IComparable
+__Apa itu IComparable?__ IComparable merupakan interface built-in system yang digunakan untuk membandingkan sebuah object dengan object lainnya. Bagaimana perbandingan dengan `IComparable` dapat bekerja?
+
+Di dalam interface `IComparable` terdapat 1 method bernama `CompareTo()`. method `CompareTo` mereturn nilai `int` dan memiliki 1 parameter dengan tipe data `object`
+
+### Cara kerja method `CompareTo()` pada `IComparable`
+
+Misalkan kita mempunyai dua object pada kode seperti dibawah ini :
+```csharp
+object a = 50;
+object b = 80;
+
+string strA = "amoguss";
+string strB = "kocheng";
+```
+- Ketika objek yang dibandingkan lebih kecil daripada pembandingnya maka hasil return dari method `CompareTo()` adalah -1
+```csharp
+int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = -1
+int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResultString = -1
+```
+> `IComparable` juga mendukung perbandingan antar string
+
+- Ketika objek yang dibandingkan lebih besar daripada pembandingnya maka hasil return dari method `CompareTo()` adalah 1
+```csharp
+object a = 100;
+object b = 80;
+
+string strA = "wawan";
+string strB = "kocheng";
+```
+```csharp
+int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = 1
+int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResult = 1
+```
+
+- Ketika objek yang dibandingkan sama dengan pembandingnya maka hasil return dari method `CompareTo()` adalah 0
+```csharp
+object a = 100;
+object b = 100;
+
+string strA = "wawan";
+string strB = "wawan";
+```
+```csharp
+int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = 0
+int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResult = 0
+```
