@@ -203,14 +203,14 @@ object b = 80;
 string strA = "amoguss";
 string strB = "kocheng";
 ```
-- Ketika objek yang dibandingkan lebih kecil daripada pembandingnya maka hasil return dari method `CompareTo()` adalah -1
+- Ketika objek yang dibandingkan lebih kecil daripada pembandingnya maka hasil return dari method `CompareTo()` adalah -1 :
 ```csharp
 int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = -1
 int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResultString = -1
 ```
 > `IComparable` juga mendukung perbandingan antar string
 
-- Ketika objek yang dibandingkan lebih besar daripada pembandingnya maka hasil return dari method `CompareTo()` adalah 1
+- Ketika objek yang dibandingkan lebih besar daripada pembandingnya maka hasil return dari method `CompareTo()` adalah 1 :
 ```csharp
 object a = 100;
 object b = 80;
@@ -223,7 +223,7 @@ int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = 1
 int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResult = 1
 ```
 
-- Ketika objek yang dibandingkan sama dengan pembandingnya maka hasil return dari method `CompareTo()` adalah 0
+- Ketika objek yang dibandingkan sama dengan pembandingnya maka hasil return dari method `CompareTo()` adalah 0 :
 ```csharp
 object a = 100;
 object b = 100;
@@ -235,12 +235,12 @@ string strB = "wawan";
 int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = 0
 int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResult = 0
 ```
-- Tetapi ketika objek yang dibandingkan berbeda tipe dengan pembandingnya maka akan menghasilkan error `System.ArgumentException` pada saat runtime
+- Tetapi ketika objek yang dibandingkan berbeda tipe dengan pembandingnya maka akan menghasilkan error `System.ArgumentException` pada saat runtime :
 ```csharp
 object a = 100;
 
 string strA = "wawan";
 ```
 ```csharp
-int compareResult = ((IComparable)a).CompareTo(strA); // error System.ArgumentException
+int compareResult = ((IComparable)a).CompareTo(strA); // error System.ArgumentException -> "Object must be type Int32"
 ```
