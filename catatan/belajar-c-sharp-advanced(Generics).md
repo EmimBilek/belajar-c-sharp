@@ -126,7 +126,7 @@ Kode di atas sudah bisa dieksekusi dengan aman.
 
 > Mengapa ini bisa terjadi? Secara otomatis, nilai yang disimpan di dalam ArrayList akan menjadi _root data type_ (tipe data akar) yaitu `object` (semua tipe data yang ada di .NET mewarisi dari `System.Object`). Ketika sebuah variable disimpan di dalam ArrayList, tipe data variable akan dibungkus oleh tipe `object` dan disimpan dalam memori _Heap_. ini yang dikenal sebagai _boxing_. _Boxing_ merupakan proses konversi tipe nilai menjadi tipe objek
 
-### Generic List (List<T>)
+### Generic List (`List<T>`)
 Keuntungan dari menggunakan Generic List `List<T>` dibanding `ArrayList` adalah kita tidak perlu melakukan _explicit cast_/_unboxing_ ketika mengambil objek di dalam `List<T>`, karena tipe data sudah ditentukan di dalam `<T>` pada saat deklarasi/instansiasi `List<T>`
 > `ArrayList` dan `List<T>`, keduanya tidak perlu mendefinisikan ukuran koleksi nya ketika dideklarasikan, tidak seperti array yang harus ditentukan ukurannya.
 
