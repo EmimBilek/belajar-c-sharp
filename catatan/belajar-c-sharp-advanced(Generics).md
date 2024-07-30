@@ -235,3 +235,12 @@ string strB = "wawan";
 int compareResult = ((IComparable)a).CompareTo(b); // hasil : compareResult = 0
 int compareResultString = ((IComparable)strA).CompareTo(strB); // hasil : compareResult = 0
 ```
+- Tetapi ketika objek yang dibandingkan berbeda tipe dengan pembandingnya maka akan menghasilkan error `System.ArgumentException` pada saat runtime
+```csharp
+object a = 100;
+
+string strA = "wawan";
+```
+```csharp
+int compareResult = ((IComparable)a).CompareTo(strA); // error System.ArgumentException
+```
