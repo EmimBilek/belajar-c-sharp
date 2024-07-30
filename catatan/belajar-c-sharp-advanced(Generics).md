@@ -129,3 +129,42 @@ Kode di atas sudah bisa dieksekusi dengan aman.
 ### Generic List (List<T>)
 Keuntungan dari menggunakan Generic List `List<T>` dibanding `ArrayList` adalah kita tidak perlu melakukan _explicit cast_/_unboxing_ ketika mengambil objek di dalam `List<T>`, karena tipe data sudah ditentukan di dalam `<T>` pada saat deklarasi/instansiasi `List<T>`
 > `ArrayList` dan `List<T>`, keduanya tidak perlu mendefinisikan ukuran koleksi nya ketika dideklarasikan, tidak seperti array yang harus ditentukan ukurannya.
+
+`T` pada `List<T>` berfungsi sebagai pengganti untuk tipe data. Jadi, Developer bisa memberikan tipe data sebagai argumen pada `List<T>` untuk mendeklarasikan bahwa hanya tipe data yang ditentukan dalam `T` yang bisa disimpan di dalam list yang bersangkutan.
+
+Pada kode sebelumnya, ubah `ArrayList` menjadi 'List<float>' :
+```csharp
+class Salaries
+{
+    List<float> _salaryList = new List<float>();
+    public Salaries()
+    {
+        _salaryList.Add(6000.03f);
+        _salaryList.Add(4230.80f);
+        _salaryList.Add(8510.43f);
+    }
+
+    public List<float> GetSalaryList()
+    {
+        return _salaryList;
+    }
+}
+```
+Pada method main, kita tidak membutuhkan _explicit cast_ lagi untuk mengambil objek yang ada di dalam list :
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        Salaries salaries = new Salaries();
+
+        List<float> salaryList = salaries.GetSalaryList();
+            
+        float salary = salaryList[1];
+
+        Console.WriteLine($"Gaji : {salary}");
+
+        Console.ReadKey();
+    }
+}
+```
