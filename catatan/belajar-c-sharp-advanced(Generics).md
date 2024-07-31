@@ -189,9 +189,19 @@ __6. Casting Tidak Diperlukan__
 - Dengan List<T>, Anda tidak perlu melakukan casting elemen saat mengambilnya dari daftar, mengurangi kemungkinan kesalahan runtime.
 
 ## IComparable
+<sup> **Keyword :** `IComparable`, `IComparable<T>` </sup>
+
 __Apa itu IComparable?__ IComparable merupakan interface built-in system yang digunakan untuk membandingkan sebuah object dengan object lainnya. Bagaimana perbandingan dengan `IComparable` dapat bekerja?
 
 Di dalam interface `IComparable` terdapat 1 method bernama `CompareTo()`. method `CompareTo` mereturn nilai `int` dan memiliki 1 parameter dengan tipe data `object`
+
+Kode pada metadata :
+```csharp
+public interface IComparable
+{
+    int CompareTo(object obj);
+}
+```
 
 ### Cara kerja method `CompareTo()` pada `IComparable`
 
@@ -243,4 +253,26 @@ string strA = "wawan";
 ```
 ```csharp
 int compareResult = ((IComparable)a).CompareTo(strA); // error System.ArgumentException -> "Object must be type Int32"
+```
+`IComparable` juga bisa menampung generic untuk membuat method perbandingan pada tipe yang spesifik -> `IComparable<T>`.
+
+Kode `IComparable<T>` pada metadata :
+```csharp
+public interface IComparable<in T>
+{
+    int CompareTo(T other);
+}
+```
+ketika `IComparable<T>` diimplementasikan pada suatu kelas, maka implementasi method `CompareTo()` harus memiliki parameter yang diisi di dalam generic. Contoh :
+```csharp
+public class Employee : IComparable<Employee>
+{
+    public int id { get; set; }
+    public string name { get; set; }
+
+    public int CompareTo(Employee other)
+    {
+        return this.name.CompareTo(other.name);
+    }
+}
 ```
