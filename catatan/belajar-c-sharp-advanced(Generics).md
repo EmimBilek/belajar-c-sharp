@@ -289,7 +289,7 @@ __Apa itu Constraint?__ Constraint adalah batasan untuk kelas generik. Constrain
 ```csharp
 public class SortArray<T> where T : IComparable<T> {...}
 ```
-Dari contoh kode di atas, __ketika instansiasi kelas `SortArray` generik yang dioper pada kelas `SortArray` harus generik interface `IComparable<T>` atau kelas apapun yang mewarisi/mengimplementasi generik interface `IComparable<T>`__. seperti kelas di bawah :
+Dari contoh kode di atas, __ketika instansiasi kelas `SortArray` generik yang dioper pada kelas `SortArray` harus bertipe `IComparable<T>` atau kelas apapun yang mewarisi/mengimplementasi generik interface `IComparable<T>`__. seperti kelas di bawah :
 ```csharp
 public class Employee : IComparable<Employee> {...}
 ```
