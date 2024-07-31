@@ -284,3 +284,15 @@ public class Employee : IComparable<Employee>
     }
 }
 ```
+## Constraint
+__Apa itu Constraint?__ Constraint adalah batasan untuk kelas generik. Constraint menggunakan keyword `where` pada kelasnya. Constraint digunakan untuk menentukan tipe apa yang harus ditetapkan pada generik pada suatu kelas. Bingung? coba lihat kode di bawah :
+```csharp
+public class SortArray<T> where T : IComparable {...}
+```
+Dari contoh kode di atas, ketika instansiasi kelas `SortArray` generik yang dioper pada kelas `SortArray` harus interface `IComparable` atau kelas apapun yang mewarisi/mengimplementasi interface `IComparable`. seperti kelas di bawah :
+```csharp
+public class Employee : IComparable<Employee> {...}
+```
+```csharp
+SortArray<Employee> sort = new SortArray<Employee>();
+```
