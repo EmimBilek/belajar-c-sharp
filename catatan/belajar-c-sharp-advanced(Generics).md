@@ -296,3 +296,15 @@ public class Employee : IComparable<Employee> {...}
 ```csharp
 SortArray<Employee> sort = new SortArray<Employee>();
 ```
+### Constraint Ganda
+Constraint ganda memungkinkan developer untuk membatasi kelas generik pada banyak tipe tertentu. Cara menggunakan __Constraint Ganda__, tambahkan tanda koma `,` setelah constraint pertama :
+```csharp
+public class SortArray<T> where T : IComparable<T>, Employee {...}
+```
+Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas yang mewarisi `IComparable<T>` dan `Employee` sebagai argumen generik nya :
+```csharp
+public class Consultant : IComparable<Consultant>, Employee {...}
+```
+```csharp
+SortArray<Consultant> sort = new SortArray<Consultant>();
+```
