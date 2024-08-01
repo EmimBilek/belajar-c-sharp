@@ -302,6 +302,7 @@ Constraint ganda memungkinkan developer untuk membatasi kelas generik pada banya
 public class SortArray<T> where T : IComparable<T>, Employee {...}
 ```
 Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas yang mewarisi `IComparable<T>` dan `Employee` sebagai argumen 
+
 generiknya :
 ```csharp
 public class Consultant : IComparable<Consultant>, Employee {...}
