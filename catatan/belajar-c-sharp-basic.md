@@ -1141,6 +1141,7 @@ And methods include:
 - `Enqueue(T t)` - Adds the object t to the end of the queue.
 
 Now let's try `Queue<T>`:
+```csharp
 class Program
 {
     static void Main(string[] args)
@@ -1167,16 +1168,51 @@ class Program
         Console.WriteLine("\nCount: " + q.Count); // 2
     }
 }
+```
 Here are additional `Queue<T>` methods:
 - `Clear()` - Removes all objects from the queue.
 - `Contains(T t)` - Returns true when the element t is present in the queue.
 - `Peek()` - Returns the object at the beginning of the queue without removing it.
 - `ToArray()` - Copies the queue into a new array.
 
+## Dictionary & HashSet
+### Dictionary<K, V>
+A dictionary is a collection of unique key/value pairs where a key is used to access the corresponding value. Dictionaries are used in database indexing, cache implementations, and so on.
 
+The C# generic collection `Dictionary<K, V>` class requires all key/value pairs be of the same type `K`, `V`. __Duplicate keys__ are not permitted to ensure that every key/value pair is unique.
 
+`Dictionary<K, V>` properties include:
+- `Count` - Gets the number of key/value pairs contained in the dictionary.
+- `Item[K key]` - Gets the value associated with the specified key in the dictionary. Item is the indexer and is not required when accessing an element. You only need to use the brackets `[]` and key value.
+- `Keys` - Gets an indexed collection containing only the keys contained in the dictionary.
 
+`Dictionary<K, V>` methods include:
+- `Add(K key, V value)` - Adds the key, value pair to the dictionary.
+- `Remove(K key)` - Removes the key/value pair related to the specified key from the dictionary.
 
+Now let's try `Dictionary<K, V>`:
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        Dictionary<string, int> d = new Dictionary<string, int>();
+        d.Add("Uno", 1);
+        d.Add("One", 1);
+        d.Add("Dos", 2);
+        d.Add("Deux", 2);
+        d.Remove("One"); // Remove key-value pair One, 1
+        d.Remove("Dos"); // Remove key-value pair Dos, 2
+
+        Console.WriteLine("Dictionary: ");
+        foreach (string s in d.Keys)
+        {
+            Console.WriteLine(s + ": " + d[s]); // Uno: 1 Deux: 2
+        }
+        Console.WriteLine("\nCount: {0}", d.Count); // 2
+    }
+}
+```
 
 
 
