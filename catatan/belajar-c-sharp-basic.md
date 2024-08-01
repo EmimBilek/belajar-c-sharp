@@ -1105,11 +1105,73 @@ static void PrintBarr(string name, BitArray ba) {
 ```
 For example, BitArrays can be used in image processing to store the individual bits of a gray-scale image.
 
+## Stack And Queue
+### Stack<T>
+A stack is a __Last In, First Out (LIFO)__ collection of elements where the last element that goes into the stack will be the first element that comes out.
 
+Inserting an element onto a stack is called _pushing_. Deleting an element from a stack is called _popping_. Pushing and popping can be performed only at the top of the stack.
 
+> Stacks can be used to create undo-redo functionalities, parsing expressions (infix to postfix/prefix conversion), and much more.
 
+The C# generic collection `Stack<T>` class requires all elements to be of the same type `T`.
+```csharp
+Stack<int> st = new Stack<int>();
+st.Push(11);
+st.Push(42);
+st.Push(15);
+if (st.Contains(42)) {
+  Console.WriteLine("yes");
+}
+```
+### Queue<T>
+A queue is a __First In, First Out (FIFO)__ collection of elements where the first element that goes into a queue is also the first element that comes out.
 
+Inserting an element into a queue is referred to as _Enqueue_. Deleting an element from a queue is referred to as _Dequeue_.
 
+> Queues are used whenever we need to manage objects in order starting with the first one in.
+> Scenarios include printing documents on a printer, call center systems answering people on hold people, and so on.
+
+The C# generic collection Queue<T> class requires that all elements be of the same type T.
+
+`Queue<T>` properties include:
+- `Count` - Gets the number of elements in the queue.
+
+And methods include:
+- `Dequeue()` - Returns the object at the beginning of the queue and also removes it.
+- `Enqueue(T t)` - Adds the object t to the end of the queue.
+
+Now let's try `Queue<T>`:
+class Program
+{
+    static void Main(string[] args)
+    {
+        Queue<int> q = new Queue<int>(); // using System.Collections.Generic;
+
+        q.Enqueue(5);
+        q.Enqueue(10);
+        q.Enqueue(15);
+        Console.Write("Queue: ");
+        foreach (int i in q)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine("\nCount: " + q.Count); // 3
+
+        Console.WriteLine("\nDequeue: " + q.Dequeue()); // 5
+
+        Console.Write("Queue: ");
+        foreach (int i in q)
+        {
+            Console.Write(i + " ");
+        }
+        Console.WriteLine("\nCount: " + q.Count); // 2
+    }
+}
+Here are additional `Queue<T>` methods:
+- `Clear()` - Removes all objects from the queue.
+- `Contains(T t)` - Returns true when the element t is present in the queue.
+- `Peek()` - Returns the object at the beginning of the queue without removing it.
+- `ToArray()` - Copies the queue into a new array.
 
 
 
