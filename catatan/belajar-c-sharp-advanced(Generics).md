@@ -311,9 +311,9 @@ SortArray<Consultant> sort = new SortArray<Consultant>();
 ### Constraint Generic Ganda
 Berbeda dari Constraint ganda, __Constraint Generic Ganda__ memungkinkan developer untuk menentukan lebih dari 1 generik untuk dibatasi. Cara menggunakan __Constraint Generic Ganda__ yaitu dengan menambahkan keyword `where` baru setelah constraint pertama :
 ```csharp
-public class SortArray<T, U> where U : Employee, new() where T : IComparable<Consultant> {...}
+public class SortArray<T, U> where U : T, new() where T : IComparable<Consultant> {...}
 ```
-Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<Consultant>`/turunannya sebagai argumen generik `T` dan kelas `Employee`/turunannya sebagai argumen generik `U`, seperti kode di bawah ini :
+Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<Consultant>`/turunannya sebagai argumen generik `T` dan kelas `T`/turunannya dan memiliki _constructor_ tanpa parameter sebagai argumen generik `U`, seperti kode di bawah ini :
 ```csharp
 public class Boss : IComparable<Consultant> {...}
 public class Employee {...}
