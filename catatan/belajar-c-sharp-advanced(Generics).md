@@ -313,7 +313,7 @@ Berbeda dari Constraint ganda, __Constraint Generic Ganda__ memungkinkan develop
 ```csharp
 public class SortArray<T, U> where U : Employee, new() where T : IComparable<Consultant> {...}
 ```
-Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<T>`/turunannya sebagai argumen generik `T` dan kelas `Employee`/turunannya sebagai argumen generik `U`, seperti kode di bawah ini :
+Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<Consultant>`/turunannya sebagai argumen generik `T` dan kelas `Employee`/turunannya sebagai argumen generik `U`, seperti kode di bawah ini :
 ```csharp
 public class Boss : IComparable<Consultant> {...}
 public class Employee {...}
