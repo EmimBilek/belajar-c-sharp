@@ -321,3 +321,4 @@ public class Employee {...}
 ```csharp
 SortArray<Boss, Employee> sort = new SortArray<Boss, Employee>();
 ```
+> constraint `new()` digunakan pada generik bahwa tipe generik harus memiliki constructor tanpa parameter, dan constraint `new()` harus ditetapkan pada akhir constraint -> `class Vehicle<T> where T : ComponentClass, EmployeeClass, new()`
