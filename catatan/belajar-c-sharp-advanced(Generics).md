@@ -326,6 +326,8 @@ SortArray<Boss, Factory> sort = new SortArray<Boss, Factory>();
 > constraint `new()` digunakan pada generik bahwa tipe generik harus memiliki constructor tanpa parameter, dan constraint `new()` harus ditetapkan pada akhir constraint -> `class Vehicle<T> where T : ComponentClass, EmployeeClass, new()`
 
 ## Ringkasan
+<sup> **Kode :** BelajarGeneric </sup>
+
 - Kita telah membahas bahwa generik diperkenalkan di C# versi 2 (hanya berlaku untuk c# versi 2 ke atas). Kita telah melihat mengapa lebih baik menggunakan list generik yang dengan tipe yang lebih baik dan kuat untuk menyimpan kumpulan item daripada `ArrayList` untuk tujuan ini.
 - Kita telah membahas manfaat ogenerik. Kelas dan metode generik menggabungkan penggunaan kembali, keamanan jenis, dan efisiensi dengan cara yang tidak dapat dilakukan oleh kelas dan metode non-generik.
 - Kita melihat bagaimana batasan (constraint) dapat diterapkan pada parameter tipe generik untuk menerapkan aturan waktu kompilasi pada parameter tipe generik.
