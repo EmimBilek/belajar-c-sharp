@@ -316,9 +316,9 @@ public class SortArray<T, U> where U : T, new() where T : IComparable<Consultant
 Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<Consultant>`/turunannya sebagai argumen generik `T` dan kelas `T`/turunannya dan memiliki _constructor_ tanpa parameter sebagai argumen generik `U`, seperti kode di bawah ini :
 ```csharp
 public class Boss : IComparable<Consultant> {...}
-public class Employee {...}
+public class Factory : Boss {...}
 ```
 ```csharp
-SortArray<Boss, Employee> sort = new SortArray<Boss, Employee>();
+SortArray<Boss, Factory> sort = new SortArray<Boss, Factory>();
 ```
 > constraint `new()` digunakan pada generik bahwa tipe generik harus memiliki constructor tanpa parameter, dan constraint `new()` harus ditetapkan pada akhir constraint -> `class Vehicle<T> where T : ComponentClass, EmployeeClass, new()`
