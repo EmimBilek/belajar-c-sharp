@@ -285,6 +285,8 @@ public class Employee : IComparable<Employee>
 }
 ```
 ## Constraint
+<sup> **Keyword :** Constraint, `new()`, `where` </sup>
+
 __Apa itu Constraint?__ Constraint adalah batasan untuk kelas generik. Constraint menggunakan keyword `where` pada kelasnya. Constraint digunakan untuk menentukan tipe apa yang harus ditetapkan pada generik pada suatu kelas. Bingung? coba lihat kode di bawah :
 ```csharp
 public class SortArray<T> where T : IComparable<T> {...}
@@ -322,3 +324,10 @@ public class Factory : Boss {...}
 SortArray<Boss, Factory> sort = new SortArray<Boss, Factory>();
 ```
 > constraint `new()` digunakan pada generik bahwa tipe generik harus memiliki constructor tanpa parameter, dan constraint `new()` harus ditetapkan pada akhir constraint -> `class Vehicle<T> where T : ComponentClass, EmployeeClass, new()`
+
+## Ringkasan
+- Kita telah membahas bahwa generik diperkenalkan di C# versi 2 (hanya berlaku untuk c# versi 2 ke atas). Kita telah melihat mengapa lebih baik menggunakan list generik yang dengan tipe yang lebih baik dan kuat untuk menyimpan kumpulan item daripada `ArrayList` untuk tujuan ini.
+- Kita telah membahas manfaat ogenerik. Kelas dan metode generik menggabungkan penggunaan kembali, keamanan jenis, dan efisiensi dengan cara yang tidak dapat dilakukan oleh kelas dan metode non-generik.
+- Kita melihat bagaimana batasan (constraint) dapat diterapkan pada parameter tipe generik untuk menerapkan aturan waktu kompilasi pada parameter tipe generik.
+- Kita telah membuat contoh kode yang mewakili sistem manajemen Gudang (Warehouse Management System). Dalam contoh ini kami menggunakan tipe koleksi generik C# `Queue` bawaan untuk menyimpan objek yang mewakili berbagai item perangkat keras yang masuk ke Gudang dan selanjutnya akan diproses. `delegate` dan `event` berperan penting dalam sistem pemantauan _real-time_ ini.
+- Terakhir di dokumen ini kita telah melihat secara singkat bagaimana kode MSIL (Microsoft Intermediate Language) digunakan oleh _.NET Runtime_ untuk secara efisien menangani tipe nilai dan tipe referensi dalam istilah generik. Kami juga menerapkan versi generik dari pola desain pabrik (Factory design pattern) dalam contoh kode dasar untuk menunjukkan bagaimana penggunaan beberapa batasan (constraint) dapat diterapkan pada tipe generik untuk menerapkan aturan waktu kompilasi yang didorong oleh persyaratan khusus.
