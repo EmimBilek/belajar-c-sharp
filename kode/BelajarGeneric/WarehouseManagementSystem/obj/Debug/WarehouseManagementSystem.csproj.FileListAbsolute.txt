@@ -1,0 +1,10 @@
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\bin\Debug\WarehouseManagementSystem.exe.config
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\bin\Debug\WarehouseManagementSystem.exe
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\bin\Debug\WarehouseManagementSystem.pdb
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\bin\Debug\WarehouseAPI.dll
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\bin\Debug\WarehouseAPI.pdb
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\obj\Debug\WarehouseManagementSystem.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\obj\Debug\WarehouseManagementSystem.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\obj\Debug\WarehouseManagementSystem.csproj.CopyComplete
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\obj\Debug\WarehouseManagementSystem.exe
+C:\kerjaan emim\belajar c#\BelajarGeneric\WarehouseManagementSystem\obj\Debug\WarehouseManagementSystem.pdb

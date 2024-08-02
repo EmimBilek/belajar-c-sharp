@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34601.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelajarGeneric1_Pengenalan", "BelajarGeneric1_Pengenalan\BelajarGeneric1_Pengenalan.csproj", "{224F4A63-3634-4093-B885-B07B2A534598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelajarGeneric2_Constraint_Non_Generic", "BelajarGeneric2_Constraint\BelajarGeneric2_Constraint_Non_Generic.csproj", "{782228CA-CB1A-487A-8254-F91BA13BE910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelajarGeneric2_Constraint_Generic", "BelajarGeneric2_Constraint_Generic\BelajarGeneric2_Constraint_Generic.csproj", "{DE6339C0-507D-45A3-98E4-3DE6A9079CED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BelajarGeneric3_WarehouseManagementSystem", "BelajarGeneric3_WarehouseManagementSystem", "{AACAEDC0-04D5-4256-AC6A-C7C307BB5D5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseManagementSystem", "WarehouseManagementSystem\WarehouseManagementSystem.csproj", "{312395CB-8434-401A-88CE-684974BDDDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarehouseAPI", "WarehouseAPI\WarehouseAPI.csproj", "{40242A43-EB92-4D2B-9A9F-B405D5FA15A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{224F4A63-3634-4093-B885-B07B2A534598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224F4A63-3634-4093-B885-B07B2A534598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224F4A63-3634-4093-B885-B07B2A534598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224F4A63-3634-4093-B885-B07B2A534598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{782228CA-CB1A-487A-8254-F91BA13BE910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{782228CA-CB1A-487A-8254-F91BA13BE910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{782228CA-CB1A-487A-8254-F91BA13BE910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{782228CA-CB1A-487A-8254-F91BA13BE910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE6339C0-507D-45A3-98E4-3DE6A9079CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE6339C0-507D-45A3-98E4-3DE6A9079CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE6339C0-507D-45A3-98E4-3DE6A9079CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE6339C0-507D-45A3-98E4-3DE6A9079CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312395CB-8434-401A-88CE-684974BDDDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312395CB-8434-401A-88CE-684974BDDDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312395CB-8434-401A-88CE-684974BDDDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312395CB-8434-401A-88CE-684974BDDDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40242A43-EB92-4D2B-9A9F-B405D5FA15A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40242A43-EB92-4D2B-9A9F-B405D5FA15A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40242A43-EB92-4D2B-9A9F-B405D5FA15A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40242A43-EB92-4D2B-9A9F-B405D5FA15A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{312395CB-8434-401A-88CE-684974BDDDAC} = {AACAEDC0-04D5-4256-AC6A-C7C307BB5D5A}
+		{40242A43-EB92-4D2B-9A9F-B405D5FA15A1} = {AACAEDC0-04D5-4256-AC6A-C7C307BB5D5A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE4AA22E-7359-4D82-893D-E1CC91159559}
+	EndGlobalSection
+EndGlobal

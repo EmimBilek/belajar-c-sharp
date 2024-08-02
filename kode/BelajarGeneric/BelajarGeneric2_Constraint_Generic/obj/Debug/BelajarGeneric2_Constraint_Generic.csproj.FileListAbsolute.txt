@@ -1,0 +1,6 @@
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\bin\Debug\BelajarGeneric2_Constraint_Generic.exe.config
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\bin\Debug\BelajarGeneric2_Constraint_Generic.exe
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\bin\Debug\BelajarGeneric2_Constraint_Generic.pdb
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\obj\Debug\BelajarGeneric2_Constraint_Generic.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\obj\Debug\BelajarGeneric2_Constraint_Generic.exe
+C:\kerjaan emim\belajar c#\BelajarGeneric\BelajarGeneric2_Constraint_Generic\obj\Debug\BelajarGeneric2_Constraint_Generic.pdb
