@@ -31,6 +31,10 @@ public async Task<string> GetFileContentAsStringAsync(string fileLocation){...} 
 ```
 > Modifier `async` digunakan pada sebuah method untuk memanggil method async yang lain dan menggunakan keyword `await` di depan pemanggilan method
 
+2 kegunaan method asinkron :
+- Menandakan pada c# compiler bahwa method ini bisa menggunakan operator await di dalamnya
+- Menandakan pada c# compiler bahwa method ini bisa di-awaited oleh method lain yang memanggilnya
+
 ## Keyword `await`
 <sup> **Keyword :** async, await</sup>
 
