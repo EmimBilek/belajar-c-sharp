@@ -24,9 +24,10 @@ __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses 
 ## Keyword `async`
 <sup> **Keyword :** async, await</sup>
 
-Keyword __async__ digunakan untuk menandakan bahwa method akan dijalankan secara asinkron :
+Keyword __async__ digunakan untuk menandakan bahwa method akan dijalankan secara asinkron. Method yang asinkron harus mengembalikan/me-return nilai `Task` jika method tidak me-return nilai apapun (alias `void`). Apabila sebuah method asinkron ingin mengembalikan suatu nilai, gunakan generic `Task` -> `Task<TReturnType>` :
 ```csharp
-public async string GetFileContentAsStringAsync(string fileLocation){...}
+public async Task DisplayContent(string fileLocation){...} // method asinkron yang mengembalikan tipe data void
+public async Task<string> GetFileContentAsStringAsync(string fileLocation){...} // method asinkron yang mengembalikan tipe data string
 ```
 > Modifier `async` digunakan pada sebuah method untuk memanggil method async yang lain dan menggunakan keyword `await` di depan pemanggilan method
 
