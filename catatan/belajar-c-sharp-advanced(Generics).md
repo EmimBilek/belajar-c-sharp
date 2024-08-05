@@ -14,7 +14,7 @@ public class Comparison<T>
 }
 ```
 - Penggunaan Generic pada method
-```cshap
+```csharp
 public class Comparison
 {
   public bool IsEqual<T>(T val1, T val2)
