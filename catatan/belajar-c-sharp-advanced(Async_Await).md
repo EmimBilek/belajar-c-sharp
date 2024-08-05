@@ -8,6 +8,6 @@ Program asinkron diimplementasikan untuk memberikan pengalaman pengguna (user ex
 
 Kita ambil contoh pada mengeklik tombol. Tombol itu akan menjalankan operasi yang membutuhkan waktu lama. Ketika tombol itu diklik, maka pengguna (user) tidak akan bisa melakukan hal yang lain pada aplikasi (seperti mengeklik tombol yang lain) sebelum operasi selesai dijalankan. Ini membuat pengalaman pengguna (UX) yang buruk dan tidak disarankan.
 <p align="center">
-  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/longrun.png" />
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/longrun.png" width="30" />
 </p>
 
