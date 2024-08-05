@@ -1,6 +1,6 @@
 # Async Await
 ## Task-based Asynchronous Pattern (TAP)
-<sup> **Keyword :** Task-based Asynchronous Pattern</sup>
+<sup> **Keyword :** Task-based Asynchronous Pattern, CPU-bound Operations, I/O-bound Operations, User Experience, Long-running operation</sup>
 
 __Apa itu Task-based Asynchronous Pattern?__ Task-based Asynchronous Pattern merupakan pola design yang direkomendasikan untuk membuat program asinkron. Program asinkron diperkenalkan pada c# versi 5, dan didukung pada _.NET Framework_ versi 4.5 ke atas dan juga _.NET Core_. Penamaan method asinkron diakhiri dengan Async -> `GetDataAsync`, `SendDataAsync` 
 
@@ -20,3 +20,17 @@ __CPU-bound Operations__ terjadi ketika komputasi intensif perlu dilakukan pada 
 __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses database atau pada saat membaca atau menulis file. Efek blokir dari operasi input output menyebabkan CPU untuk menunggu hingga operasi bersangkutan telah selesai. Saat I/O-bound operations berjalan, maka CPU akan terblokir dari menjalankan operasi yang lain. Performa aplikasi akan kurang optimal ketika kode untuk operasi yang berjalan relatif lama ini ditangani secara sinkron.
 
 >__I/O-bound Operations__ prosesnya jauh lebih lambat daripada __CPU-bound Operations__
+
+## Keyword `async`
+Keyword __async__ digunakan untuk menandakan bahwa method akan dijalankan secara asinkron :
+```csharp
+public async string GetFileContentAsStringAsync(string fileLocation){...}
+```
+> Modifier `async` digunakan pada sebuah method untuk memanggil method async yang lain dan menggunakan keyword `await` di depan pemanggilan method
+
+## Keyword `await`
+Keyword __await__ digunakan untuk memanggil method asinkron dan berada di depan pada saat pemanggilan method :
+```csharp
+string content = await GetFileContentAsStringAsync(fileLocation);
+```
+> Method yang mengandung keyword `await` harus method asinkron
