@@ -22,6 +22,8 @@ __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses 
 >__I/O-bound Operations__ prosesnya jauh lebih lambat daripada __CPU-bound Operations__
 
 ## Keyword `async`
+<sup> **Keyword :** async, await</sup>
+
 Keyword __async__ digunakan untuk menandakan bahwa method akan dijalankan secara asinkron :
 ```csharp
 public async string GetFileContentAsStringAsync(string fileLocation){...}
@@ -29,6 +31,8 @@ public async string GetFileContentAsStringAsync(string fileLocation){...}
 > Modifier `async` digunakan pada sebuah method untuk memanggil method async yang lain dan menggunakan keyword `await` di depan pemanggilan method
 
 ## Keyword `await`
+<sup> **Keyword :** async, await</sup>
+
 Keyword __await__ digunakan untuk memanggil method asinkron dan berada di depan pada saat pemanggilan method :
 ```csharp
 string content = await GetFileContentAsStringAsync(fileLocation);
