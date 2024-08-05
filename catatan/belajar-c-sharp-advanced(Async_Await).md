@@ -2,12 +2,21 @@
 ## Task-based Asynchronous Pattern (TAP)
 <sup> **Keyword :** Task-based Asynchronous Pattern</sup>
 
-__Apa itu Task-based Asynchronous Pattern?__ Task-based Asynchronous Pattern merupakan pola design yang direkomendasikan untuk membuat program asinkron. Program asinkron diperkenalkan pada c# versi 5, dan didukung pada _.NET Framework_ versi 4.5 ke atas dan juga _.NET Core_. Anggota asinkron mengandung keyword 'async'
+__Apa itu Task-based Asynchronous Pattern?__ Task-based Asynchronous Pattern merupakan pola design yang direkomendasikan untuk membuat program asinkron. Program asinkron diperkenalkan pada c# versi 5, dan didukung pada _.NET Framework_ versi 4.5 ke atas dan juga _.NET Core_. Penamaan method asinkron diakhiri dengan Async -> `GetDataAsync`, `SendDataAsync` 
 
-Operasi jangka panjang (long-running operation) membuat pengalaman pengguna yang buruk. Dengan mengimplementasikan program asinkron, itu dapat memberikan pengalaman pengguna (user experience) menjadi lebih baik. Lalu bagaimana bisa operasi jangka panjang (long-running operation) membuat pengalaman pengguna yang buruk?
+Operasi jangka panjang (_long-running operation_) membuat pengalaman pengguna yang buruk. Dengan mengimplementasikan program asinkron, itu dapat memberikan pengalaman pengguna (_User Experience_) menjadi lebih baik. Lalu bagaimana bisa _long-running operation_ membuat pengalaman pengguna yang buruk?
 
 Kita ambil contoh pada mengeklik sebuah tombol. Tombol itu akan menjalankan operasi yang membutuhkan waktu lama dan dijalankan secara sinkron. Ketika tombol itu diklik, maka pengguna (user) tidak akan bisa melakukan hal yang lain pada aplikasi (seperti mengeklik tombol yang lain) dan menjadi tidak responsif, karena eksekusi yang menjalankan operasi yang memakan waktu akan terboklir sebelum operasi sinkron selesai dijalankan. Ini membuat pengalaman pengguna (UX) yang buruk dan tidak disarankan.
 <p align="center">
   <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/longrun.png" width="500" />
 </p>
 
+2 jenis pemblokiran operasi :
+- CPU-bound Operations
+- I/O-bound Operations
+
+__CPU-bound Operations__ terjadi ketika komputasi intensif perlu dilakukan pada CPU (seperti bermain game berat yang perlu melakukan banyak perhitungan komputer, ataupun pada bidang finansial dan _scientific_).
+
+__I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses database atau pada saat membaca atau menulis file. Efek blokir dari operasi input output menyebabkan CPU untuk menunggu hingga operasi bersangkutan telah selesai. Saat I/O-bound operations berjalan, maka CPU akan terblokir dari menjalankan operasi yang lain. Performa aplikasi akan kurang optimal ketika kode untuk operasi yang berjalan relatif lama ini ditangani secara sinkron.
+
+>__I/O-bound Operations__ prosesnya jauh lebih lambat daripada __CPU-bound Operations__
