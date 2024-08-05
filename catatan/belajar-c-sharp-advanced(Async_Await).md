@@ -22,7 +22,7 @@ __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses 
 >__I/O-bound Operations__ prosesnya jauh lebih lambat daripada __CPU-bound Operations__
 
 ## Keyword `async`
-<sup> **Keyword :** async, await</sup>
+<sup> **Keyword :** async, await, `Task`, `Task<TReturnType>`</sup>
 
 Keyword __async__ digunakan untuk menandakan bahwa method akan dijalankan secara asinkron. Method yang asinkron harus mengembalikan/me-return nilai `Task` jika method tidak me-return nilai apapun (alias `void`). Apabila sebuah method asinkron ingin mengembalikan suatu nilai, gunakan generic `Task` -> `Task<TReturnType>` :
 ```csharp
