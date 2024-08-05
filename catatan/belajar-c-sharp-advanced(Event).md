@@ -88,7 +88,7 @@ EventHandler<SomeClass> event = (EventHandler<SomeClass>) EHList[_eventKey1];
 
 > Dalam konteks pola desain Observer, loose coupling berarti bahwa subject (observable) dan observer tidak saling bergantung secara langsung pada implementasi masing-masing. Mereka hanya mengetahui antarmuka (interface) satu sama lain.
 
-Dalam pola ini, object provider harus mengimplementasikan interface generik system `IObservable<T>`, dan subscriber haurs mengimplementasikan interface generik system `IObserver<T>`. 
+Dalam pola ini, object provider harus mengimplementasikan interface generik system `IObservable<T>`, dan subscriber harus mengimplementasikan interface generik system `IObserver<T>`. 
 
 Saat object provider mengimplementasi interface `IObservable<T>`, ada satu method yang harus diimplementasi di dalam object provider nya, yaitu method `Subscribe(IObserver<T> subscriber)` :
 ```csharp
