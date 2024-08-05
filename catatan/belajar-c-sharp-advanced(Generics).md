@@ -318,7 +318,10 @@ public class SortArray<T, U> where U : T, new() where T : IComparable<Consultant
 Dengan begitu, untuk inisialisasi kelas `SortArray` diperlukan kelas `IComparable<Consultant>`/turunannya sebagai argumen generik `T` dan kelas `T`/turunannya dan memiliki _constructor_ tanpa parameter sebagai argumen generik `U`, seperti kode di bawah ini :
 ```csharp
 public class Boss : IComparable<Consultant> {...}
-public class Factory : Boss {...}
+public class Factory : Boss
+{
+  public Factory(){...}
+}
 ```
 ```csharp
 SortArray<Boss, Factory> sort = new SortArray<Boss, Factory>();
