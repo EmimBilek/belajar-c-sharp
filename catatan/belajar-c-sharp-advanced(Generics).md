@@ -140,7 +140,7 @@ Keuntungan dari menggunakan Generic List `List<T>` dibanding `ArrayList` adalah 
 
 `T` pada `List<T>` berfungsi sebagai pengganti untuk tipe data. Jadi, Developer bisa memberikan tipe data sebagai argumen pada `List<T>` untuk mendeklarasikan bahwa hanya tipe data yang ditentukan dalam `T` yang bisa disimpan di dalam list yang bersangkutan.
 
-Pada kode sebelumnya, ubah `ArrayList` menjadi 'List<float>' :
+Pada kode sebelumnya, ubah `ArrayList` menjadi `List<float>` :
 ```csharp
 class Salaries
 {
