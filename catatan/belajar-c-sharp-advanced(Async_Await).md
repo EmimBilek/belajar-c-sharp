@@ -64,7 +64,7 @@ private async Task<string> GetDocumentContentAsync(string fileName)
 
 Pada contoh kode di atas, method `GetDocumentContentAsync()` akan me-return nilai string ketika method sudah selesai dijalankan. Karena methodnya merupakan method async yang me-return nilai string, maka harus menggunakan object `Task<string>` sebagai pengganti nilai returnnya.
 
-Ketika menjalankan method asinkron dengan operator `await`, kontrol segera dikembalikan ke kode pemanggil. Artinya bisa menjalankan eksekusi lain ketika menjalankan method asinkron
+Ketika menjalankan method asinkron dengan operator `await`, kontrol segera dikembalikan ke kode pemanggil. Artinya bisa menjalankan eksekusi lain ketika method asinkron sedang berjalan. sehingga CPU tidak dibiarkan menganggur saat _I/O-bound Operations_ sedang berlangsung
 
 Hasil result dari method asinkron yang menggunakan operator `await` akan dikembalikan ketika method asinkron selesai atau melempar pengecualian (throws an exception) ketika terjadi error
 ```csharp
