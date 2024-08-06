@@ -44,6 +44,8 @@ string content = await GetFileContentAsStringAsync(fileLocation);
 ```
 > Method yang mengandung keyword `await` harus method asinkron
 
+kode yang berada di bawah operator `await` tidak akan dieksekusi sampai method asinkron yang dipanggil dengan operator `await` telah selesai
+
 ## Contoh penggunaan async dan await dalam kode
 ```csharp
 private async void button_click(object sender, EventArgs e)
