@@ -43,3 +43,22 @@ Keyword __await__ digunakan untuk memanggil method asinkron dan berada di depan 
 string content = await GetFileContentAsStringAsync(fileLocation);
 ```
 > Method yang mengandung keyword `await` harus method asinkron
+
+## Contoh penggunaan async dan await dalam kode
+```csharp
+private async void button_click(object sender, EventArgs e)
+{
+  string content = await GetDocumentContentAsync("HugeFile.txt");
+  DisplayContent(content);
+}
+
+private async Task<string> GetDocumentContentAsync(string fileName)
+{
+  string content = await GetDocumentContentAsStringAsync(filename);
+  SaveDocumentLocally(content);
+  return content;
+}
+```
+> Pada contoh kode di atas, dapat dilihat bahwa method asinkron `GetDocumentContentAsync()` akan me-return objek `Task`. Tetapi tidak dengan method `button_click()`, karena method `button_click()` merupakan _high level event handler_ (penanganan event tingkat tinggi) jadi, tidak perlu mengganti `void` dengan `Task`. Semua asinkron method yang bukan _high level event handler_ akan me-return nilai `Task` apabila method yang bersangkutan tidak me-return nilai apapun (alias `void`) atau me-return generic `Task<T>` apabila method yang bersangkutan me-return sebuah nilai.
+
+Pada contoh kode di atas, method `GetDocumentContentAsync()` akan me-return nilai string ketika method sudah selesai dijalankan. Karena methodnya merupakan method async yang me-return nilai string, maka harus menggunakan object `Task<string>` sebagai pengganti nilai returnnya.
