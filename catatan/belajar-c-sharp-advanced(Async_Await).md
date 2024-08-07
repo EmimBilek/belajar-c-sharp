@@ -123,4 +123,4 @@ public class Program
 ```
 Ada beberapa method yang terdapat pada object `Task` :
 - __`Run(Action action)`__ -> menjalankan `Task` pada thread pool, sehingga tidak mengganggu thread utama aplikasi (misalnya, thread UI).
-- __`WhenAll()`__ -> kode yang dibawah method ini tidak akan dijalankan sebelum semua `Task` yang berada di dalam method `WhenAll()` telah selesai
+- __`WhenAll(params Task[] tasks)`__ -> kode yang dibawah method ini tidak akan dijalankan sebelum semua `Task` yang berada di dalam method `WhenAll()` telah selesai
