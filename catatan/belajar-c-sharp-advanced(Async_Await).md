@@ -21,6 +21,11 @@ __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses 
 
 >__I/O-bound Operations__ prosesnya jauh lebih lambat daripada __CPU-bound Operations__
 
+Penanganan asinkron pada __CPU-bound Operations__ dan __I/O-bound Operations__ diimplementasikan dengan cara yang berbeda :
+<p align="center">
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="500" />
+</p>
+
 ## Keyword `async`
 <sup> **Keyword :** async, await, `Task`, `Task<TReturnType>`</sup>
 
