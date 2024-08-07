@@ -23,7 +23,7 @@ __I/O-bound Operations__ terjadi saat meminta data dari jaringan yang mengakses 
 
 Penanganan asinkron pada __CPU-bound Operations__ dan __I/O-bound Operations__ diimplementasikan dengan cara yang berbeda :
 <p align="center">
-  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="800" />
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="1000" />
 </p>
 
 ## Keyword `async`
