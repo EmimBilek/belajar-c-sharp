@@ -84,3 +84,35 @@ private async Task<string> GetDocumentContentAsync(string fileName)
   return content;
 }
 ```
+
+## Task
+__Apa itu `Task`?__ Dalam pemrograman asinkron di C#, Task adalah objek yang merepresentasikan pekerjaan yang sedang berjalan atau akan berjalan di masa depan. Ini adalah cara C# untuk menangani operasi asinkron secara efisien dan memungkinkan aplikasi untuk tetap responsif dengan menjalankan pekerjaan di latar belakang tanpa mengunci thread utama (misalnya, antarmuka pengguna).
+
+> Object `Task` berada pada namespace `System.Threading.Tasks`
+
+Penggunaan `Task` pada async dan await di C# :
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+    {
+        // Memulai operasi asinkron untuk mengunduh data dari dua URL
+        Task<string> downloadTask1 = DownloadDataAsync("https://example.com/data1");
+        Task<string> downloadTask2 = DownloadDataAsync("https://example.com/data2");
+
+        // Menunggu kedua tugas selesai
+        string[] results = await Task.WhenAll(downloadTask1, downloadTask2);
+
+        // Menampilkan hasil unduhan
+        Console.WriteLine("Data dari URL 1: " + results[0]);
+        Console.WriteLine("Data dari URL 2: " + results[1]);
+    }
+
+    public static async Task<string> DownloadDataAsync(string url)
+    {
+        using HttpClient client = new HttpClient(); // namespace System.Net.Http
+          string data = await client.GetStringAsync(url);
+        return data;
+    }
+}
+```
