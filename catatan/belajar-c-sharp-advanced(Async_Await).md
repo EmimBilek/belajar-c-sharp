@@ -127,4 +127,4 @@ public class Program
 Ada beberapa method yang terdapat pada object `Task` :
 - __`Run(Action action)`__ -> Menjalankan `Task` pada thread pool, sehingga tidak mengganggu thread utama aplikasi (misalnya, thread UI).
 - __`WhenAll(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum semua `Task` yang berada di dalam method `WhenAll()` telah selesai. WhenAll bisa dijalankan secara asinkron dengan menggunakan operator `await`.
-- __`WaitAll(params Task[] tasks)`__ -> Memblokir thread main sehingga kode yang berada di bawah method ini tidak akan dijalankan sebelum semua `Task` terdaftar telah selesai. WaitAll hanya bisa dijalankan secara sinkron
+- __`WaitAll(params Task[] tasks)`__ -> Memblokir thread main sehingga kode yang berada di bawah method ini tidak akan dijalankan sebelum semua `Task` terdaftar telah selesai. WaitAll hanya bisa dijalankan secara sinkron, sehingga tidak bisa menggunakan operator `await` di depannya.
