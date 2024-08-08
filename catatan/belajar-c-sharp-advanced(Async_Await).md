@@ -90,7 +90,7 @@ private async Task<string> GetDocumentContentAsync(string fileName)
 }
 ```
 <p align="center">
-  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="1000" />
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/iobon operation.png" width="1000" />
 </p>
 
 ## Task
