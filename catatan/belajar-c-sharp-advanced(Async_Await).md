@@ -89,6 +89,9 @@ private async Task<string> GetDocumentContentAsync(string fileName)
   return content;
 }
 ```
+<p align="center">
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="1000" />
+</p>
 
 ## Task
 __Apa itu `Task`?__ Dalam pemrograman asinkron di C#, Task adalah objek yang merepresentasikan pekerjaan yang sedang berjalan atau akan berjalan di masa depan. Ini adalah cara C# untuk menangani operasi asinkron secara efisien dan memungkinkan aplikasi untuk tetap responsif dengan menjalankan pekerjaan di latar belakang tanpa mengunci thread utama (misalnya, _user interface_).
