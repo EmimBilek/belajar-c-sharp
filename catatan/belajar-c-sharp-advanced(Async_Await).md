@@ -134,3 +134,7 @@ Ada beberapa method yang terdapat pada object `Task` :
 - DLL (_banyak di document microsoft_)
 
 > Para pengembang/developer, seharusnya jangan menggunakan method `Task.Run()` pada method yang dapat digunakan kembali (_reusable method_), karena developer yang menentukan apakah _reusable method_ itu akan dijalankan secara sinkron atau asinkron
+
+## Best Practice For Async Await
+- Menjalankan method `Task.Run()` secara langsung pada _event handler method_ adalah cara terbaik dalam penggunaan async await.
+- Jangan menjalankan _Main UI Thread_ kecuali memang harus dilakukan.
