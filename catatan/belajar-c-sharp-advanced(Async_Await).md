@@ -138,4 +138,4 @@ Ada beberapa method yang terdapat pada object `Task` :
 
 ## Best Practice For Async Await
 - Menjalankan method `Task.Run()` secara langsung pada _event handler method_ adalah cara terbaik dalam penggunaan async await.
-- Jangan menjalankan _Main UI Thread_ kecuali memang harus dilakukan. Caranya yaitu bisa dengan menggunakan method `ConfigureAwait(bool continueOnCapturedContext)` pada objek task dengan argumen false supaya eksekusi tidak dilanjutkan di main thread, tetapi dilanjutkan di thread lain.
+- Jangan menjalankan _Main UI Thread_ kecuali memang harus dilakukan. Caranya yaitu bisa dengan menggunakan method `ConfigureAwait(bool continueOnCapturedContext)` pada objek task yang menggunakan operator `await` dengan argumen false, supaya eksekusi tidak dilanjutkan di main thread setelah await diselesaikan, tetapi dilanjutkan di thread lain.
