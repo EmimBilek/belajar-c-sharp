@@ -132,3 +132,5 @@ Ada beberapa method yang terdapat pada object `Task` :
 - __`WhenAny(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum ada `Task` yang terdaftar telah selesai.
 - __`Delay(Int32)`__ -> Memberikan waktu jeda dalam milisekon.
 - DLL (_banyak di document microsoft_)
+
+> Method yang bisa digunakan kembali (_reusable method_) tidak disarankan menggunakan `Task`, karena developer yang menentukan apakah _reusable method_ itu akan dijalankan secara sinkron atau asinkron
