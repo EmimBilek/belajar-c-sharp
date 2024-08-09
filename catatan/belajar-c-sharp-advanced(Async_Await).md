@@ -131,10 +131,11 @@ Ada beberapa method yang terdapat pada object `Task` :
 - __`ContinueWith(Action<T> action)`__ -> Membuat kelanjutan setelah task yang menggunakan method ini selesai (melanjutkan method).
 - __`WhenAny(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum ada `Task` yang terdaftar telah selesai.
 - __`Delay(Int32)`__ -> Memberikan waktu jeda dalam milisekon.
+- __`ConfigureAwait(bool continueOnCapturedContext)`__ -> Mengontrol bagaimana konteks sinkronisasi (seperti UI thread atau konteks tertentu lainnya) diatur ketika sebuah await diselesaikan. Jika true maka operasi asinkron akan melanjutkan thread dimana operasi asinkron dijalankan, jika false maka operasi asinkron akan mengabaikan thread dimana operasi asinkron dijalankan. (_lebih jelasnya tanya jipiti_)
 - DLL (_banyak di document microsoft_)
 
 > Para pengembang/developer, seharusnya jangan menggunakan method `Task.Run()` pada method yang dapat digunakan kembali (_reusable method_), karena developer yang menentukan apakah _reusable method_ itu akan dijalankan secara sinkron atau asinkron
 
 ## Best Practice For Async Await
 - Menjalankan method `Task.Run()` secara langsung pada _event handler method_ adalah cara terbaik dalam penggunaan async await.
-- Jangan menjalankan _Main UI Thread_ kecuali memang harus dilakukan.
+- Jangan menjalankan _Main UI Thread_ kecuali memang harus dilakukan. Caranya yaitu bisa dengan menggunakan method `ConfigureAwait(bool continueOnCapturedContext)` pada objek task dengan argumen false supaya eksekusi tidak dilanjutkan di main thread, tetapi dilanjutkan di thread lain.
