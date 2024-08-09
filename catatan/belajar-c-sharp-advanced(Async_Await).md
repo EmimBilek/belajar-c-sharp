@@ -129,7 +129,7 @@ Ada beberapa method yang terdapat pada object `Task` :
 - __`WhenAll(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum semua `Task` yang berada di dalam method `WhenAll()` telah selesai. WhenAll bisa dijalankan secara asinkron dengan menggunakan operator `await`.
 - __`WaitAll(params Task[] tasks)`__ -> Memblokir thread main sehingga kode yang berada di bawah method ini tidak akan dijalankan sebelum semua `Task` terdaftar telah selesai. WaitAll hanya bisa dijalankan secara sinkron, sehingga tidak bisa menggunakan operator `await` di depannya.
 - __`ContinueWith(Action<T> action)`__ -> Membuat kelanjutan setelah task yang menggunakan method ini selesai (melanjutkan method).
-- __`WhenAny(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum ada `Task` yang terdaftar telah selesai.
+- __`WhenAny(params Task[] tasks)`__ -> Memberhentikan kode yang dibawah method ini sebelum ada `Task` yang terdaftar telah selesai. Sama seperti WhenAll, WhenAny juga tidak memblokir thread main.
 - __`Delay(Int32)`__ -> Memberikan waktu jeda dalam milisekon.
 - __`ConfigureAwait(bool continueOnCapturedContext)`__ -> Mengontrol bagaimana konteks sinkronisasi (seperti UI thread atau konteks tertentu lainnya) diatur ketika sebuah await diselesaikan. Jika true maka operasi asinkron akan melanjutkan thread dimana operasi asinkron dijalankan, jika false maka operasi asinkron akan mengabaikan thread dimana operasi asinkron dijalankan. (_lebih jelasnya tanya jipiti_)
 - DLL (_banyak di document microsoft_)
@@ -150,3 +150,6 @@ Ada beberapa method yang terdapat pada object `Task` :
 - On the client side run CPU-bound operations close to the relevant UI event handler method, for example using `Task.Run()` method directly within the relevant button click event handler method
 - If for example a button-click event handler method needs to perform a CPU-bound operation asynchronously on a background thread and subsquently code within that method does not require a return to the UI thread, explicitly let the .net runtime know that it is unnecessary to return to the UI thread once the CPU bound operation has completed by appropiately calling the `ConfigureAwait()` method this can result in a performance boost.
 - Avoid running CPU bound operation on the server side using the `Task.Run()` method
+
+## Cancellation Token Source
+Kamu bisa membatalkan aplikasi konsol async jika tidak ingin menunggnya hingga selesai. Dengan mengikuti contoh dalam topik ini, kamu dapat menambahkan pembatalan ke aplikasi yang mengunduh konten daftar situs web. Kamu dapat membatalkan banyak `Task` dengan mengaitkan instance `CancellationTokenSource` dengan setiap `Task`.
