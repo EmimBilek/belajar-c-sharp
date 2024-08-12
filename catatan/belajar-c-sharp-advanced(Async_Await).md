@@ -52,6 +52,8 @@ string content = await GetFileContentAsStringAsync(fileLocation);
 kode yang berada di bawah operator `await` tidak akan dieksekusi sampai method asinkron yang dipanggil dengan operator `await` telah selesai
 
 ## Contoh penggunaan async dan await dalam kode
+<sup> **Keyword :** thread, thread pool</sup>
+
 ```csharp
 private async void button_click(object sender, EventArgs e)
 {
@@ -103,6 +105,7 @@ __Thread Pool__
 Thread Pool adalah sekelompok thread menganggur yang telah dibuat sebelumnya dan siap untuk diberikan pekerjaan. Jadi thread pool dibuat sehingga thread tersedia untuk suatu program yang berarti ketika suatu program memerlukan thread, program dapat memperoleh thread dari thread pool daripada mengeluarkan biaya overhead untuk membuat instance thread baru.
 
 ## Task
+<sup> **Keyword :** `Task`, `Task<TResult>`</sup>
 __Apa itu `Task`?__ Dalam pemrograman asinkron di C#, Task adalah objek yang merepresentasikan pekerjaan yang sedang berjalan atau akan berjalan di masa depan. Ini adalah cara C# untuk menangani operasi asinkron secara efisien dan memungkinkan aplikasi untuk tetap responsif dengan menjalankan pekerjaan di latar belakang tanpa mengunci thread utama (misalnya, _user interface_).
 
 > Object `Task` berada pada namespace `System.Threading.Tasks`
@@ -161,6 +164,7 @@ Ada beberapa method yang terdapat pada object `Task` :
 - Avoid running CPU bound operation on the server side using the `Task.Run()` method
 
 ## Membatalkan Operasi Asinkron
+<sup> **Keyword :** `CancellationTokenSource`, `CancellationToken`</sup>
 Kamu bisa membatalkan aplikasi konsol async jika tidak ingin menunggnya hingga selesai. Dengan mengikuti contoh dalam topik ini, kamu dapat menambahkan pembatalan ke aplikasi yang mengunduh konten daftar situs web. Kamu dapat membatalkan banyak `Task` dengan mengaitkan instance `CancellationTokenSource` dengan setiap `Task`.
 
 > `CancellationTokenSource` ada di namespace `System.Threading`
