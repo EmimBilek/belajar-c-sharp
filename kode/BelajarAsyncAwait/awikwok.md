@@ -1,1 +1,0 @@
-hahay palpale
