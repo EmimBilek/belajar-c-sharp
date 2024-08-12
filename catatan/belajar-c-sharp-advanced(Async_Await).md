@@ -212,6 +212,7 @@ class Program
 ## Ringkasan
 <sup> **Kode :** BelajarAsyncAwait</sup>
 
+
 - Kita telah mengetahui pola yang direkomendasikan Microsoft untuk mengimplementasikan kode guna menjalankan suatu operasi atau beberapa operasi secara asinkron, yaitu “Pola Asinkron Berbasis Tugas”.
 
 - Kita membahas bahwa menjalankan operasi pemblokiran CPU tertentu yang berjalan relatif lama dapat berdampak buruk pada kinerja aplikasi kita. Untuk mengurangi efek negatif pada pengalaman pengguna (UX), kita dapat menjalankan operasi pemblokiran CPU yang berjalan relatif lama ini secara asinkron.
