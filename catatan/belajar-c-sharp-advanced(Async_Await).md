@@ -210,6 +210,7 @@ class Program
 ```
 
 ## Ringkasan
+<sup> **Kode :** BelajarAsyncAwait</sup>
 
 - Kita telah mengetahui pola yang direkomendasikan Microsoft untuk mengimplementasikan kode guna menjalankan suatu operasi atau beberapa operasi secara asinkron, yaitu “Pola Asinkron Berbasis Tugas”.
 
