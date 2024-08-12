@@ -1,0 +1,6 @@
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\bin\Debug\MetodeMasak.dll
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\bin\Debug\MetodeMasak.pdb
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\obj\Debug\MetodeMasak.csproj.AssemblyReference.cache
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\obj\Debug\MetodeMasak.csproj.CoreCompileInputs.cache
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\obj\Debug\MetodeMasak.dll
+C:\kerjaan emim\belajar c#\BelajarAsyncAwait\async_await_belajar_masak\MetodeMasak\obj\Debug\MetodeMasak.pdb
