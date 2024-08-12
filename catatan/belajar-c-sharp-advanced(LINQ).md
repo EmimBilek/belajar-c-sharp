@@ -6,4 +6,4 @@ __LINQ__ merupakan singkatan dari _Language Intregrated Query_. LINQ adalah nama
 
 Kamu bisa mengetik query LINQ di C# untuk _SQL Server database_, Dokumen XML, ADO.NET Dataset, dan segala objek koleksi yang mendukung antarmuka (interface) `IEnumerable` atau generik `IEnumerable<T>` (seperti `Array`, `List<T>`, `Dictionary<K, V>`, dan semua kelas yang mengimplementasikan `IEnumerable`).
 
-> LINQ ada di namespace `System.LINQ`, jangan lupa untuk menambahkan namespace-nya jika ingin menggunakan LINQ
+> LINQ ada di namespace `System.Linq`, jangan lupa untuk menambahkan namespace-nya jika ingin menggunakan LINQ
