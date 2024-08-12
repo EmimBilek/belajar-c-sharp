@@ -41,4 +41,4 @@ Query LINQ di atas merupakan implementasi/menghasilkan hasil yang sama dari Quer
 SELECT e.Id, e.FirstName, e.LastName, d.ShortName, d.LongName, e.AnnualSalary, e.IsManager FROM Employee e JOIN Department d ON e.DepartmentId = d.Id
 ```
 
-> Catat bahwa Microsoft menyarankan untuk menggunakan Query jika memungkinkan dibandingkan menggunakan extension method yang relevan untuk tujuan yang sama. Ini karena keuntungan keterbacaan yang disediakan dalam sintaks query yang relevan. Tetapi ada beberapa extension method yang hanya disediakan untuk khusus dan tidak bisa diimplementasikan menggunakan Query, seperti `Average()`, `Max()`, `Min()`, DLL.
+> Catat bahwa Microsoft menyarankan untuk menggunakan Query jika memungkinkan dibandingkan menggunakan extension method yang relevan untuk tujuan yang sama. Ini karena keuntungan keterbacaan yang disediakan dalam sintaks query yang relevan. Tetapi ada beberapa waktu ketika kamu perlu menggunakan extension method, karena ada method yang hanya disediakan khusus dan tidak bisa diimplementasikan menggunakan Query, seperti `Average()`, `Max()`, `Min()`, DLL.
