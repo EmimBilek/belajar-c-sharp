@@ -34,7 +34,7 @@ var selectEmpAndDept = from emp in employees
                            IsManager = emp.IsManager
                        };
 ```
-Query LINQ di atas merupakan implementasi dari Query SQL di bawah ini :
+Query LINQ di atas merupakan implementasi/menghasilkan hasil yang sama dari Query SQL di bawah ini :
 ```SQL
 SELECT e.Id, e.FirstName, e.LastName, d.ShortName, d.LongName, e.AnnualSalary, e.IsManager FROM Employee e JOIN Department d ON e.DepartmentId = d.Id
 ```
