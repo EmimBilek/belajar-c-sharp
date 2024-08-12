@@ -93,6 +93,15 @@ private async Task<string> GetDocumentContentAsync(string fileName)
   <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/iobon operation.png" width="1000" />
 </p>
 
+### Pengertian dari Thread dan Thread pool
+__Thread__
+
+Thread dalam ilmu komputer adalah kependekan dari thread eksekusi. Thread adalah cara suatu program membagi dirinya menjadi dua atau lebih tugas/task yang berjalan secara bersamaan (atau semu secara bersamaan).
+
+__Thread Pool__
+
+Thread Pool adalah sekelompok thread menganggur yang telah dibuat sebelumnya dan siap untuk diberikan pekerjaan. Jadi kumpulan thread dibuat sehingga thread tersedia untuk suatu program yang berarti ketika suatu program memerlukan thread, program dapat memperoleh thread dari thread pool daripada mengeluarkan biaya overhead untuk membuat instance thread baru.
+
 ## Task
 __Apa itu `Task`?__ Dalam pemrograman asinkron di C#, Task adalah objek yang merepresentasikan pekerjaan yang sedang berjalan atau akan berjalan di masa depan. Ini adalah cara C# untuk menangani operasi asinkron secara efisien dan memungkinkan aplikasi untuk tetap responsif dengan menjalankan pekerjaan di latar belakang tanpa mengunci thread utama (misalnya, _user interface_).
 
