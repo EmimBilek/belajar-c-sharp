@@ -34,7 +34,11 @@ var selectEmpAndDept = from emp in employees
                            IsManager = emp.IsManager
                        };
 ```
+Pada query `select` di atas, itu akan menghasilkan tipe baru yang anonim (Anonym type/tipe yang tidak diketahui). Dengan menggunakan `var`, maka otomatis akan mengidentifikasi tipe dari hasil query di atas.
+
 Query LINQ di atas merupakan implementasi/menghasilkan hasil yang sama dari Query SQL di bawah ini :
 ```SQL
 SELECT e.Id, e.FirstName, e.LastName, d.ShortName, d.LongName, e.AnnualSalary, e.IsManager FROM Employee e JOIN Department d ON e.DepartmentId = d.Id
 ```
+
+> Catat bahwa Microsoft menyarankan untuk menggunakan sintaks kueri jika memungkinkan dibandingkan menggunakan metode ekstensi yang relevan untuk tujuan yang sama. Tetapi ada beberapa method yang hanya disediakan untuk method query, seperti `Average()`, `Max()`, `Min()`, DLL.
