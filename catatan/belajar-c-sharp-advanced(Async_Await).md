@@ -160,5 +160,47 @@ Ada beberapa method yang terdapat pada object `Task` :
 - If for example a button-click event handler method needs to perform a CPU-bound operation asynchronously on a background thread and subsquently code within that method does not require a return to the UI thread, explicitly let the .net runtime know that it is unnecessary to return to the UI thread once the CPU bound operation has completed by appropiately calling the `ConfigureAwait()` method this can result in a performance boost.
 - Avoid running CPU bound operation on the server side using the `Task.Run()` method
 
-## Cancellation Token Source
+## Membatalkan Operasi Asinkron
 Kamu bisa membatalkan aplikasi konsol async jika tidak ingin menunggnya hingga selesai. Dengan mengikuti contoh dalam topik ini, kamu dapat menambahkan pembatalan ke aplikasi yang mengunduh konten daftar situs web. Kamu dapat membatalkan banyak `Task` dengan mengaitkan instance `CancellationTokenSource` dengan setiap `Task`.
+
+> `CancellationTokenSource` ada di namespace `System.Threading`
+
+Cara menggunakan `CancellationTokenSource` pada pemrograman asinkron :
+```csharp
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        CancellationTokenSource cts = new CancellationTokenSource();
+        CancellationToken token = cts.Token;
+
+        Task task = SomeOperationAsync(token);
+
+        // Batalkan operasi setelah 3 detik
+        cts.CancelAfter(3000);
+
+        try
+        {
+            await task;
+        }
+        catch (OperationCanceledException)
+        {
+            Console.WriteLine("Operasi dibatalkan.");
+        }
+    }
+
+    static async Task SomeOperationAsync(CancellationToken cancellationToken)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            await Task.Delay(1000); // Simulasi operasi
+            Console.WriteLine($"Iteration {i}");
+        }
+    }
+}
+```
