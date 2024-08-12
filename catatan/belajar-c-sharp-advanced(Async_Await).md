@@ -204,3 +204,19 @@ class Program
     }
 }
 ```
+
+## Ringkasan
+
+- Kita telah mengetahui pola yang direkomendasikan Microsoft untuk mengimplementasikan kode guna menjalankan suatu operasi atau beberapa operasi secara asinkron, yaitu “Pola Asinkron Berbasis Tugas”.
+
+- Kita membahas bahwa menjalankan operasi pemblokiran CPU tertentu yang berjalan relatif lama dapat berdampak buruk pada kinerja aplikasi kita. Untuk mengurangi efek negatif pada pengalaman pengguna (UX), kita dapat menjalankan operasi pemblokiran CPU yang berjalan relatif lama ini secara asinkron.
+
+- Untuk mengimplementasikan kode asinkron dengan benar, pertama-tama kita harus mengetahui sifat tugas atau operasi yang ingin kita jalankan secara asinkron. Pertama-tama kita perlu mengajukan pertanyaan; "Apakah operasi yang relevan merupakan operasi yang terikat CPU atau apakah operasi yang relevan merupakan operasi yang terikat I/O?"
+
+- Di bagian pertama dokumen ini, kami berfokus pada menjalankan operasi terikat I/O secara asinkron menggunakan modifier `async`, operator `await`, dan objek `Task` atau `Task<TResult>`.
+
+- Di bagian kedua dari dokumen ini kita melihat menjalankan operasi yang terikat CPU secara asinkron menggunakan method `Task.Run()` pada thread latar belakang. Kita juga telah melihat Method `Task.WaitAll()`.
+
+- Di bagian ketiga seri video ini, kita melihat praktik terbaik saat mengimplementasikan operasi di C# agar berjalan secara asinkron. Kita juga melihat Method `Task.WhenAll()` dan perbedaannya dengan method `Task.WaitAll()`.
+
+- Dalam dokumen ini, kita melihat bagaimana kami dapat memberikan pengguna kemampuan untuk membatalkan satu atau lebih operasi asinkron yang berjalan sebelum operasi terkait selesai, menggunakan objek `CancelationTokenSource`. Kita juga mendemonstrasikan bagaimana kita dapat mengotomatiskan pembatalan operasi asinkron yang berjalan setelah jangka waktu tertentu dengan memanggil metode `CancelAfter()` pada objek `CancellationTokenSource` yang relevan.
