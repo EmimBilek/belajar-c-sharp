@@ -111,5 +111,38 @@ Console.ReadKey();
 ```
 ### Deferred Execution & Immediate Execution
 
-- Deferred Execution: Query hanya dieksekusi saat hasilnya dibutuhkan, yang memungkinkan untuk operasi yang lebih efisien dan konsisten dengan data terbaru.
-- Immediate Execution: Query dieksekusi segera, dan hasilnya disimpan dalam memori, memberikan hasil yang prediktif tetapi bisa mengonsumsi lebih banyak resource.
+__Deferred Execution__
+Query hanya dieksekusi saat hasilnya dibutuhkan, yang memungkinkan untuk operasi yang lebih efisien dan konsisten dengan data terbaru.
+```csharp
+var results = from emp in employees
+              where emp.AnnualSalary < 50000
+              select new
+              {
+                  FullName = emp.FirstName + " " + emp.LastName,
+                  AnnualSalary = emp.AnnualSalary
+              }; // query hanya akan disimpan, tidak akan dieksekusi karena belum dibutuhkan
+//Menambahkan kelas 'Employee' baru
+employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true, DepartmentId = 3});
+
+foreach (var item in results) // query akan dieksekusi di sini, karena akan dibutuhkan
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
+```
+kelas `Employee` baru yang ditambahkan ke dalam `employees` akan terdaftar ke dalam variable 'results'
+
+__Immediate Execution__
+Query dieksekusi segera, dan hasilnya disimpan dalam memori, memberikan hasil yang prediktif tetapi bisa mengonsumsi lebih banyak resource.
+```csharp
+var results = (from emp in employees
+              where emp.AnnualSalary < 50000
+              select new
+              {
+                  FullName = emp.FirstName + " " + emp.LastName,
+                  AnnualSalary = emp.AnnualSalary
+              }).ToList(); // query akan dieksekusi langsung, kemudian hasil query disimpan ke dalam variable 'results'
+//Menambahkan kelas 'Employee' baru
+employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true, DepartmentId = 3}); // kelas baru akan ditambahkan ke dalam list 'employees', tetapi tidak terdaftar/bertambah pada variable 'results'
+
+foreach (var item in results) // kelas yang baru ditambahkan tidak akan ke-print disini
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
+```
+kelas `Employee` baru yang ditambahkan ke dalam `employees` tidak terdaftar ke dalam variable `results`
