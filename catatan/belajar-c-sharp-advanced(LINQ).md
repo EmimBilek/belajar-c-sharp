@@ -41,5 +41,6 @@ Query LINQ di atas merupakan implementasi/menghasilkan hasil yang sama dari Quer
 ```SQL
 SELECT e.Id, e.FirstName, e.LastName, d.ShortName, d.LongName, e.AnnualSalary, e.IsManager FROM Employee e JOIN Department d ON e.DepartmentId = d.Id
 ```
+Perbedaan dari Query LINQ dan umumnya Query SQL yaitu keyword `from` di LINQ terletak pada awal Query sebelum keyword `select`, sedangkan `from` pada umumnya Query SQL terletak pada akhir Query/setelah keyword `select`
 
 > Catat bahwa Microsoft menyarankan untuk menggunakan Query jika memungkinkan dibandingkan menggunakan extension method yang relevan untuk tujuan yang sama. Ini karena keuntungan keterbacaan yang disediakan dalam sintaks query yang relevan. Tetapi ada beberapa waktu ketika kamu perlu menggunakan extension method, karena ada method yang hanya disediakan khusus dan tidak bisa diimplementasikan menggunakan Query, seperti `Average()`, `Max()`, `Min()`, DLL.
