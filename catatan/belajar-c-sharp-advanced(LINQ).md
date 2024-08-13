@@ -74,3 +74,21 @@ foreach (var item in results)
 
 Console.ReadKey();
 ```
+Menggunakan query syntax :
+```csharp
+List<Department> departments = Data.GenerateDepartments();
+List<Employee> employees = Data.GenerateEmployees();
+
+var results = from emp in employees
+              where emp.AnnualSalary < 50000
+              select new
+              {
+                  FullName = emp.FirstName + " " + emp.LastName,
+                  AnnualSalary = emp.AnnualSalary
+              };
+
+foreach (var item in results)
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
+
+Console.ReadKey();
+```
