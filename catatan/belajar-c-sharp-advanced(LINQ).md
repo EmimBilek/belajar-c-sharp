@@ -111,7 +111,7 @@ Console.ReadKey();
 ```
 ### Deferred Execution & Immediate Execution
 
-__Deferred Execution__
+__Deferred Execution__ :
 Query hanya dieksekusi saat hasilnya dibutuhkan, yang memungkinkan untuk operasi yang lebih efisien dan konsisten dengan data terbaru.
 ```csharp
 var results = from emp in employees
@@ -129,7 +129,7 @@ foreach (var item in results) // query akan dieksekusi di sini, karena akan dibu
 ```
 kelas `Employee` baru yang ditambahkan ke dalam `employees` akan terdaftar ke dalam variable 'results'
 
-__Immediate Execution__
+__Immediate Execution__ :
 Query dieksekusi segera, dan hasilnya disimpan dalam memori, memberikan hasil yang prediktif tetapi bisa mengonsumsi lebih banyak resource.
 ```csharp
 var results = (from emp in employees
