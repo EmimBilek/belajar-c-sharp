@@ -36,6 +36,9 @@ var selectEmpAndDept = from emp in employees
                        };
 ```
 Pada query `select` di atas, itu akan menghasilkan tipe baru yang anonim (Anonym type/tipe yang tidak diketahui). Dengan menggunakan `var`, maka otomatis akan mengidentifikasi tipe dari hasil query di atas.
+<p align="center">
+  <img src="https://github.com/EmimBilek/belajar-c-sharp/blob/main/catatan/asinkronus handling.png" width="1000" />
+</p>
 
 Query LINQ di atas merupakan implementasi/menghasilkan hasil yang sama dari Query SQL di bawah ini :
 ```SQL
