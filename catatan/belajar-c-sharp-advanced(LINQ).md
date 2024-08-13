@@ -142,7 +142,9 @@ var results = (from emp in employees
               }).ToList(); // query akan dieksekusi langsung, kemudian hasil query disimpan ke dalam variable 'results'
 
 //Menambahkan kelas 'Employee' baru
-employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true, DepartmentId = 3}); // kelas baru akan ditambahkan ke dalam list 'employees', tetapi tidak terdaftar/bertambah pada variable 'results'
+employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true,
+DepartmentId = 3}); /* kelas baru akan ditambahkan ke dalam list 'employees',
+tetapi tidak terdaftar/bertambah pada variable 'results' */
 
 foreach (var item in results) // kelas yang baru ditambahkan tidak akan ke-print disini
     Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
