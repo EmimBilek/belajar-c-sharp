@@ -121,6 +121,7 @@ var results = from emp in employees
                   FullName = emp.FirstName + " " + emp.LastName,
                   AnnualSalary = emp.AnnualSalary
               }; // query hanya akan disimpan, tidak akan dieksekusi karena belum dibutuhkan
+
 //Menambahkan kelas 'Employee' baru
 employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true, DepartmentId = 3});
 
@@ -139,6 +140,7 @@ var results = (from emp in employees
                   FullName = emp.FirstName + " " + emp.LastName,
                   AnnualSalary = emp.AnnualSalary
               }).ToList(); // query akan dieksekusi langsung, kemudian hasil query disimpan ke dalam variable 'results'
+
 //Menambahkan kelas 'Employee' baru
 employees.Add(new Employee{Id = 5, FirstName = "Awik", LastName = "Wok", AnnualSalary = 32000m, IsManager = true, DepartmentId = 3}); // kelas baru akan ditambahkan ke dalam list 'employees', tetapi tidak terdaftar/bertambah pada variable 'results'
 
