@@ -44,3 +44,18 @@ SELECT e.Id, e.FirstName, e.LastName, d.ShortName, d.LongName, e.AnnualSalary, e
 Perbedaan dari Query LINQ dan umumnya Query SQL yaitu keyword `from` di LINQ terletak pada awal Query sebelum keyword `select`, sedangkan `from` pada umumnya Query SQL terletak pada akhir Query/setelah keyword `select`
 
 > Catat bahwa Microsoft menyarankan untuk menggunakan Query jika memungkinkan dibandingkan menggunakan extension method yang relevan untuk tujuan yang sama. Ini karena keuntungan keterbacaan yang disediakan dalam sintaks query yang relevan. Tetapi ada beberapa waktu ketika kamu perlu menggunakan extension method, karena ada method yang hanya disediakan khusus dan tidak bisa diimplementasikan menggunakan Query, seperti `Average()`, `Max()`, `Min()`, DLL.
+
+## Query LINQ
+
+
+Materi yang dibahas pada segmen ini yaitu :
+- Query LINQ Select, Where, Join, GroupJoin
+- _Method Chaining_
+- _Deferred Execution of LINQ Queries_ dan _Immediate Execution of LINQ Queries_
+- keyword `yield`
+
+### Query LINQ Select, Where, Join, GroupJoin
+Penggabungan `Select` dan `Where` dengan menggunakan method syntax :
+```csharp
+
+```
