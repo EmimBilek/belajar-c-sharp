@@ -60,5 +60,17 @@ Materi yang dibahas pada segmen ini yaitu :
 ### Query LINQ Select, Where, Join, GroupJoin
 Penggabungan `Select` dan `Where` dengan menggunakan method syntax :
 ```csharp
+List<Department> departments = Data.GenerateDepartments();
+List<Employee> employees = Data.GenerateEmployees();
 
+var results = employees.Select(e => new
+{
+    FullName = e.FirstName + " " + e.LastName,
+    AnnualSalary = e.AnnualSalary
+}).Where(e => e.AnnualSalary < 50000m);
+
+foreach (var item in results)
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
+
+Console.ReadKey();
 ```
