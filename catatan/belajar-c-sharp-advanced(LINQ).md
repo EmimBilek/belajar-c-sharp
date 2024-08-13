@@ -109,3 +109,7 @@ foreach (var item in results)
 
 Console.ReadKey();
 ```
+### Deferred Execution & Immediate Execution
+
+- Deferred Execution: Query hanya dieksekusi saat hasilnya dibutuhkan, yang memungkinkan untuk operasi yang lebih efisien dan konsisten dengan data terbaru.
+- Immediate Execution: Query dieksekusi segera, dan hasilnya disimpan dalam memori, memberikan hasil yang prediktif tetapi bisa mengonsumsi lebih banyak resource.
