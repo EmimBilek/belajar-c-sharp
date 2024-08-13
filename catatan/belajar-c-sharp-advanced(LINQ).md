@@ -74,6 +74,7 @@ foreach (var item in results)
 
 Console.ReadKey();
 ```
+Pada kode diatas, kita telah mengimplementasikan _Method Chaining_. Apa itu _Method Chaining_? _Method Chaining_ adalah teknik pemrograman untuk memanggil beberapa metode secara berurutan pada satu objek dalam satu pernyataan (menggunakan method setelah method). Setiap metode dalam rantai (chain) mengembalikan objek, biasanya objek yang sama, yang kemudian digunakan untuk memanggil metode berikutnya. Biasanya method chaining mengembalikan tipe yang sama dari objek yang di _chaining_ (biasanya menggunakan keyword `this`).
 Menggunakan query syntax :
 ```csharp
 List<Department> departments = Data.GenerateDepartments();
