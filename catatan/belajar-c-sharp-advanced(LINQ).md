@@ -83,9 +83,11 @@ var results = employees.Select(e => new
             }).Where(e => e.AnnualSalary < 50000m);
 ```
 ```csharp
+//chaining method Select()
 IEnumerable<'a> IEnumerable<Employee>.Select<Employee, 'a> (Func<Employee, 'a> selector)
 ```
 ```csharp
+//chaining method Where()
 IEnumerable<'a> IEnumerable<'a>.Where<'a> (Func<'a, bool> predicate)
 ```
 
