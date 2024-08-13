@@ -17,6 +17,7 @@ Ada dua cara untuk menggunakan LINQ, yaitu dengan menggunakan extension method (
 var filteredEmployee = employees.Where((employee) => !employee.IsManager);
 ```
 Method `Where()` merupakan extension method dari IEnumerable milik LINQ (tidak bisa digunakan jika namespace LINQ tidak ditambahkan). Selain dari method `Where()` ada banyak method yang bisa digunakan dari LINQ, seperti `First()`, `OrderBy()`, `GroupBy()`, dan masih banyak lagi.
+> IEnumerable dan IQueryable merupakan anggota dari namespace `System.Linq`.
 
 - Menggunakan Query LINQ :
 ```csharp
