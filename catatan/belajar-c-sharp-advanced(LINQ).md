@@ -10,7 +10,7 @@ seperti mengurutkan, menyaring/filtering, pengelompokkan, dan masih banyak lagi 
 > LINQ ada di namespace `System.Linq`, jangan lupa untuk menambahkan namespace-nya jika ingin menggunakan LINQ
 
 ## Cara menggunakan LINQ
-Ada dua cara untuk menggunakan LINQ, yaitu dengan menggunakan extension method dan dengan menggunakan query LINQ :
+Ada dua cara untuk menggunakan LINQ, yaitu dengan menggunakan extension method (method LINQ) dan dengan menggunakan query LINQ :
 
 - Menggunakan Method LINQ :
 ```csharp
