@@ -57,7 +57,7 @@ Materi yang dibahas pada segmen ini yaitu :
 - _Deferred Execution of LINQ Queries_ dan _Immediate Execution of LINQ Queries_
 - keyword `yield`
 
-### Query LINQ Select, Where, Join, GroupJoin
+### Query LINQ Select, Where, Join, GroupJoin - Method Chaining
 Penggabungan `Select` dan `Where` dengan menggunakan method syntax :
 ```csharp
 List<Department> departments = Data.GenerateDepartments();
@@ -150,3 +150,18 @@ foreach (var item in results) // kelas yang baru ditambahkan tidak akan ke-print
     Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}");
 ```
 kelas `Employee` baru yang ditambahkan ke dalam `employees` tidak terdaftar ke dalam variable `results`
+
+### Keyword `yield`
+Keyword `yield` digunakan untuk mengembalikan nilai satu per satu pada method yang membutuhkan return banyak nilai (koleksi seperti array, list, dll). Biasanya keyword `yield` ini berada di dalam perulangan.
+
+Contoh penggunaan yield :
+```csharp
+public List<Employee> GetFilteredEmployee(List<Employee> employees, Predicate<Employee> predicate)
+{
+  foreach (Employee employee in employees)
+  {
+    if (predicate(employee))
+      yield return employee;
+  }
+}
+```
