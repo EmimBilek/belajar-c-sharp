@@ -243,3 +243,5 @@ public List<Employee> GetFilteredEmployee(List<Employee> employees, Predicate<Em
   }
 }
 ```
+
+## LINQ Operators
