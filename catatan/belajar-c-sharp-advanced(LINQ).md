@@ -319,3 +319,23 @@ foreach(var result in results)
 }
 ```
 > Menggunakan LINQ dengan cara sintaks query harus diakhiri dengan operator `select` atau operator `group`. Pada contoh di atas, dapat dilihat bahwa sintaks query tidak diakhiri dengan operator `select`, melainkan operator `group`.
+
+### Quantifier (Penghitung)
+Digunakan untuk mengecek apakah suatu koleksi memenuhi suatu kriteria
+
+-__Sintaks method : `All()`, `Any()`, `Contains()`__
+```csharp
+var salary = 50000m;
+bool result = employeeList.All(emp => emp.AnnualSalary > salary);
+bool result2 = employeeList.Any(emp => emp.AnnualSalary > salary);
+
+if (result)
+    Console.WriteLine($"All employee has salary more than " + salary);
+else
+    Console.WriteLine($"Not all employee has salary more than " + salary);
+
+if (result2)
+    Console.WriteLine($"There is employee that has salary more than " + salary);
+else
+    Console.WriteLine($"Not any employee has salary more than " + salary);
+```
