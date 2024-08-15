@@ -245,3 +245,34 @@ public List<Employee> GetFilteredEmployee(List<Employee> employees, Predicate<Em
 ```
 
 ## LINQ Operators
+### Sorting
+- __Sintaks method : `OrderBy()`, `OrderByDescending()`, `ThenBy()`, `ThenByDescending()`__
+__OrderBy()__ digunakan untuk mengurutkan sebuah koleksi dari kecil ke besar, sedangkan __OrderByDescending()__ adalah kebalikannya. Lalu __ThenBy()__ digunakan untuk ketentuan pengurutan yang selanjutnya setelah OrderBy atau OrderBy descending, sedangkan __ThenByDescending()__ adalah kebalikan dari ThenBy. Contoh penggunaan :
+```csharp
+var results = departmentList.Join(employeeList,
+        department => department.Id,
+        employee => employee.DepartmentId,
+        (department, employee) => new
+        {
+            FullName = employee.FirstName + " " + employee.LastName,
+            AnnualSalary = employee.AnnualSalary,
+            DepartmentName = department.LongName
+        }
+    ).OrderBy(o => o.DepartmentName).ThenByDescending(o => o.AnnualSalary);
+```
+
+- __Sintaks query__
+  Penggunaan sorting dengan menggunakan Sintaks query lebih ringkas dibanding dengan sintaks method. Cara sorting menggunakan sintaks query hanya perlu menggunakan operator `orderby` di akhir query sebelum `select`. Jika ingin mendapatkan hasil yang sama dengan contoh sorting diatas dengan menggunakan `ThenBy()`, maka hanya perlu menambahkan koma setelah ketentuan sorting pertama :
+```csharp
+var results = from departments in departmentList
+              join employees in employeeList on
+              departments.Id equals employees.DepartmentId
+              where employees.AnnualSalary > 50000
+              orderby employees.FirstName + " " + employees.LastName, employees.AnnualSalary descending
+              select new
+              {
+                  FullName = employees.FirstName + " " + employees.LastName,
+                  AnnualSalary = employees.AnnualSalary,
+                  DepartmentName = departments.LongName
+              };
+```
