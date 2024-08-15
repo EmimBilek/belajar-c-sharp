@@ -58,7 +58,7 @@ Materi yang dibahas pada segmen ini yaitu :
 - keyword `yield`
 
 ### Query LINQ Select, Where, Join, GroupJoin - Method Chaining
-Penggabungan `Select` dan `Where` dengan menggunakan method syntax :
+#### Penggabungan `Select` dan `Where` dengan menggunakan method syntax :
 ```csharp
 List<Department> departments = Data.GenerateDepartments();
 List<Employee> employees = Data.GenerateEmployees();
@@ -109,6 +109,84 @@ foreach (var item in results)
 
 Console.ReadKey();
 ```
+#### Implementasi sintaks menggunakan method join dan groupjoin
+__Join (sintaks method):__
+```csharp
+var results = departmentList.Join(employeeList,
+        department => department.Id,
+        employee => employee.DepartmentId,
+        (department, employee) => new
+        {
+            FullName = employee.FirstName + " " + employee.LastName,
+            AnnualSalary = employee.AnnualSalary,
+            DepartmentName = department.LongName
+        }
+    );
+
+foreach (var item in results)
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}\t{item.DepartmentName}");
+```
+
+__Join (sintaks query) :__
+```csharp
+var results = from departments in departmentList
+              join employees in employeeList on
+              departments.Id equals employees.DepartmentId
+              where employees.AnnualSalary > 50000
+              select new
+              {
+                  FullName = employees.FirstName + " " + employees.LastName,
+                  AnnualSalary = employees.AnnualSalary,
+                  DepartmentName = departments.LongName
+              };
+
+foreach (var item in results)
+    Console.WriteLine($"{item.FullName,-20} {item.AnnualSalary,10}\t{item.DepartmentName}");
+```
+
+__Group Join (sintaks method) :__
+```csharp
+var results = departmentList.GroupJoin(employeeList,
+        dept => dept.Id,
+        emp => emp.DepartmentId,
+        (depart, employeesGroup) => new
+        {
+            Employees = employeesGroup,
+            DepartmentName = depart.LongName
+        });
+
+foreach (var item in results)
+{
+    Console.WriteLine($" Department Name : {item.DepartmentName}");
+    foreach (var emp in item.Employees)
+    {
+        Console.WriteLine($"\t{emp.FirstName + " " + emp.LastName}");
+    }
+}
+```
+__Group Join (sintaks query) :__
+```csharp
+var results = from dep in departmentList
+              join emp in employeeList
+              on dep.Id equals emp.DepartmentId
+              into employeesGroup
+              select new
+              {
+                  Employees = employeesGroup,
+                  DepartmentName = dep.LongName
+              };
+
+foreach (var item in results)
+{
+    Console.WriteLine($" Department Name : {item.DepartmentName}");
+    foreach (var emp in item.Employees)
+    {
+        Console.WriteLine($"\t{emp.FirstName + " " + emp.LastName}");
+    }
+}
+```
+Dilihat dari sintaks join di atas, fungsi dari sintaks join yaitu memungkinkan kita untuk menggabungkan dua objek koleksi berdasarkan suatu kunci (dalam konteks ini, yang menjadi kuncinya adalah id departemen). Method join hanya mendukung inner join, jadi hanya bisa mendapatkan data yang memiliki relasi dari kedua objek koleksi. Sedangkan method group join mendukung left join/right join, sehingga memungkinkan untuk memanggil data yang terelasi dan juga tidak terelasi dengan objek koleksi lain.
+
 ### Deferred Execution & Immediate Execution
 
 __Deferred Execution__ :
