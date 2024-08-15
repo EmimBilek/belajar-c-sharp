@@ -323,7 +323,7 @@ foreach(var result in results)
 ### Quantifier (Penghitung)
 Digunakan untuk mengecek apakah suatu koleksi memenuhi suatu kriteria
 
--__Sintaks method : `All()`, `Any()`, `Contains()`__
+- __Sintaks method : `All()`, `Any()`, `Contains()`__
 ```csharp
 var salary = 50000m;
 bool result = employeeList.All(emp => emp.AnnualSalary > salary);
@@ -339,3 +339,5 @@ if (result2)
 else
     Console.WriteLine($"Not any employee has salary more than " + salary);
 ```
+- `All()` : mengecek apakah semua elemen memenuhi kriteria dari suatu koleksi (return bool)
+- `Any()` : mengecek apakah ada elemen yang memenuhi kriteria dari suatu koleksi (return bool)
