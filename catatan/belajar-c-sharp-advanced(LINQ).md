@@ -281,6 +281,7 @@ var results = from departments in departmentList
 ### Grouping
 Digunakan untuk mengelompokkan data berdasarkan kunci tertentu (pada konteks kali ini, kuncinya adalah departemen id)
 - __Sintaks method : `GroupBy()`__
+```csharp
 var results = employeeList.GroupBy(emp => emp.DepartmentId);
 
 foreach (var result in results)
@@ -291,7 +292,7 @@ foreach (var result in results)
         Console.WriteLine($"\t{emp.FirstName + " " + emp.LastName}");
     }
 }
-
+```
 - __Sintaks query (operator `group` & `by`)__
 ```csharp
 var results = from emp in employeeList
