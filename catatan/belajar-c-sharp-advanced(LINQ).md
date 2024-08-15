@@ -307,4 +307,4 @@ foreach(var result in results)
     }
 }
 ```
-> Menggunakan LINQ dengan cara sintaks query harus diakhiri dengan operator `select` atau operator `group`. Pada contoh di atas, dapat dilihat bahwa sintaks query diakhiri dengan operator `group`
+> Menggunakan LINQ dengan cara sintaks query harus diakhiri dengan operator `select` atau operator `group`. Pada contoh di atas, dapat dilihat bahwa sintaks query tidak diakhiri dengan operator `select`, melainkan operator `group`.
