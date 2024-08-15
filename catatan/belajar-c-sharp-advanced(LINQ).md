@@ -280,9 +280,10 @@ var results = from departments in departmentList
 ```
 ### Grouping
 Digunakan untuk mengelompokkan data berdasarkan kunci tertentu (pada konteks kali ini, kuncinya adalah departemen id)
-- __Sintaks method : `GroupBy()`__
+- __Sintaks method : `GroupBy(), ToLookup()`__
 ```csharp
 var results = employeeList.GroupBy(emp => emp.DepartmentId);
+var results2 = employeeList.ToLookup(emp => emp.DepartmentId);
 
 foreach (var result in results)
 {
@@ -292,7 +293,17 @@ foreach (var result in results)
         Console.WriteLine($"\t{emp.FirstName + " " + emp.LastName}");
     }
 }
+
+foreach (var result in results2)
+{
+    Console.WriteLine("Department Id : " + result.Key);
+    foreach (var emp in result)
+    {
+        Console.WriteLine($"\t{emp.FirstName + " " + emp.LastName}");
+    }
+}
 ```
+Perbedaan antara method `GroupBy()` dengan `ToLookup()` adalah __GroupBy()__ dijalankan secara _deferred execution_, sedangkan __ToLookup()__ dijalankan secara _immediate execution_
 - __Sintaks query (operator `group` & `by`)__
 ```csharp
 var results = from emp in employeeList
