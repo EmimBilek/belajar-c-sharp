@@ -345,7 +345,7 @@ else
 __Contains()__ : Ada dua cara untuk menggunakan method ini jika digunakan pada tipe yang didefinisikan user (user-defined type)
 1. meng-override-kan method `Equals()` pada tipe nya :
 ```csharp
- class Employee
+class Employee
 {
     public int Id { get; set; }
     public string FirstName { get; set; }
