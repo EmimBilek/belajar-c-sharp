@@ -341,3 +341,57 @@ else
 ```
 - `All()` : mengecek apakah semua elemen memenuhi kriteria dari suatu koleksi (return bool)
 - `Any()` : mengecek apakah ada elemen yang memenuhi kriteria dari suatu koleksi (return bool)
+
+__Contains()__ : Ada dua cara untuk menggunakan method ini jika digunakan pada tipe yang didefinisikan user (user-defined type)
+1. meng-override-kan method `Equals()` pada tipe nya :
+```csharp
+ class Employee
+    {
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Employee emp = (Employee)obj;
+            return (this.FirstName == emp.FirstName) && (this.LastName == emp.LastName);
+        }
+    }
+```
+```csharp
+var checkEmp = new Employee { Id = 1, FirstName = "Momog", LastName = "Gus", AnnualSalary = 45000.2m, IsManager = true, DepartmentId = 2 };
+bool result = employeeList.Contains(checkEmp);
+
+if (result)
+    Console.WriteLine($"There is an employee with name  : {checkEmp.FirstName} {checkEmp.LastName}");
+else
+    Console.WriteLine($"There is not enployee with name : {checkEmp.FirstName} {checkEmp.LastName}");
+```
+2. mengimplementasikan interface generik `IEqualityComparer<T>`, kemudian override method `Equals()` dan `GetHashCode()` :
+```csharp
+public class EmployeeComparer : IEqualityComparer<Employee>
+{
+    public bool Equals(Employee x, Employee y)
+    {
+        return (x.FirstName == y.FirstName) && (x.LastName == y.LastName);
+    }
+
+    public int GetHashCode(Employee obj)
+    {
+        return obj.Id.GetHashCode();
+    }
+}
+```
+```csharp
+var checkEmp = new Employee { Id = 1, FirstName = "Momog", LastName = "Gus", AnnualSalary = 45000.2m, IsManager = true, DepartmentId = 2 };
+bool result = employeeList.Contains(checkEmp, new EmployeeComparer());
+
+if (result)
+    Console.WriteLine($"There is an employee with name  : {checkEmp.FirstName} {checkEmp.LastName}");
+else
+    Console.WriteLine($"There is not enployee with name : {checkEmp.FirstName} {checkEmp.LastName}");
+```
