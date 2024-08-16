@@ -346,21 +346,21 @@ __Contains()__ : Ada dua cara untuk menggunakan method ini jika digunakan pada t
 1. meng-override-kan method `Equals()` pada tipe nya :
 ```csharp
  class Employee
-    {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
-        public override bool Equals(object obj)
+    public override bool Equals(object obj)
+    {
+        if (obj == null || this.GetType() != obj.GetType())
         {
-            if (obj == null || this.GetType() != obj.GetType())
-            {
-                return false;
-            }
-            Employee emp = (Employee)obj;
-            return (this.FirstName == emp.FirstName) && (this.LastName == emp.LastName);
+            return false;
         }
+        Employee emp = (Employee)obj;
+        return (this.FirstName == emp.FirstName) && (this.LastName == emp.LastName);
     }
+}
 ```
 ```csharp
 var checkEmp = new Employee { Id = 1, FirstName = "Momog", LastName = "Gus", AnnualSalary = 45000.2m, IsManager = true, DepartmentId = 2 };
