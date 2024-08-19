@@ -463,7 +463,7 @@ foreach (var result in results2)
     </tr>
     <tr>
       <td>Any reference type</td>
-      <td><span style="border-radius:10px;background-color:#000000;">null</span></td>
+      <td>null</td>
     </tr>
     <tr>
       <td>Any built-in integral numeric type</td>
@@ -475,19 +475,15 @@ foreach (var result in results2)
     </tr>
     <tr>
       <td>bool</td>
-      <td>`false`</td>
+      <td>false</td>
     </tr>
     <tr>
       <td>char</td>
-      <td>`'\0'` (U+0000)</td>
+      <td>'\0' (U+0000)</td>
     </tr>
     <tr>
       <td>enum</td>
-      <td>The value produced by the expression `(E)0`, where `E` is the enum identifier.</td>
-    </tr>
-    <tr>
-      <td>enum</td>
-      <td>The value produced by the expression `(E)0`, where `E` is the enum identifier.</td>
+      <td>The value produced by the expression (E)0, where E is the enum identifier.</td>
     </tr>
     <tr>
       <td>struct</td>
@@ -495,7 +491,7 @@ foreach (var result in results2)
     </tr>
     <tr>
       <td>Any nullable value type</td>
-      <td>An instance for which the HasValue property is `false` and the Value property is undefined. That default value is also known as the `null` value of a nullable value type.</td>
+      <td>An instance for which the HasValue property is false and the Value property is undefined. That default value is also known as the null value of a nullable value type.</td>
     </tr>
   </table>
 </p>
