@@ -453,4 +453,41 @@ foreach (var result in results2)
 - __`Last()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada daya yang didapat, maka akan melemparkan eksepsi `System.InvalidOperationException`.
 - __`LastOrDefault()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai null.
 - __`Single()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Selain itu, maka akan melemparkan eksepsi `System.InvalidOperationException`.
-- __`SingleOrDefault()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Selain itu, maka akan mengembalikan nilai null.
+- __`SingleOrDefault()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Jika, tidak ada data di dalam koleksi, maka akan mengembalikan nilai null. Jika ada lebih dari satu data yang ada di dalam koleksi, maka akan melemparkan eksepsi `System.InvalidOperationException`.
+
+### Equality (Operasi persamaan) :
+- __`SequenceEqual()`__ -> Digunakan untuk menyamakan sebuah koleksi. Bila urutan serta isi datanya sama maka akan mengembalikan nilai true, selain itu maka false.
+Apabila menggunakan SequenceEqual untuk membandingkan tipe yang didefinisikan user (user-defined type), maka method Equals harus di override di dalam tipe nya atau menggunakan kelas yang mengimplementasikan `IEqualityComparer<T>`.
+```csharp
+var list1 = new List<int> { 1, 2, 3, 4, 5, 6 };
+var list2 = new List<int> { 1, 2, 3, 4, 5, 6 };
+
+bool result = list1.SequenceEqual(list2);
+```
+```csharp
+public class Employee
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public decimal AnnualSalary { get; set; }
+    public bool IsManager { get; set; }
+    public int DepartmentId { get; set; }
+  
+    public override bool Equals(object obj)
+    {
+        if (obj == null || this.GetType() != obj.GetType())
+            return false;
+  
+        Employee emp = (Employee)obj;
+  
+        return (this.FirstName.ToLower() == emp.FirstName.ToLower()) && (this.LastName.ToLower() == emp.LastName.ToLower());
+    }
+}
+```
+```csharp
+List<Employee> employeeList = Data.GenerateEmployees();
+List<Employee> employeeList2 = Data.GenerateEmployees();
+
+bool result = employeeList.SequenceEqual(employeeList2);
+```
