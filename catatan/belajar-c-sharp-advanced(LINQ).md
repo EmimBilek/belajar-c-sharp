@@ -463,7 +463,7 @@ foreach (var result in results2)
     </tr>
     <tr>
       <td>Any reference type</td>
-      <td><span style="border-radius:10px;background-color:#cccccc;">null</span></td>
+      <td><span style="border-radius:10px;background-color:#000000;">null</span></td>
     </tr>
     <tr>
       <td>Any built-in integral numeric type</td>
