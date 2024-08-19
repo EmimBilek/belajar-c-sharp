@@ -447,13 +447,58 @@ foreach (var result in results2)
 
 ### Elemen (Element Operator) :
 - __`ElementAt(int index)`__ -> Mengambil data pada element tertentu pada koleksi, jika ElementAt melebihi index koleksi maka akan melemparkan eksepsi `System.IndexOutOfRangeException`.
-- __`ElementAtOrDefault(int index)`__ -> Mengambil data pada element tertentu pada koleksi, jika ElementAt melebihi index koleksi maka akan me-return nilai null
+- __`ElementAtOrDefault(int index)`__ -> Mengambil data pada element tertentu pada koleksi, jika ElementAt melebihi index koleksi maka akan me-return nilai default
 - __`First()` +1 overload__ -> Mengambil data pertama pada koleksi. Bila tidak ada data yang diambil (tidak ada data pertama/tidak ada data sama sekali) maka akan melemparkan eksepsi `System.InvalidOperationException`.
-- __`FirstOrDefault()` +1 overload__ -> Mengambil data pertama pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai null.
+- __`FirstOrDefault()` +1 overload__ -> Mengambil data pertama pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai default.
 - __`Last()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada daya yang didapat, maka akan melemparkan eksepsi `System.InvalidOperationException`.
-- __`LastOrDefault()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai null.
+- __`LastOrDefault()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai default.
 - __`Single()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Selain itu, maka akan melemparkan eksepsi `System.InvalidOperationException`.
-- __`SingleOrDefault()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Jika, tidak ada data di dalam koleksi, maka akan mengembalikan nilai null. Jika ada lebih dari satu data yang ada di dalam koleksi, maka akan melemparkan eksepsi `System.InvalidOperationException`.
+- __`SingleOrDefault()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Jika, tidak ada data di dalam koleksi, maka akan mengembalikan nilai default. Jika ada lebih dari satu data yang ada di dalam koleksi, maka akan melemparkan eksepsi `System.InvalidOperationException`.
+
+<p align="center">
+  <table>
+    <tr>
+      <th>Type</th>
+      <th>Default Value</th>
+    </tr>
+    <tr>
+      <td>Any reference type</td>
+      <td>`null`</td>
+    </tr>
+    <tr>
+      <td>Any built-in integral numeric type</td>
+      <td>0 (zero)</td>
+    </tr>
+    <tr>
+      <td>Any built-in floating-point numeric type</td>
+      <td>0 (zero)</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td>`false`</td>
+    </tr>
+    <tr>
+      <td>char</td>
+      <td>`'\0'` (U+0000)</td>
+    </tr>
+    <tr>
+      <td>enum</td>
+      <td>The value produced by the expression `(E)0`, where `E` is the enum identifier.</td>
+    </tr>
+    <tr>
+      <td>enum</td>
+      <td>The value produced by the expression `(E)0`, where `E` is the enum identifier.</td>
+    </tr>
+    <tr>
+      <td>struct</td>
+      <td>The value produced by setting all value-type fields to their default values and all reference-type fields to null.</td>
+    </tr>
+    <tr>
+      <td>Any nullable value type</td>
+      <td>An instance for which the HasValue property is `false` and the Value property is undefined. That default value is also known as the `null` value of a nullable value type.</td>
+    </tr>
+  </table>
+</p>
 
 ### Equality (Operasi persamaan) :
 - __`SequenceEqual()`__ -> Digunakan untuk menyamakan sebuah koleksi. Bila urutan serta isi datanya sama maka akan mengembalikan nilai true, selain itu maka false.
