@@ -559,3 +559,4 @@ Kode diatas menggunakan Aggregate untuk menghitung total dari salary employee ya
 - __`Sum(Func<T, Decimal>)`__ : Digunakan untuk menghitung jumlah/total dari sebuah koleksi.
 - __`Max(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai tertinggi dari sebuah koleksi.
 - __`Min(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai terendah dari sebuah koleksi.
+- __`Count()`__ : Digunakan untuk menghitung jumlah data yang terdapat di sebuah koleksi.
