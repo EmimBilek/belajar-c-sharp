@@ -541,3 +541,21 @@ var concatenation = listInt1.Concat(listInt2); // concatenation = 1, 2, 3, 4, 5,
 Concat juga bisa digunakan pada tipe yang didefinisikan user (user-defined type)
 
 ### Agregasi (Aggregate)
+- __Aggregate()__ :
+
+Aggregasi / method `Aggregate()` digunakan untuk melakukan operasi pada seluruh koleksi yang melibatkan penggabungan atau transformasi data yang tidak langsung atau membutuhkan logika khusus. Contoh :
+```csharp
+decimal results = employeeList.Aggregate<Employee, decimal>(0, (totalsalarywbonus, e) => {
+                  var bonus = e.IsManager ? 0.1m : 0.05m;
+  
+                  totalsalarywbonus = (e.AnnualSalary + (e.AnnualSalary * bonus)) + totalsalarywbonus;
+  
+                  return totalsalarywbonus;
+              });
+```
+Kode diatas menggunakan Aggregate untuk menghitung total dari salary employee yang sudah ditambahkan dengan bonus (untuk manager mendapatkan bonus 10%, selain manager 5%).
+
+- __`Average(Func<T, Decimal>)`__ : Digunakan untuk menghitung rata2 dari sebuah koleksi.
+- __`Sum(Func<T, Decimal>)`__ : Digunakan untuk menghitung jumlah/total dari sebuah koleksi.
+- __`Max(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai tertinggi dari sebuah koleksi.
+- __`Min(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai terendah dari sebuah koleksi.
