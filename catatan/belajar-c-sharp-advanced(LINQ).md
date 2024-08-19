@@ -424,11 +424,11 @@ foreach(var result in results)
 }
 ```
 ```csharp
-var results = from ar in arr.OfType<int>()
+var results1 = from ar in arr.OfType<int>()
               select ar;
-var results = from ar in arr.OfType<Employee>()
+var results2 = from ar in arr.OfType<Employee>()
               select ar;
-var results = from ar in arr.OfType<Department>()
+var results3 = from ar in arr.OfType<Department>()
               select ar;
 ```
 Dapat diketahui dari kode diatas, fungsi dari operasi `OfType()` ialah untuk mengambil data dengan tipe data tertentu pada koleksi yang memiliki banyak tipe seperti arraylist yang menyimpan data berupa objek.
