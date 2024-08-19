@@ -530,3 +530,14 @@ List<Employee> employeeList2 = Data.GenerateEmployees();
 
 bool result = employeeList.SequenceEqual(employeeList2, new EmployeeComparer());
 ```
+### Concatenation
+Concat digunakan untuk penggabungan antara 2 koleksi :
+```csharp
+var listInt1 = new List<int> { 1, 2, 3, 4 };
+var listInt2 = new List<int> { 5, 6, 7, 8 };
+
+var concatenation = listInt1.Concat(listInt2); // concatenation = 1, 2, 3, 4, 5, 6, 7, 8
+```
+Concat juga bisa digunakan pada tipe yang didefinisikan user (user-defined type)
+
+### Agregasi (Aggregate)
