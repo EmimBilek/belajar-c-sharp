@@ -457,7 +457,7 @@ foreach (var result in results2)
 
 ### Equality (Operasi persamaan) :
 - __`SequenceEqual()`__ -> Digunakan untuk menyamakan sebuah koleksi. Bila urutan serta isi datanya sama maka akan mengembalikan nilai true, selain itu maka false.
-Apabila menggunakan SequenceEqual untuk membandingkan tipe yang didefinisikan user (user-defined type), maka method Equals harus di override di dalam tipe nya atau menggunakan kelas yang mengimplementasikan `IEqualityComparer<T>`.
+Apabila menggunakan SequenceEqual untuk membandingkan tipe yang didefinisikan user (user-defined type), maka method `Equals()` harus di override di dalam tipe nya atau menggunakan kelas yang mengimplementasikan `IEqualityComparer<T>`.
 ```csharp
 var list1 = new List<int> { 1, 2, 3, 4, 5, 6 };
 var list2 = new List<int> { 1, 2, 3, 4, 5, 6 };
