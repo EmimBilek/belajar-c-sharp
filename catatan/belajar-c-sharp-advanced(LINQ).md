@@ -444,3 +444,13 @@ var results2 = from emp in employeeList
 foreach (var result in results2)
     Console.WriteLine($"{result.Id} : {result.FirstName} {result.LastName} {(result.IsManager ? "is Manager" : "is not Manager")}");
 ```
+
+### Elemen (Element Operator) :
+- __`ElementAt(int index)`__ -> Mengambil data pada element tertentu pada koleksi, jika ElementAt melebihi index koleksi maka akan melemparkan eksepsi `System.IndexOutOfRangeException`.
+- __`ElementAtOrDefault(int index)`__ -> Mengambil data pada element tertentu pada koleksi, jika ElementAt melebihi index koleksi maka akan me-return nilai null
+- __`First()` +1 overload__ -> Mengambil data pertama pada koleksi. Bila tidak ada data yang diambil (tidak ada data pertama/tidak ada data sama sekali) maka akan melemparkan eksepsi `System.InvalidOperationException`.
+- __`FirstOrDefault()` +1 overload__ -> Mengambil data pertama pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai null.
+- __`Last()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada daya yang didapat, maka akan melemparkan eksepsi `System.InvalidOperationException`.
+- __`LastOrDefault()` +1 overload__ -> Mengambil data terakhir pada koleksi. Bila tidak ada data yang didapat, maka akan mengembalikan nilai null.
+- __`Single()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Selain itu, maka akan melemparkan eksepsi `System.InvalidOperationException`.
+- __`SingleOrDefault()` +1 overload__ -> Mengambil satu data dari suatu koleksi apabila di dalam koleksi hanya terdapat satu data. Selain itu, maka akan mengembalikan nilai null.
