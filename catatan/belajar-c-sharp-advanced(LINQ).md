@@ -462,8 +462,15 @@ Apabila menggunakan SequenceEqual untuk membandingkan tipe yang didefinisikan us
 var list1 = new List<int> { 1, 2, 3, 4, 5, 6 };
 var list2 = new List<int> { 1, 2, 3, 4, 5, 6 };
 
-bool result = list1.SequenceEqual(list2);
+bool result = list1.SequenceEqual(list2); //result = true
 ```
+```csharp
+var list1 = new List<int> { 1, 2, 3, 4, 5, 6 };
+var list2 = new List<int> { 1, 2, 3, 4, 6, 5 };
+
+bool result = list1.SequenceEqual(list2); //result = false
+```
+User-defined type 1 :
 ```csharp
 public class Employee
 {
@@ -490,4 +497,36 @@ List<Employee> employeeList = Data.GenerateEmployees();
 List<Employee> employeeList2 = Data.GenerateEmployees();
 
 bool result = employeeList.SequenceEqual(employeeList2);
+```
+User-defined type 2 :
+```csharp
+public class Employee
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public decimal AnnualSalary { get; set; }
+    public bool IsManager { get; set; }
+    public int DepartmentId { get; set; }
+}
+```
+```csharp
+public class EmployeeComparer : IEqualityComparer<Employee>
+{
+    public bool Equals(Employee x, Employee y)
+    {
+        return (x.FirstName.ToLower() == y.FirstName.ToLower()) && (x.LastName.ToLower() == y.LastName.ToLower());
+    }
+
+    public int GetHashCode(Employee obj)
+    {
+        return obj.Id.GetHashCode();
+    }
+}
+```
+```csharp
+List<Employee> employeeList = Data.GenerateEmployees();
+List<Employee> employeeList2 = Data.GenerateEmployees();
+
+bool result = employeeList.SequenceEqual(employeeList2, new EmployeeComparer());
 ```
