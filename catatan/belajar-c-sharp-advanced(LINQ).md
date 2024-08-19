@@ -371,7 +371,7 @@ if (result)
 else
     Console.WriteLine($"There is not enployee with name : {checkEmp.FirstName} {checkEmp.LastName}");
 ```
-2. mengimplementasikan interface generik `IEqualityComparer<T>`, kemudian override method `Equals()` dan `GetHashCode()` :
+2. Mengimplementasikan interface generik `IEqualityComparer<T>`, kemudian override method `Equals()` dan `GetHashCode()` :
 ```csharp
 public class EmployeeComparer : IEqualityComparer<Employee>
 {
@@ -395,3 +395,40 @@ if (result)
 else
     Console.WriteLine($"There is not enployee with name : {checkEmp.FirstName} {checkEmp.LastName}");
 ```
+### Filter (Penyaring)
+Digunakan untuk menyaring sebuah koleksi. Berbeda dengan operasi quantifier, operasi filter tidak mengembalikan nilai boolean, tetapi mengembalikan nilai itu sendiri (nilai yang difilter).
+
+- __Sintaks Gabungan : `OnType()`__
+```csharp
+ArrayList arr = new ArrayList();
+
+arr.Add(2000);
+arr.Add("Kucing");
+arr.Add(new Employee { Id = 5, AnnualSalary = 3000, DepartmentId = 2, FirstName = "iteng", LastName = "hitam", IsManager = false });
+arr.Add(new Department { Id=2, LongName="kominfo", ShortName="kmnf" });
+arr.Add(800);
+arr.Add("ase omagat asi deway yu sain");
+arr.Add(new Employee { Id = 7, AnnualSalary = 9000, DepartmentId = 2, FirstName = "jarwo", LastName = "dontol", IsManager = true });
+arr.Add(new Department { Id=2, LongName="kominfo", ShortName="kmnf" });
+arr.Add(7800);
+arr.Add("selaluuu, selagi jang ganggu");
+arr.Add(new Employee { Id = 6, AnnualSalary = 8230, DepartmentId = 2, FirstName = "harung", LastName = "hideung", IsManager = true });
+arr.Add(new Department { Id=2, LongName="kominfo", ShortName="kmnf" });
+
+var results = from ar in arr.OfType<string>()
+              select ar;
+
+foreach(var result in results)
+{
+    Console.WriteLine(result);
+}
+```
+```csharp
+var results = from ar in arr.OfType<int>()
+              select ar;
+var results = from ar in arr.OfType<Employee>()
+              select ar;
+var results = from ar in arr.OfType<Department>()
+              select ar;
+```
+Dapat diketahui dari kode diatas, fungsi dari operasi `OfType()` ialah untuk mengambil data dengan tipe data tertentu pada koleksi yang memiliki banyak tipe seperti arraylist yang menyimpan data berupa objek.
