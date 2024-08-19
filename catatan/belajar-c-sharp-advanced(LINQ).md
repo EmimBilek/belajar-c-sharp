@@ -432,3 +432,15 @@ var results3 = from ar in arr.OfType<Department>()
                select ar;
 ```
 Dapat diketahui dari kode diatas, fungsi dari operasi `OfType()` ialah untuk mengambil data dengan tipe data tertentu pada koleksi yang memiliki banyak tipe seperti arraylist yang menyimpan data berupa objek.
+
+- __Sintaks Method dan Query : `Where()`, `where`__
+```csharp
+var results = employeeList.Where(e => e.IsManager);
+
+var results2 = from emp in employeeList
+              where emp.IsManager
+              select emp;
+
+foreach (var result in results2)
+    Console.WriteLine($"{result.Id} : {result.FirstName} {result.LastName} {(result.IsManager ? "is Manager" : "is not Manager")}");
+```
