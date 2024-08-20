@@ -750,3 +750,24 @@ Employee[] deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kuma", 
 foreach (Employee emp in deretEmployee)
   Console.WriteLine($"ID : {emp.Id}, {emp.FirstName} {emp.LastName}");
 ```
+
+### Keyword Query
+- __let :__
+
+Digunakan untuk membuat variable baru pada sintaks query dengan LINQ :
+```csharp
+var result = from emp in employeeList
+                         let Inisial = emp.FirstName.Substring(0, 1).ToUpper() + emp.LastName.Substring(0, 1).ToUpper()
+                         let SalaryWithBonus = emp.IsManager ? (emp.AnnualSalary + (emp.AnnualSalary * 0.1m)) : (emp.AnnualSalary + (emp.AnnualSalary * 0.05m))
+                         select new
+                         {
+                             Id = emp.Id,
+                             FirstName = emp.FirstName,
+                             LastName = emp.LastName,
+                             Initial = Inisial,
+                             SalaryWithBonus = SalaryWithBonus
+                         };
+
+            foreach (var employi in result)
+                Console.WriteLine($"{employi.Id} {employi.Initial}. {employi.FirstName} {employi.LastName}, Salary (With bonus) : {employi.SalaryWithBonus}");
+```
