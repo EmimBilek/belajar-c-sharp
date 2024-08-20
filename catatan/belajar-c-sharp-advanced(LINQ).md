@@ -771,3 +771,15 @@ var result = from emp in employeeList
             foreach (var employi in result)
                 Console.WriteLine($"{employi.Id} {employi.Initial}. {employi.FirstName} {employi.LastName}, Salary (With bonus) : {employi.SalaryWithBonus}");
 ```
+
+- __into :__
+
+Digunakan untuk menyimpan variable sementara pada query. Biasanya digunakan untuk melakukan operasi yang lain setelah `select` :
+```csharp
+var result = from emp in employeeList
+             where emp.IsManager == true
+             select emp into highSalary
+             where highSalary.AnnualSalary > 50000
+             select highSalary;
+```
+Variable `highSalary` hanya akan berlaku di dalam query `result`. Di luar itu, tidak akan bisa dipanggil/digunakan.
