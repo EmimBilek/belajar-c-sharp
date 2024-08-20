@@ -615,7 +615,7 @@ Console.WriteLine(result.ElementAt(0)); // output : "Kosong"
 ```
 Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah string `"Kosong"`, karena nilai `"Kosong"` dilemparkan sebagai argumen untuk nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
 
-__Enumerable.Empty<TResult>()__ :
+- **Enumerable.Empty<TResult>() :**
 
 Method `Empty` pada `Enumerable` digunakan untuk membuat koleksi kosong. Contoh :
 ```csharp
