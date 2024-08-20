@@ -640,3 +640,11 @@ Method `Repeat()` digunakan untuk membuat koleksi dengan data yang sama berulang
 var deretString = Enumerable.Repeat("Halo", 10).ToList();
 // deretString = new List<string> {"Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo"};
 ```
+
+Contoh Kompleks :
+```csharp
+List<Employee> deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kuma", LastName = "Lala" }, 10).Select((e, index) => new Employee { Id = index + 1, FirstName = e.FirstName, LastName = e.LastName }).ToList();
+
+foreach (Employee employi in deretEmployee)
+    Console.WriteLine($"{employi.Id}. {employi.FirstName} {employi.LastName}");
+```
