@@ -615,7 +615,7 @@ Console.WriteLine(result.ElementAt(0)); // output : "Kosong"
 ```
 Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah string `"Kosong"`, karena nilai `"Kosong"` dilemparkan sebagai argumen untuk nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
 
-- `Enumerable.Empty<TResult>()` :
+- __`Enumerable.Empty<TResult>()` :__
 
 Method `Empty` pada `Enumerable` digunakan untuk membuat koleksi kosong. Contoh :
 ```csharp
@@ -633,7 +633,7 @@ var intRange = Enumerable.Range(10, 20); // angka 10 sampai 29
 var intRange = Enumerable.Range(11, 20); // angka 11 sampai 30
 ```
 
-- __`Enumerable.Repeat<TResult>(TResult element, int count)`__ :
+- __`Enumerable.Repeat<TResult>(TResult element, int count)` :__
 
 Method `Repeat()` digunakan untuk membuat koleksi dengan data yang sama berulang kali. Contoh sederhana :
 ```csharp
