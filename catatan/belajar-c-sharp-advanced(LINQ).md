@@ -623,3 +623,20 @@ List<Employee> employeet = Enumerable.Empty<Employee>().ToList(); // membuat lis
 
 employeet.Add(new Employee { Id = 20, FirstName = "miaw", LastName = "miyau" }); // menambahkan employee pada list kosong
 ```
+
+- __Enumerable.Range(int start, int count)__ :
+
+Method `Range()` digunakan untuk membuat deret integer dengan argumen pertama sebagai nilai awal deret integer, kemudian argumen kedua sebagai jumlah banyaknya penambahan 1 pada nilai awal deret. Contoh :
+```csharp
+var intRange = Enumerable.Range(1, 5); // angka 1 sampai 5
+var intRange = Enumerable.Range(10, 20); // angka 10 sampai 29
+var intRange = Enumerable.Range(11, 20); // angka 11 sampai 30
+```
+
+- __`Enumerable.Repeat<TResult>(TResult element, int count)`__ :
+
+Method `Repeat()` digunakan untuk membuat koleksi dengan data yang sama berulang kali. Contoh sederhana :
+```csharp
+var deretString = Enumerable.Repeat("Halo", 10).ToList();
+// deretString = new List<string> {"Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo", "Halo"};
+```
