@@ -609,6 +609,8 @@ Method `DefaultIfEmpty()` digunakan untuk menyetel koleksi menjadi nilai default
 ```csharp
 List<string> list = new List<string>();
 
-var result = list.DefaultIfEmpty("Kosong"); // result = "Kosong"
+var result = list.DefaultIfEmpty("Kosong");
+
+Console.WriteLine(result.ElementAt(0)); // output : "Kosong"
 ```
 Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah string `"Kosong"`, karena nilai `"Kosong"` dilemparkan sebagai argumen untuk nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
