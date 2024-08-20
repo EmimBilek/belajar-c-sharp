@@ -648,3 +648,23 @@ List<Employee> deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kum
 foreach (Employee employi in deretEmployee)
     Console.WriteLine($"{employi.Id}. {employi.FirstName} {employi.LastName}");
 ```
+
+### Operator Set
+- __Distinct() :__
+
+Digunakan untuk mengambil 1 data dari data yang sama pada list (tidak ada data yang sama di dalam list). Contoh :
+```csharp
+List<int> listInt = new List<int> {1,2,2,5,4,3,5,43,6,7,9,8,6,7,8,0,7,5};
+var distincted = listInt.Distinct().OrderBy(e => e); // distincted = 0,1,2,3,4,5,6,7,8,9
+```
+
+- __Except() :__
+
+Digunakan untuk mengambil data dalam koleksi selain dari data koleksi yang kedua (koleksi yang dijadikan sebagai argumen). Contoh :
+```csharp
+List<int> listInt = new List<int> {1,2,3,4,5};
+List<int> listInt2 = new List<int> {4,5,6,7,2};
+var exceppt = listInt.Except(listInt2); // exceppt = 1,3
+```
+
+> Jika ingin menggunakan except untuk list dengan tipe yang didefinisikan user (user-defined type), caranya sama seperti menggunakan `Contains()` di materi sebelumnya, yaitu dengan menggunakan kelas yang mengimplementasikan interface equality comparer (`IEqualityComparer`) atau dengan meng-override-kan method `Equals()` di dalam tipenya/kelasnya.
