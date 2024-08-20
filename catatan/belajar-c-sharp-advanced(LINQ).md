@@ -603,12 +603,12 @@ Kode diatas menggunakan Aggregate untuk menghitung total dari salary employee ya
 - __`Count()`__ : Digunakan untuk menghitung jumlah data yang terdapat di sebuah koleksi.
 
 ### Generasi (Generation)
-- __DefaultIfEmpty()__ :
+- __DefaultIfEmpty(object DefaultValue)__ :
 
 Method `DefaultIfEmpty()` digunakan untuk menyetel koleksi menjadi nilai default jika suatu koleksi tidak memiliki satupun nilai. Contoh :
 ```csharp
 List<string> list = new List<string>();
 
-var result = list.DefaultIfEmpty(); // result = null
+var result = list.DefaultIfEmpty("Kosong"); // result = "Kosong"
 ```
-Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah null, karena null adalah nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
+Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah string `"Kosong"`, karena nilai `"Kosong"` dilemparkan sebagai argumen untuk nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
