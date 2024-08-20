@@ -601,3 +601,14 @@ Kode diatas menggunakan Aggregate untuk menghitung total dari salary employee ya
 - __`Max(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai tertinggi dari sebuah koleksi.
 - __`Min(Func<T, Decimal>)`__ : Digunakan untuk menghitung nilai terendah dari sebuah koleksi.
 - __`Count()`__ : Digunakan untuk menghitung jumlah data yang terdapat di sebuah koleksi.
+
+### Generasi (Generation)
+- __DefaultIfEmpty()__ :
+
+Method `DefaultIfEmpty()` digunakan untuk menyetel koleksi menjadi nilai default jika suatu koleksi tidak memiliki satupun nilai. Contoh :
+```csharp
+List<string> list = new List<string>();
+
+var result = list.DefaultIfEmpty(); // result = null
+```
+Pada kode di atas, variable `list` tidak memiliki satupun nilai. Maka hasil dari `list.DefaultIfEmpty()` adalah null, karena null adalah nilai default yang diberikan jika suatu koleksi itu kosong/tidak memiliki nilai.
