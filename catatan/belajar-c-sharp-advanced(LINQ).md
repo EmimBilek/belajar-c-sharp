@@ -658,7 +658,7 @@ List<int> listInt = new List<int> {1,2,2,5,4,3,5,43,6,7,9,8,6,7,8,0,7,5};
 var distincted = listInt.Distinct().OrderBy(e => e); // distincted = 0,1,2,3,4,5,6,7,8,9
 ```
 
-- __Except() :__
+- __`Except<TSource>(IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)` :__
 
 Digunakan untuk mengambil data dalam koleksi selain dari data koleksi yang kedua (koleksi yang dijadikan sebagai argumen). Contoh :
 ```csharp
@@ -667,4 +667,86 @@ List<int> listInt2 = new List<int> {4,5,6,7,2};
 var exceppt = listInt.Except(listInt2); // exceppt = 1,3
 ```
 
-> Jika ingin menggunakan except untuk list dengan tipe yang didefinisikan user (user-defined type), caranya sama seperti menggunakan `Contains()` di materi sebelumnya, yaitu dengan menggunakan kelas yang mengimplementasikan interface equality comparer (`IEqualityComparer`) atau dengan meng-override-kan method `Equals()` di dalam tipenya/kelasnya.
+> Jika ingin menggunakan except untuk list dengan tipe yang didefinisikan user (user-defined type), caranya sama seperti menggunakan `Contains()` di materi sebelumnya, yaitu dengan membuat kelas yang mengimplementasikan interface equality comparer (`IEqualityComparer`) atau dengan meng-override-kan method `Equals()` di dalam tipenya/kelasnya.
+
+- __`Intersect<TSource>(IEnumerable<TSource> second, IEqualityComparer<Tsource> comparer)` :__
+
+Kebalikan dari `Except()`, `Intersect()` mengambil data dalam koleksi yang terdapat juga pada koleksi lain (seperti join). Contoh :
+```csharp
+List<int> listInt = new List<int> {1,2,3,4,5};
+List<int> listInt2 = new List<int> {4,5,6,7,2};
+var exceppt = listInt.Intersect(listInt2); // exceppt = 2,4,5
+```
+> Jika ingin menggunakan intersect untuk list dengan tipe yang didefinisikan user (user-defined type), caranya sama seperti menggunakan `Except()` di materi sebelumnya, yaitu dengan membuat kelas yang mengimplementasikan interface equality comparer (`IEqualityComparer`) atau dengan meng-override-kan method `Equals()` di dalam tipenya/kelasnya.
+
+- __`Union<TSource>(IEnumerable<TSource> second)` +1 overload -> IEqualityComparer :__
+
+`Union()` digunakan untuk penggabungan antara 2 koleksi. Bila ingin tidak ada data terduplikasi, maka gunakan IEqualityComparer atau meng-override-kan method `Equals()` (Khusus user-defined type, selain itu tidak perlu menggunakan IEqualityComparer karena sudah otomatis tidak akan ada data duplikasi jika menggunakan union). Contoh :
+```csharp
+List<int> listInt = new List<int> { 1, 2, 2, 5, 4, 3, 5, 3, 6, 7, 9, 8, 6, 7, 8, 0, 7, 5 };
+List<int> listInt2 = new List<int> { 1, 2, 2, 5, 4, 3, 5, 3, 6, 7, 9, 8, 6, 7, 10, 19, 13, 12 };
+
+var unionInt = listInt.Union(listInt2).OrderBy(e => e); // unionInt = 0,1,2,3,4,5,6,7,8,9,10,12,13,19
+```
+
+### Operasi Pembagian (Partitioning Operation)
+- __Skip(int count) :__
+
+Digunakan untuk melongkapi beberapa data dalam sebuah koleksi. Contoh :
+```csharp
+List<int> listInt = new List<int> { 1, 2, 3, 4 };
+var result = listInt.Skip(2); // result = 3,4
+```
+
+- __`SkipWhile(Predicate<T> predicate)` :__
+
+Digunakan untuk melongkapi data yang memenuhi kriteria tertentu dalam sebuah koleksi. Contoh :
+```csharp
+List<int> listInt = new List<int> { 1, 2, 3, 4 };
+var result = listInt.SkipWhile(e => e % 2 == 0); // result = 1,3
+```
+
+- __Take(int count) :__
+
+Digunakan untuk mengambil beberapa data dari awal dalam sebuah koleksi. Contoh :
+```csharp
+List<int> listInt = new List<int> { 1, 2, 3, 4 };
+var result = listInt.Take(2); // result = 1,2
+```
+
+- __TakeWhile(Predicate<T> predicate) :__
+
+Digunakan untuk mengambil beberapa data yang memenuhi kriteria dalam sebuah koleksi. Contoh :
+```csharp
+List<int> listInt = new List<int> { 1, 2, 3, 4 };
+var result = listInt.TakeWhile(e => e > 1); // result = 2,3,4
+```
+
+### Conversion (Konversi)
+
+- __ToList() :__
+
+Konversi `IEnumerable` menjadi `List` :
+```csharp
+List<Employee> deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kuma", LastName = "Lala" }, 10).Select((e, index) => new Employee { Id = index + 1, FirstName = e.FirstName, LastName = e.LastName }).ToList();
+```
+
+- __`ToDictionary<K, V>()` :__
+
+Konversi `IEnumerable` menjadi `Dictionary` :
+```csharp
+Dictionary<int, Employee> deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kuma", LastName = "Lala" }, 10).Select((e, index) => new Employee { Id = index + 1, FirstName = e.FirstName, LastName = e.LastName }).ToDictionary<Employee, int>(e => e.Id);
+
+foreach (var key in deretEmployee.keys)
+  Console.WriteLine($"ID : {key}, {deretEmployee[key].FirstName} {deretEmployee[key].LastName}");
+```
+
+- __ToArray() :__
+
+Konversi `IEnumerable` menjadi `Array` (`[]`) :
+```csharp
+Employee[] deretEmployee = Enumerable.Repeat(new Employee { FirstName = "Kuma", LastName = "Lala" }, 10).Select((e, index) => new Employee { Id = index + 1, FirstName = e.FirstName, LastName = e.LastName }).ToArray();
+
+foreach (Employee emp in deretEmployee)
+  Console.WriteLine($"ID : {emp.Id}, {emp.FirstName} {emp.LastName}");
+```
