@@ -1,0 +1,12 @@
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\ThePretendCompanyApp.exe.config
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\ThePretendCompanyApp.exe
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\ThePretendCompanyApp.pdb
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\TCPData.dll
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\TCPExtensions.dll
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\TCPData.pdb
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\bin\Debug\TCPExtensions.pdb
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\obj\Debug\ThePretendCompanyApp.csproj.AssemblyReference.cache
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\obj\Debug\ThePretendCompanyApp.csproj.CoreCompileInputs.cache
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\obj\Debug\ThePretendCompanyApp.csproj.CopyComplete
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\obj\Debug\ThePretendCompanyApp.exe
+C:\Users\benta\source\repos\BelajarLINQ\ThePretendCompanyApp\obj\Debug\ThePretendCompanyApp.pdb

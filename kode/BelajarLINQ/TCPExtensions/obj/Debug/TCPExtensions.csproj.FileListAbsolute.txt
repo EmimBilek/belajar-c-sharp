@@ -1,0 +1,6 @@
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\bin\Debug\TCPExtensions.dll
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\bin\Debug\TCPExtensions.pdb
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\obj\Debug\TCPExtensions.csproj.AssemblyReference.cache
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\obj\Debug\TCPExtensions.csproj.CoreCompileInputs.cache
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\obj\Debug\TCPExtensions.dll
+C:\Users\benta\source\repos\BelajarLINQ\TCPExtensions\obj\Debug\TCPExtensions.pdb
