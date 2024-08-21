@@ -187,6 +187,42 @@ foreach (var item in results)
 ```
 Dilihat dari sintaks join di atas, fungsi dari sintaks join yaitu memungkinkan kita untuk menggabungkan dua objek koleksi berdasarkan suatu kunci (dalam konteks ini, yang menjadi kuncinya adalah id departemen). Method join hanya mendukung inner join, jadi hanya bisa mendapatkan data yang memiliki relasi dari kedua objek koleksi. Sedangkan method group join mendukung left join/right join, sehingga memungkinkan untuk memanggil data yang terelasi dan juga tidak terelasi dengan objek koleksi lain.
 
+#### Sintaks `SelectMany()` :
+```csharp
+public class Department
+{
+    public int Id { get; set; }
+    public string ShortName { get; set; }
+    public string LongName { get; set; }
+    public IEnumerable<Employee> Employees { get; set; }
+}
+public class Employee
+{
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public decimal AnnualSalary { get; set; }
+    public bool IsManager { get; set; }
+    public int DepartmentId { get; set; }
+}
+```
+```csharp
+var results = departmentList.SelectMany(d => d.Employees).OrderBy(d=>d.DepartmentId);
+// results = IOrderedEnumerable<Employee>
+
+foreach (var result in results)
+    Console.WriteLine($"{result.Id} {result.FirstName} {result.LastName} {result.DepartmentId}");
+```
+
+Dari kode di atas, kita dapat menyimpulkan bahwa fungsi dari sintaks `SelectMany()` adalah untuk mengambil banyak data yang ditaruh ke dalam satu variable (`results`), sehingga tidak perlu melakukan nested loop pada saat memanggil hasilnya. Implementasi yang sama jika hanya menggunakan `Select()` :
+```csharp
+var results1 = departmentList.Select(d => d.Employees);
+
+foreach (var result1 in results1)
+    foreach(var result in result1)
+        Console.WriteLine($"{result.Id} {result.FirstName} {result.LastName} {result.DepartmentId}");
+```
+
 ### Deferred Execution & Immediate Execution
 
 __Deferred Execution__ :
