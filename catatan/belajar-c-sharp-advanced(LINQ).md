@@ -819,3 +819,22 @@ var result = from emp in employeeList
              select highSalary;
 ```
 Variable `highSalary` hanya akan berlaku di dalam query `result`. Di luar itu, tidak akan bisa dipanggil/digunakan.
+
+## Ringkasan
+- Kebanyakan LINQ Dibuat dengan menggunakan _extension method_ yang disimpan di dalam 2 kelas statis (_static classes_) yang bernama Enumerable dan Queryable. Kita bisa menggunakan 2 kelas ini dengan menambahkan namespace LINQ di dalam method kita -> `using System.Linq`. Keduanya Enumerable dan Queryable merupakan anggota dari namespace `System.Linq`.
+- Kita telah mendemonstrasikan contoh penggunaan operator `Select`, `Where`, `Join`, dan `GroupJoin`. Kita juga telah mengetahui perbedaan antara _Deferred Execution_ dan _Immediate Execution_. Query dieksekusi secara _Deffered_, tetapi kita bisa membuatnya untuk dieksekusi secara langsung (_Execute Immediately_) dengan menggunakan operasi konversi (alias _to_), seperti `ToList()`, `ToDictionary<Source, Key>()`, dan `ToArray()`.
+-  Kita telah mendemonstrasikan bagaimana cara menggunakan :
+1. Operasi pengurutan     : `OrderBy()`, `OrderByDescending()`, `ThenBy()`, `ThenByDescendidng()`
+2. Operasi pengelompokan  : `GroupBy()`, `ToLookup`
+3. Operasi penghitungan   : `All()`, `Any()`, `Contains()`
+4. Operasi penyaringan    : `OfType()`, `Where()`
+5. Operasi elemen         : `ElementAt()`, `ElementAtOrDefault()`, `First()`, `FirstOrDefault()`, `Last()`, `LastOrDefault()`, `Single()`, `SingleOrDefault()`
+6. Operasi persamaan      : `SequenceEqual()`
+7. Operasi penggabungan   : `Concat()`
+8. Operasi pengatur       : `Distinct()`, `Except()`, `Intersect()`, `Union()`
+9. Operasi generasi       : `DefaultIfEmpty()`, `Empty()`, `Range()`, `Repeat()`
+10. Operasi agregasi      : `Aggregate()`, `Average()`, `Count()`, `Sum()`, `Min()`, `Max()`
+11. Operasi pembagian     : `Skip()`, `SkipWhile()`, `Take()`, `TakeWhile()`
+12. Operasi konversi      : `ToList()`, `ToDictionary()`, `ToArray()`
+13. Operasi proyeksi      : `Select()`, `SelectMany()`
+14. Keyword `let` dan `into` pada sintaks query
