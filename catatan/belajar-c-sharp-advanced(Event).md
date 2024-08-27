@@ -16,11 +16,11 @@ public event EventHandler AnEvent;
 Untuk membuat sebuah event, gunakan kata kunci `event`
 
 Ada dua jenis built-in system EventHandler, yaitu: 
-- EventHandler(object sender, EventArgs e);
+- `EventHandler(object sender, EventArgs e);`
 ```csharp
 public delegate void EventHandler (object? sender, EventArgs e);
 ```
-- EventHandler<TEventArgs>(object sender, TEventArgs e);
+- `EventHandler<TEventArgs>(object sender, TEventArgs e);`
 ```csharp
 public delegate void EventHandler<TEventArgs> (object? sender, TEventArgs e);
 ```
